@@ -33,4 +33,8 @@ Public Class frmImportarVentas
         Me.Close()
 
     End Sub
+
+    Private Sub cmdImportar_Click(sender As Object, e As EventArgs) Handles cmdImportar.Click
+        MsgBox("Desea importar estos comprobantes al Sistema?", vbQuestion + vbYesNo)
+    End Sub
 End Class

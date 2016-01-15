@@ -327,6 +327,7 @@ Partial Class frmExportaciones
         '
         'TextBox8
         '
+        Me.TextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox8.Location = New System.Drawing.Point(139, 135)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(100, 20)
@@ -344,6 +345,7 @@ Partial Class frmExportaciones
         '
         'TextBox5
         '
+        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox5.Location = New System.Drawing.Point(139, 82)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(100, 20)
@@ -361,6 +363,7 @@ Partial Class frmExportaciones
         '
         'TextBox4
         '
+        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox4.Location = New System.Drawing.Point(139, 29)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(100, 20)
@@ -389,6 +392,7 @@ Partial Class frmExportaciones
         'ComboBox4
         '
         Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox4.FormattingEnabled = True
         Me.ComboBox4.Items.AddRange(New Object() {"40-Exportación definitive", "50-Exportación temporal para reimportación en el mismo estado", "51-Exportación temporal para perfeccionamiento pasivo", "60-Reexp. de mercancías en el mismo estado", "61-Reexportación de mercancías que fueron importadas para perfeccionamiento activ" &
                 "o", "79-Exportación a consumo desde Zona Franca", "83-Reembarque", "94-Courier exportación", "95-Exportaciones Correos del Ecuador"})
@@ -410,6 +414,7 @@ Partial Class frmExportaciones
         'ComboBox5
         '
         Me.ComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox5.FormattingEnabled = True
         Me.ComboBox5.Items.AddRange(New Object() {"019-GuayaquilAéreo", "028-Guayaquil Marítimo", "037-Manta", "046-Esmeraldas", "055-Quito", "064-Puerto Bolívar", "073-Tulcán", "082-Huaquillas", "091-Cuenca", "109-Loja Macara", "118-Sta Elena", "127-Latacunga", "136-Gerencia General", "145-CEBAF San Miguel "})
         Me.ComboBox5.Location = New System.Drawing.Point(139, 55)
@@ -625,7 +630,7 @@ Partial Class frmExportaciones
         'Button2
         '
         Me.Button2.Image = Global.Impuestos.My.Resources.Resources.find_icon
-        Me.Button2.Location = New System.Drawing.Point(156, 35)
+        Me.Button2.Location = New System.Drawing.Point(156, 33)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(31, 23)
         Me.Button2.TabIndex = 32

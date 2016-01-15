@@ -24,11 +24,11 @@ Partial Class frmImportarVentas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmImportarVentas))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.HelpToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.cmdAyuda = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.cmdSalir = New System.Windows.Forms.ToolStripButton()
         Me.Spr = New System.Windows.Forms.DataGridView()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.cmdImportar = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lblMensaje = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStrip1.SuspendLayout()
@@ -38,21 +38,21 @@ Partial Class frmImportarVentas
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HelpToolStripButton, Me.ToolStripSeparator2, Me.cmdSalir})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmdAyuda, Me.ToolStripSeparator2, Me.cmdSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(531, 25)
         Me.ToolStrip1.TabIndex = 26
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'HelpToolStripButton
+        'cmdAyuda
         '
-        Me.HelpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.HelpToolStripButton.Image = CType(resources.GetObject("HelpToolStripButton.Image"), System.Drawing.Image)
-        Me.HelpToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.HelpToolStripButton.Name = "HelpToolStripButton"
-        Me.HelpToolStripButton.Size = New System.Drawing.Size(23, 22)
-        Me.HelpToolStripButton.Text = "Ayuda"
+        Me.cmdAyuda.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.cmdAyuda.Image = CType(resources.GetObject("cmdAyuda.Image"), System.Drawing.Image)
+        Me.cmdAyuda.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.cmdAyuda.Name = "cmdAyuda"
+        Me.cmdAyuda.Size = New System.Drawing.Size(23, 22)
+        Me.cmdAyuda.Text = "Ayuda"
         '
         'ToolStripSeparator2
         '
@@ -79,14 +79,14 @@ Partial Class frmImportarVentas
         Me.Spr.Size = New System.Drawing.Size(407, 311)
         Me.Spr.TabIndex = 27
         '
-        'Button2
+        'cmdImportar
         '
-        Me.Button2.Location = New System.Drawing.Point(438, 161)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 29
-        Me.Button2.Text = "Importar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.cmdImportar.Location = New System.Drawing.Point(438, 161)
+        Me.cmdImportar.Name = "cmdImportar"
+        Me.cmdImportar.Size = New System.Drawing.Size(75, 23)
+        Me.cmdImportar.TabIndex = 29
+        Me.cmdImportar.Text = "Importar"
+        Me.cmdImportar.UseVisualStyleBackColor = True
         '
         'StatusStrip1
         '
@@ -108,7 +108,7 @@ Partial Class frmImportarVentas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(531, 376)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.cmdImportar)
         Me.Controls.Add(Me.Spr)
         Me.Controls.Add(Me.ToolStrip1)
         Me.MaximizeBox = False
@@ -125,11 +125,11 @@ Partial Class frmImportarVentas
     End Sub
 
     Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents HelpToolStripButton As ToolStripButton
+    Friend WithEvents cmdAyuda As ToolStripButton
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents cmdSalir As ToolStripButton
     Friend WithEvents Spr As DataGridView
-    Friend WithEvents Button2 As Button
+    Friend WithEvents cmdImportar As Button
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents lblMensaje As ToolStripStatusLabel
 End Class

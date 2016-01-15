@@ -3,19 +3,35 @@
         Me.Close()
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles cmdAñadirRetencion.Click
+        frmComprasRetenciones.ShowDialog()
+        Spr.Rows.Add()
 
     End Sub
 
-    Private Sub Label16_Click(sender As Object, e As EventArgs) Handles Label16.Click
-
+    Private Sub chkSiTieneCR_CheckedChanged(sender As Object, e As EventArgs) Handles chkSiTieneCR.CheckedChanged
+        If chkSiTieneCR.Checked = True Then
+            cmdAñadirRetencion.Enabled = True
+            cmdQuitarRetencion.Enabled = True
+            txtEstablecimientoCR.Enabled = True
+            txtPuntoEmisionCR.Enabled = True
+            txtSecuencialCR.Enabled = True
+            txtAutorizacionCR.Enabled = True
+            txtFechaEmisionCR.Enabled = True
+        Else
+            cmdAñadirRetencion.Enabled = False
+            cmdQuitarRetencion.Enabled = False
+            txtEstablecimientoCR.Enabled = False
+            txtPuntoEmisionCR.Enabled = False
+            txtSecuencialCR.Enabled = False
+            txtAutorizacionCR.Enabled = False
+            txtFechaEmisionCR.Enabled = False
+            Spr.Rows.Clear()
+        End If
     End Sub
 
-    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
-
-    End Sub
-
-    Private Sub TextBox9_TextChanged(sender As Object, e As EventArgs) Handles TextBox9.TextChanged
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim f As New frmBuscarProveedor
+        f.ShowDialog()
     End Sub
 End Class

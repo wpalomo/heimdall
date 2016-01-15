@@ -30,6 +30,7 @@
     End Sub
 
     Private Sub ATSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ATSToolStripMenuItem.Click
+        InputBox("Ingrese Mes [1-12] para generar ATS", "Generar ATS")
         GenerarATS()
     End Sub
 
@@ -37,5 +38,35 @@
         Dim f As New frmImportarVentas
         f.MdiParent = Me
         f.Show()
+    End Sub
+
+    Private Sub ComprasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ComprasToolStripMenuItem1.Click
+        Dim f As New frmCompras
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub ProveedoresToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProveedoresToolStripMenuItem1.Click
+        Dim f As New frmProveedor
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub ClientesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem1.Click
+        Dim f As New frmCliente
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub ListadoDeProveedoresToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ListadoDeProveedoresToolStripMenuItem1.Click
+        Me.Cursor = Cursors.WaitCursor
+        rptListadoProveedores()
+        Me.Cursor = Cursors.Default
+    End Sub
+
+    Private Sub ListadoDeClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeClientesToolStripMenuItem.Click
+        Me.Cursor = Cursors.WaitCursor
+        rptListadoClientes()
+        Me.Cursor = Cursors.Default
     End Sub
 End Class

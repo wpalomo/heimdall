@@ -49,10 +49,18 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXmlSDK.2.0\lib\Net35\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="facturaE">
       <HintPath>referencias\facturaE.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="SpreadsheetLight, Version=3.4.4.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpreadsheetLight.3.4.4\lib\SpreadsheetLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -82,16 +90,35 @@
     <Compile Include="frmCierreMensual.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCliente.Designer.vb">
-      <DependentUpon>frmCliente.vb</DependentUpon>
+    <Compile Include="Helpers\frmBuscarCliente.Designer.vb">
+      <DependentUpon>frmBuscarCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmCliente.vb">
+    <Compile Include="Helpers\frmBuscarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Helpers\frmBuscarProveedor.Designer.vb">
+      <DependentUpon>frmBuscarProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\frmBuscarProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\frmCliente.Designer.vb">
+      <DependentUpon>frmCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\frmCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\modProveedores.vb" />
     <Compile Include="Transacciones\frmCompras.Designer.vb">
       <DependentUpon>frmCompras.vb</DependentUpon>
     </Compile>
     <Compile Include="Transacciones\frmCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\frmComprasRetenciones.Designer.vb">
+      <DependentUpon>frmComprasRetenciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\frmComprasRetenciones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Transacciones\frmExportaciones.Designer.vb">
@@ -124,14 +151,14 @@
     <Compile Include="frmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProveedor.Designer.vb">
+    <Compile Include="Maestros\frmProveedor.Designer.vb">
       <DependentUpon>frmProveedor.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmProveedor.vb">
+    <Compile Include="Maestros\frmProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Globales.vb" />
-    <Compile Include="modGenerador.vb" />
+    <Compile Include="Reportes\modGenerador.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -152,11 +179,20 @@
     <EmbeddedResource Include="frmCierreMensual.resx">
       <DependentUpon>frmCierreMensual.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCliente.resx">
+    <EmbeddedResource Include="Helpers\frmBuscarCliente.resx">
+      <DependentUpon>frmBuscarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\frmBuscarProveedor.resx">
+      <DependentUpon>frmBuscarProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\frmCliente.resx">
       <DependentUpon>frmCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transacciones\frmCompras.resx">
       <DependentUpon>frmCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\frmComprasRetenciones.resx">
+      <DependentUpon>frmComprasRetenciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transacciones\frmExportaciones.resx">
       <DependentUpon>frmExportaciones.vb</DependentUpon>
@@ -173,7 +209,7 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProveedor.resx">
+    <EmbeddedResource Include="Maestros\frmProveedor.resx">
       <DependentUpon>frmProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -193,11 +229,13 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="find_icon.png" />
     <Content Include="logo.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
