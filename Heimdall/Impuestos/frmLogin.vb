@@ -1,19 +1,39 @@
-﻿Public Class frmLogin
+﻿Imports System.ComponentModel
+Imports MySql.Data.MySqlClient
 
-    ' TODO: Insert code to perform custom authentication using the provided username and password 
-    ' (See http://go.microsoft.com/fwlink/?LinkId=35339).  
-    ' The custom principal can then be attached to the current thread's principal as follows: 
-    '     My.User.CurrentPrincipal = CustomPrincipal
-    ' where CustomPrincipal is the IPrincipal implementation used to perform authentication. 
-    ' Subsequently, My.User will return identity information encapsulated in the CustomPrincipal object
-    ' such as the username, display name, etc.
+Public Class frmLogin
+    Private isLogin As Integer = 0
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        Me.Close()
+        Try
+            Dim cmd As New MySqlCommand("select * from usuarios where user='" + txtUsuario.Text + "' and pwd='" + txtContraseña.Text + "';", gloConexion)
+            Dim dt As New DataTable
+            dt.Load(cmd.ExecuteReader)
+            If dt.Rows.Count > 0 Then
+                gloUsuario = txtUsuario.Text
+                isLogin = 1
+                Me.Close()
+            Else
+                MsgBox("Combinación de usuario y contraseña errónea", vbCritical)
+                txtContraseña.ResetText()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message + vbCrLf + vbCrLf + "funcion=login", vbCritical)
+        End Try
+
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
-        Me.Close()
+        Application.Exit()
     End Sub
 
+    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub frmLogin_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        If isLogin = 0 Then
+            Application.Exit()
+        End If
+    End Sub
 End Class
