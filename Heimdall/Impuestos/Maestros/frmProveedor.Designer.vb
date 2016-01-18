@@ -23,7 +23,7 @@ Partial Class frmProveedor
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProveedor))
-        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.txtCorreoElectronico = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -33,33 +33,35 @@ Partial Class frmProveedor
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtID = New System.Windows.Forms.TextBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.cmdNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.cmdBuscar = New System.Windows.Forms.ToolStripButton()
         Me.cmdGuardar = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.cmdAyuda = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.cmdSalir = New System.Windows.Forms.ToolStripButton()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'txtTelefono
+        'txtCorreoElectronico
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(124, 177)
-        Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
-        Me.txtTelefono.TabIndex = 24
+        Me.txtCorreoElectronico.Location = New System.Drawing.Point(124, 177)
+        Me.txtCorreoElectronico.Name = "txtCorreoElectronico"
+        Me.txtCorreoElectronico.Size = New System.Drawing.Size(220, 20)
+        Me.txtCorreoElectronico.TabIndex = 24
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(25, 180)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(52, 13)
+        Me.Label6.Size = New System.Drawing.Size(97, 13)
         Me.Label6.TabIndex = 23
-        Me.Label6.Text = "Teléfono:"
+        Me.Label6.Text = "Correo Electrónico:"
         '
         'txtDireccion
         '
@@ -129,17 +131,9 @@ Partial Class frmProveedor
         Me.Label2.TabIndex = 15
         Me.Label2.Text = "Nombre:"
         '
-        'txtID
-        '
-        Me.txtID.Location = New System.Drawing.Point(285, 177)
-        Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(59, 20)
-        Me.txtID.TabIndex = 14
-        Me.txtID.Visible = False
-        '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmdNuevo, Me.ToolStripButton1, Me.cmdGuardar, Me.toolStripSeparator, Me.cmdAyuda, Me.ToolStripSeparator2, Me.cmdSalir})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmdNuevo, Me.cmdBuscar, Me.cmdGuardar, Me.toolStripSeparator, Me.cmdAyuda, Me.ToolStripSeparator2, Me.cmdSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(469, 25)
@@ -155,14 +149,14 @@ Partial Class frmProveedor
         Me.cmdNuevo.Size = New System.Drawing.Size(23, 22)
         Me.cmdNuevo.Text = "Nuevo"
         '
-        'ToolStripButton1
+        'cmdBuscar
         '
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton1.Text = "ToolStripButton1"
+        Me.cmdBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.cmdBuscar.Image = CType(resources.GetObject("cmdBuscar.Image"), System.Drawing.Image)
+        Me.cmdBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.cmdBuscar.Name = "cmdBuscar"
+        Me.cmdBuscar.Size = New System.Drawing.Size(23, 22)
+        Me.cmdBuscar.Text = "ToolStripButton1"
         '
         'cmdGuardar
         '
@@ -201,13 +195,40 @@ Partial Class frmProveedor
         Me.cmdSalir.Size = New System.Drawing.Size(23, 22)
         Me.cmdSalir.Text = "Salir"
         '
+        'txtTelefono
+        '
+        Me.txtTelefono.Location = New System.Drawing.Point(124, 203)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
+        Me.txtTelefono.TabIndex = 37
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(25, 206)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(52, 13)
+        Me.Label1.TabIndex = 36
+        Me.Label1.Text = "Teléfono:"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(285, 203)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(59, 20)
+        Me.TextBox2.TabIndex = 35
+        Me.TextBox2.Visible = False
+        '
         'frmProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(469, 220)
-        Me.Controls.Add(Me.ToolStrip1)
+        Me.ClientSize = New System.Drawing.Size(469, 250)
         Me.Controls.Add(Me.txtTelefono)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.ToolStrip1)
+        Me.Controls.Add(Me.txtCorreoElectronico)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtDireccion)
         Me.Controls.Add(Me.Label5)
@@ -217,7 +238,6 @@ Partial Class frmProveedor
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtID)
         Me.Name = "frmProveedor"
         Me.Text = "Proveedores"
         Me.ToolStrip1.ResumeLayout(False)
@@ -226,7 +246,7 @@ Partial Class frmProveedor
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents txtCorreoElectronico As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtDireccion As TextBox
     Friend WithEvents Label5 As Label
@@ -236,7 +256,6 @@ Partial Class frmProveedor
     Friend WithEvents Label3 As Label
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents txtID As TextBox
     Friend WithEvents cmdNuevo As ToolStripButton
     Friend WithEvents cmdGuardar As ToolStripButton
     Friend WithEvents cmdAyuda As ToolStripButton
@@ -244,5 +263,8 @@ Partial Class frmProveedor
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents toolStripSeparator As ToolStripSeparator
     Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents cmdBuscar As ToolStripButton
 End Class
