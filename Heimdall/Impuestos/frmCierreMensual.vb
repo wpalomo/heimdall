@@ -11,7 +11,7 @@ Public Class frmCierreMensual
 
     Private Sub llenarSpr()
         Try
-            Dim cmd As New MySqlCommand("select mes, fecha_cierre from mes where estado=2", gloConexion)
+            Dim cmd As New MySqlCommand("select mes, fecha_cierre from cierre_mes where estado=2", gloConexion)
             Dim dt As New DataTable
             dt.Load(cmd.ExecuteReader)
             If dt.Rows.Count > 0 Then
@@ -21,7 +21,7 @@ Public Class frmCierreMensual
                 Spr.Columns(1).HeaderText = "Fecha de Cierre"
             End If
 
-            cmd.CommandText = "select id, mes from mes where estado=1"
+            cmd.CommandText = "select id, mes from cierre_mes where estado=1"
             Dim dt2 As New DataTable
             dt2.Load(cmd.ExecuteReader)
             If dt2.Rows.Count > 0 Then

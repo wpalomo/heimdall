@@ -30,9 +30,13 @@ Partial Class frmBuscarCliente
         '
         'Spr
         '
+        Me.Spr.AllowUserToAddRows = False
+        Me.Spr.AllowUserToDeleteRows = False
+        Me.Spr.AllowUserToOrderColumns = True
         Me.Spr.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Spr.Location = New System.Drawing.Point(12, 54)
         Me.Spr.Name = "Spr"
+        Me.Spr.ReadOnly = True
         Me.Spr.Size = New System.Drawing.Size(422, 317)
         Me.Spr.TabIndex = 5
         '
