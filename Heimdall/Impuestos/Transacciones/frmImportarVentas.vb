@@ -8,7 +8,7 @@ Public Class frmImportarVentas
 
     Private Sub llenarSpr()
         Try
-            Dim cmd As New MySqlCommand("select id, clave_acceso from comprobantes where procesada=0", gloConexionImport)
+            Dim cmd As New MySqlCommand("select id, clave_acceso from comprobantes where procesada=0", gloConexion)
             Dim dt As New DataTable
             dt.Load(cmd.ExecuteReader)
             If dt.Rows.Count > 0 Then

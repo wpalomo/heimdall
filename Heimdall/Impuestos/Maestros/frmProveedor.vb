@@ -13,8 +13,9 @@
         cboTipoIdentificacion.SelectedIndex = -1
         txtIdentificacion.Text = ""
         txtDireccion.Text = ""
-        txtCorreoElectronico.Text = ""
+        txtCiudad.Text = ""
         txtTelefono.Text = ""
+        txtID.Text = ""
 
     End Sub
 End Class

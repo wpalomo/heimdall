@@ -46,7 +46,7 @@ Partial Class frmExportaciones
         Me.txtCliente = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.groRefrendo = New System.Windows.Forms.GroupBox()
         Me.txtCorrelativo = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtAño = New System.Windows.Forms.TextBox()
@@ -84,7 +84,7 @@ Partial Class frmExportaciones
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.groRefrendo.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -145,8 +145,11 @@ Partial Class frmExportaciones
         '
         'txtRegistro
         '
+        Me.txtRegistro.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.txtRegistro.Location = New System.Drawing.Point(91, 35)
+        Me.txtRegistro.MaxLength = 6
         Me.txtRegistro.Name = "txtRegistro"
+        Me.txtRegistro.ReadOnly = True
         Me.txtRegistro.Size = New System.Drawing.Size(59, 20)
         Me.txtRegistro.TabIndex = 15
         '
@@ -291,7 +294,7 @@ Partial Class frmExportaciones
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.GroupBox1)
+        Me.TabPage2.Controls.Add(Me.groRefrendo)
         Me.TabPage2.Controls.Add(Me.txtFecha)
         Me.TabPage2.Controls.Add(Me.txtValorFOB)
         Me.TabPage2.Controls.Add(Me.Label12)
@@ -306,30 +309,31 @@ Partial Class frmExportaciones
         Me.TabPage2.Text = "Detalle de Exportación"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'GroupBox1
+        'groRefrendo
         '
-        Me.GroupBox1.Controls.Add(Me.txtCorrelativo)
-        Me.GroupBox1.Controls.Add(Me.Label14)
-        Me.GroupBox1.Controls.Add(Me.txtAño)
-        Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Controls.Add(Me.txtDocTpte)
-        Me.GroupBox1.Controls.Add(Me.Label13)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.cboRegimen)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.cboDistrito)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(32, 115)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(492, 166)
-        Me.GroupBox1.TabIndex = 55
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Refrendo"
+        Me.groRefrendo.Controls.Add(Me.txtCorrelativo)
+        Me.groRefrendo.Controls.Add(Me.Label14)
+        Me.groRefrendo.Controls.Add(Me.txtAño)
+        Me.groRefrendo.Controls.Add(Me.Label11)
+        Me.groRefrendo.Controls.Add(Me.txtDocTpte)
+        Me.groRefrendo.Controls.Add(Me.Label13)
+        Me.groRefrendo.Controls.Add(Me.Label7)
+        Me.groRefrendo.Controls.Add(Me.cboRegimen)
+        Me.groRefrendo.Controls.Add(Me.Label8)
+        Me.groRefrendo.Controls.Add(Me.cboDistrito)
+        Me.groRefrendo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.groRefrendo.Location = New System.Drawing.Point(32, 115)
+        Me.groRefrendo.Name = "groRefrendo"
+        Me.groRefrendo.Size = New System.Drawing.Size(492, 166)
+        Me.groRefrendo.TabIndex = 55
+        Me.groRefrendo.TabStop = False
+        Me.groRefrendo.Text = "Refrendo"
         '
         'txtCorrelativo
         '
         Me.txtCorrelativo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCorrelativo.Location = New System.Drawing.Point(139, 135)
+        Me.txtCorrelativo.MaxLength = 8
         Me.txtCorrelativo.Name = "txtCorrelativo"
         Me.txtCorrelativo.Size = New System.Drawing.Size(100, 20)
         Me.txtCorrelativo.TabIndex = 64
@@ -348,6 +352,7 @@ Partial Class frmExportaciones
         '
         Me.txtAño.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAño.Location = New System.Drawing.Point(139, 82)
+        Me.txtAño.MaxLength = 4
         Me.txtAño.Name = "txtAño"
         Me.txtAño.Size = New System.Drawing.Size(100, 20)
         Me.txtAño.TabIndex = 62
@@ -366,6 +371,7 @@ Partial Class frmExportaciones
         '
         Me.txtDocTpte.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDocTpte.Location = New System.Drawing.Point(139, 29)
+        Me.txtDocTpte.MaxLength = 13
         Me.txtDocTpte.Name = "txtDocTpte"
         Me.txtDocTpte.Size = New System.Drawing.Size(100, 20)
         Me.txtDocTpte.TabIndex = 60
@@ -522,6 +528,7 @@ Partial Class frmExportaciones
         'txtNumeroAutorizacion
         '
         Me.txtNumeroAutorizacion.Location = New System.Drawing.Point(151, 171)
+        Me.txtNumeroAutorizacion.MaxLength = 49
         Me.txtNumeroAutorizacion.Name = "txtNumeroAutorizacion"
         Me.txtNumeroAutorizacion.Size = New System.Drawing.Size(284, 20)
         Me.txtNumeroAutorizacion.TabIndex = 60
@@ -565,6 +572,7 @@ Partial Class frmExportaciones
         'txtSecuencial
         '
         Me.txtSecuencial.Location = New System.Drawing.Point(335, 145)
+        Me.txtSecuencial.MaxLength = 9
         Me.txtSecuencial.Name = "txtSecuencial"
         Me.txtSecuencial.Size = New System.Drawing.Size(100, 20)
         Me.txtSecuencial.TabIndex = 55
@@ -572,6 +580,7 @@ Partial Class frmExportaciones
         'txtPuntoEmision
         '
         Me.txtPuntoEmision.Location = New System.Drawing.Point(243, 145)
+        Me.txtPuntoEmision.MaxLength = 3
         Me.txtPuntoEmision.Name = "txtPuntoEmision"
         Me.txtPuntoEmision.Size = New System.Drawing.Size(86, 20)
         Me.txtPuntoEmision.TabIndex = 54
@@ -579,6 +588,7 @@ Partial Class frmExportaciones
         'txtEstablecimiento
         '
         Me.txtEstablecimiento.Location = New System.Drawing.Point(151, 145)
+        Me.txtEstablecimiento.MaxLength = 3
         Me.txtEstablecimiento.Name = "txtEstablecimiento"
         Me.txtEstablecimiento.Size = New System.Drawing.Size(86, 20)
         Me.txtEstablecimiento.TabIndex = 53
@@ -611,6 +621,7 @@ Partial Class frmExportaciones
         '
         'cboTipoComprobante
         '
+        Me.cboTipoComprobante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipoComprobante.FormattingEnabled = True
         Me.cboTipoComprobante.Items.AddRange(New Object() {"01-Factura ", "04-Nota de crédito", "05-Nota de débito", "16-Formulario Único de Exportación (FUE) o Declaración Aduanera Única (DAU) o Dec" &
                 "laración Andina de Valor (DAV)", "41-Comprobante de venta emitido por reembolso", "47-Nota de Crédito por Reembolso Emitida por Intermediario", "48-Nota de Débito por Reembolso Emitida por Intermediario"})
@@ -656,8 +667,8 @@ Partial Class frmExportaciones
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.groRefrendo.ResumeLayout(False)
+        Me.groRefrendo.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
@@ -695,7 +706,7 @@ Partial Class frmExportaciones
     Friend WithEvents txtValorFOB As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents txtFecha As DateTimePicker
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents groRefrendo As GroupBox
     Friend WithEvents cboDistrito As ComboBox
     Friend WithEvents Label8 As Label
     Friend WithEvents cboRegimen As ComboBox

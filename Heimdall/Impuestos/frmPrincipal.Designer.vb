@@ -153,7 +153,7 @@ Partial Class frmPrincipal
         'CierreDeMesToolStripMenuItem
         '
         Me.CierreDeMesToolStripMenuItem.Name = "CierreDeMesToolStripMenuItem"
-        Me.CierreDeMesToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.CierreDeMesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CierreDeMesToolStripMenuItem.Text = "Cierre de Mes"
         '
         'ReportesToolStripMenuItem1

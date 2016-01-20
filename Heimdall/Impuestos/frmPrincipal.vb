@@ -1,8 +1,12 @@
-﻿Public Class frmPrincipal
+﻿Imports MySql.Data.MySqlClient
+
+Public Class frmPrincipal
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AbrirConexion()
+        CargarVariablesGlobales()
         Dim f As New frmLogin
         f.ShowDialog()
+        statusUsuario.Text = gloUsuario
+        statusMes.Text = gloMesActualNombre
     End Sub
 
     Private Sub CierreDeMesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CierreDeMesToolStripMenuItem.Click
@@ -65,8 +69,30 @@
     End Sub
 
     Private Sub ListadoDeClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeClientesToolStripMenuItem.Click
-        Me.Cursor = Cursors.WaitCursor
-        rptListadoClientes()
-        Me.Cursor = Cursors.Default
+        Try
+            Me.Cursor = Cursors.WaitCursor
+            Dim cmd As New MySqlCommand("select * from clientes", gloConexion)
+            Dim dt As New DataTable
+            dt.Load(cmd.ExecuteReader)
+            rptListadoClientes(dt)
+        Catch ex As Exception
+            MsgBox(ex.Message + vbCrLf + vbCrLf + "funcion=reporteClientes", vbCritical)
+        Finally
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+    Private Sub RegistrosDeExportacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrosDeExportacionesToolStripMenuItem.Click
+        Try
+            Me.Cursor = Cursors.WaitCursor
+            Dim cmd As New MySqlCommand("select * from exportaciones", gloConexion)
+            Dim dt As New DataTable
+            dt.Load(cmd.ExecuteReader)
+            rptListadoExportaciones(dt, "", "", "")
+        Catch ex As Exception
+            MsgBox(ex.Message + vbCrLf + vbCrLf + "funcion=reporteExportaciones", vbCritical)
+        Finally
+            Me.Cursor = Cursors.Default
+        End Try
     End Sub
 End Class

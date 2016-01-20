@@ -22,27 +22,27 @@ Partial Class frmComprasRetenciones
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.cboCodigoRetencion = New System.Windows.Forms.ComboBox()
         Me.Label37 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtBaseImponible = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtPorcentaje = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtMonto = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cmdCancelar = New System.Windows.Forms.Button()
         Me.cmdAceptar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'ComboBox4
+        'cboCodigoRetencion
         '
-        Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Items.AddRange(New Object() {"01-PAGO A RESIDENTE", "02-PAGO A NO RESIDENTE"})
-        Me.ComboBox4.Location = New System.Drawing.Point(153, 16)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(375, 21)
-        Me.ComboBox4.TabIndex = 84
+        Me.cboCodigoRetencion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboCodigoRetencion.FormattingEnabled = True
+        Me.cboCodigoRetencion.Items.AddRange(New Object() {"01-PAGO A RESIDENTE", "02-PAGO A NO RESIDENTE"})
+        Me.cboCodigoRetencion.Location = New System.Drawing.Point(153, 16)
+        Me.cboCodigoRetencion.Name = "cboCodigoRetencion"
+        Me.cboCodigoRetencion.Size = New System.Drawing.Size(375, 21)
+        Me.cboCodigoRetencion.TabIndex = 84
         '
         'Label37
         '
@@ -53,12 +53,12 @@ Partial Class frmComprasRetenciones
         Me.Label37.TabIndex = 83
         Me.Label37.Text = "Concepto de Retención:"
         '
-        'TextBox4
+        'txtBaseImponible
         '
-        Me.TextBox4.Location = New System.Drawing.Point(153, 43)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox4.TabIndex = 86
+        Me.txtBaseImponible.Location = New System.Drawing.Point(153, 43)
+        Me.txtBaseImponible.Name = "txtBaseImponible"
+        Me.txtBaseImponible.Size = New System.Drawing.Size(100, 20)
+        Me.txtBaseImponible.TabIndex = 86
         '
         'Label8
         '
@@ -69,12 +69,12 @@ Partial Class frmComprasRetenciones
         Me.Label8.TabIndex = 85
         Me.Label8.Text = "Base Imponible Renta:"
         '
-        'TextBox1
+        'txtPorcentaje
         '
-        Me.TextBox1.Location = New System.Drawing.Point(153, 69)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 88
+        Me.txtPorcentaje.Location = New System.Drawing.Point(153, 69)
+        Me.txtPorcentaje.Name = "txtPorcentaje"
+        Me.txtPorcentaje.Size = New System.Drawing.Size(100, 20)
+        Me.txtPorcentaje.TabIndex = 88
         '
         'Label1
         '
@@ -85,12 +85,12 @@ Partial Class frmComprasRetenciones
         Me.Label1.TabIndex = 87
         Me.Label1.Text = "Porcentaje Retención:"
         '
-        'TextBox2
+        'txtMonto
         '
-        Me.TextBox2.Location = New System.Drawing.Point(153, 95)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 90
+        Me.txtMonto.Location = New System.Drawing.Point(153, 95)
+        Me.txtMonto.Name = "txtMonto"
+        Me.txtMonto.Size = New System.Drawing.Size(100, 20)
+        Me.txtMonto.TabIndex = 90
         '
         'Label2
         '
@@ -127,13 +127,13 @@ Partial Class frmComprasRetenciones
         Me.ControlBox = False
         Me.Controls.Add(Me.cmdCancelar)
         Me.Controls.Add(Me.cmdAceptar)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtMonto)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtPorcentaje)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.txtBaseImponible)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.ComboBox4)
+        Me.Controls.Add(Me.cboCodigoRetencion)
         Me.Controls.Add(Me.Label37)
         Me.Name = "frmComprasRetenciones"
         Me.Text = "Agregar Retención en la Fuente"
@@ -142,13 +142,13 @@ Partial Class frmComprasRetenciones
 
     End Sub
 
-    Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents cboCodigoRetencion As ComboBox
     Friend WithEvents Label37 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txtBaseImponible As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtPorcentaje As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtMonto As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents cmdCancelar As Button
     Friend WithEvents cmdAceptar As Button
