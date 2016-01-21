@@ -110,11 +110,6 @@ Partial Class frmCompras
         Me.cmdAñadirRetencion = New System.Windows.Forms.Button()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.Spr = New System.Windows.Forms.DataGridView()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.concepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.baseImponible = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.porcentaje = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.valor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtFechaEmisionRet = New System.Windows.Forms.DateTimePicker()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
@@ -129,6 +124,11 @@ Partial Class frmCompras
         Me.txtRegistro = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmdMostrar = New System.Windows.Forms.Button()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.concepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.baseImponible = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.porcentaje = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.valor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage3.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -1010,36 +1010,6 @@ Partial Class frmCompras
         Me.Spr.Size = New System.Drawing.Size(596, 162)
         Me.Spr.TabIndex = 90
         '
-        'codigo
-        '
-        Me.codigo.HeaderText = "Código"
-        Me.codigo.Name = "codigo"
-        Me.codigo.ReadOnly = True
-        '
-        'concepto
-        '
-        Me.concepto.HeaderText = "Concepto"
-        Me.concepto.Name = "concepto"
-        Me.concepto.ReadOnly = True
-        '
-        'baseImponible
-        '
-        Me.baseImponible.HeaderText = "Base Imponible"
-        Me.baseImponible.Name = "baseImponible"
-        Me.baseImponible.ReadOnly = True
-        '
-        'porcentaje
-        '
-        Me.porcentaje.HeaderText = "% Retención"
-        Me.porcentaje.Name = "porcentaje"
-        Me.porcentaje.ReadOnly = True
-        '
-        'valor
-        '
-        Me.valor.HeaderText = "Valor Retenido"
-        Me.valor.Name = "valor"
-        Me.valor.ReadOnly = True
-        '
         'txtFechaEmisionRet
         '
         Me.txtFechaEmisionRet.CustomFormat = "dd/MM/yyyy"
@@ -1165,6 +1135,41 @@ Partial Class frmCompras
         Me.cmdMostrar.TabIndex = 31
         Me.cmdMostrar.UseVisualStyleBackColor = True
         '
+        'codigo
+        '
+        Me.codigo.HeaderText = "Código"
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        Me.codigo.Width = 50
+        '
+        'concepto
+        '
+        Me.concepto.HeaderText = "Concepto"
+        Me.concepto.Name = "concepto"
+        Me.concepto.ReadOnly = True
+        Me.concepto.Width = 250
+        '
+        'baseImponible
+        '
+        Me.baseImponible.HeaderText = "Base Imponible"
+        Me.baseImponible.Name = "baseImponible"
+        Me.baseImponible.ReadOnly = True
+        Me.baseImponible.Width = 90
+        '
+        'porcentaje
+        '
+        Me.porcentaje.HeaderText = "% Retención"
+        Me.porcentaje.Name = "porcentaje"
+        Me.porcentaje.ReadOnly = True
+        Me.porcentaje.Width = 70
+        '
+        'valor
+        '
+        Me.valor.HeaderText = "Valor Retenido"
+        Me.valor.Name = "valor"
+        Me.valor.ReadOnly = True
+        Me.valor.Width = 90
+        '
         'frmCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1286,11 +1291,6 @@ Partial Class frmCompras
     Friend WithEvents Label36 As Label
     Friend WithEvents cmdQuitarRetencion As Button
     Friend WithEvents cmdAñadirRetencion As Button
-    Friend WithEvents valor As DataGridViewTextBoxColumn
-    Friend WithEvents porcentaje As DataGridViewTextBoxColumn
-    Friend WithEvents baseImponible As DataGridViewTextBoxColumn
-    Friend WithEvents concepto As DataGridViewTextBoxColumn
-    Friend WithEvents codigo As DataGridViewTextBoxColumn
     Friend WithEvents Label41 As Label
     Friend WithEvents Label40 As Label
     Friend WithEvents cboPagoRegimenMenor As ComboBox
@@ -1303,4 +1303,9 @@ Partial Class frmCompras
     Friend WithEvents cboPaisPago As ComboBox
     Friend WithEvents chkSiTieneRet As CheckBox
     Friend WithEvents cmdImportarRetencion As Button
+    Friend WithEvents valor As DataGridViewTextBoxColumn
+    Friend WithEvents porcentaje As DataGridViewTextBoxColumn
+    Friend WithEvents baseImponible As DataGridViewTextBoxColumn
+    Friend WithEvents concepto As DataGridViewTextBoxColumn
+    Friend WithEvents codigo As DataGridViewTextBoxColumn
 End Class

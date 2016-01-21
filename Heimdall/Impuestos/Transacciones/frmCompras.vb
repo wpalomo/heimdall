@@ -4,8 +4,10 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles cmdAñadirRetencion.Click
-        frmComprasRetenciones.ShowDialog()
-        Spr.Rows.Add()
+        Dim f As New frmComprasRetenciones
+        f.Spr = Me.Spr
+        f.ShowDialog()
+        Spr.Refresh()
 
     End Sub
 
