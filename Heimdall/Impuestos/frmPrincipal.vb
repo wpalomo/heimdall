@@ -63,9 +63,17 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub ListadoDeProveedoresToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ListadoDeProveedoresToolStripMenuItem1.Click
-        Me.Cursor = Cursors.WaitCursor
-        rptListadoProveedores()
-        Me.Cursor = Cursors.Default
+        Try
+            Me.Cursor = Cursors.WaitCursor
+            Dim cmd As New MySqlCommand("select * from proveedores", gloConexion)
+            Dim dt As New DataTable
+            dt.Load(cmd.ExecuteReader)
+            rptListadoProveedores(dt)
+        Catch ex As Exception
+            MsgBox(ex.Message + vbCrLf + vbCrLf + "funcion=reporteProveedores", vbCritical)
+        Finally
+            Me.Cursor = Cursors.Default
+        End Try
     End Sub
 
     Private Sub ListadoDeClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeClientesToolStripMenuItem.Click
@@ -89,6 +97,28 @@ Public Class frmPrincipal
             Dim dt As New DataTable
             dt.Load(cmd.ExecuteReader)
             rptListadoExportaciones(dt, "", "", "")
+        Catch ex As Exception
+            MsgBox(ex.Message + vbCrLf + vbCrLf + "funcion=reporteExportaciones", vbCritical)
+        Finally
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+    Private Sub UsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem.Click
+        Dim s As String = getSHA1Hash(InputBox(""))
+        Clipboard.SetText(s)
+        'MsgBox(s)
+
+
+    End Sub
+
+    Private Sub RegistrosDeCompraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrosDeCompraToolStripMenuItem.Click
+        Try
+            Me.Cursor = Cursors.WaitCursor
+            Dim cmd As New MySqlCommand("select * from compras", gloConexion)
+            Dim dt As New DataTable
+            dt.Load(cmd.ExecuteReader)
+            rptListadoCompras(dt)
         Catch ex As Exception
             MsgBox(ex.Message + vbCrLf + vbCrLf + "funcion=reporteExportaciones", vbCritical)
         Finally

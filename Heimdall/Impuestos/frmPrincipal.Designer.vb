@@ -25,6 +25,7 @@ Partial Class frmPrincipal
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SistemaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ParámetrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransaccionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -74,7 +75,7 @@ Partial Class frmPrincipal
         '
         'SistemaToolStripMenuItem
         '
-        Me.SistemaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ParámetrosToolStripMenuItem, Me.ToolStripMenuItem4, Me.SalirToolStripMenuItem})
+        Me.SistemaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ParámetrosToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.ToolStripMenuItem4, Me.SalirToolStripMenuItem})
         Me.SistemaToolStripMenuItem.Name = "SistemaToolStripMenuItem"
         Me.SistemaToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.SistemaToolStripMenuItem.Text = "Sistema"
@@ -84,6 +85,12 @@ Partial Class frmPrincipal
         Me.ParámetrosToolStripMenuItem.Name = "ParámetrosToolStripMenuItem"
         Me.ParámetrosToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
         Me.ParámetrosToolStripMenuItem.Text = "Parámetros"
+        '
+        'UsuariosToolStripMenuItem
+        '
+        Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
+        Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'ToolStripMenuItem4
         '
@@ -153,7 +160,7 @@ Partial Class frmPrincipal
         'CierreDeMesToolStripMenuItem
         '
         Me.CierreDeMesToolStripMenuItem.Name = "CierreDeMesToolStripMenuItem"
-        Me.CierreDeMesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CierreDeMesToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.CierreDeMesToolStripMenuItem.Text = "Cierre de Mes"
         '
         'ReportesToolStripMenuItem1
@@ -302,7 +309,7 @@ Partial Class frmPrincipal
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmPrincipal"
-        Me.Text = "Impuestos"
+        Me.Text = "Sistema de Información Tributaria - UNA E.P."
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -350,4 +357,5 @@ Partial Class frmPrincipal
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As ToolStripSeparator
     Friend WithEvents ATSToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
 End Class

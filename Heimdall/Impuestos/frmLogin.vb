@@ -6,7 +6,7 @@ Public Class frmLogin
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         Try
-            Dim cmd As New MySqlCommand("select * from usuarios where user='" + txtUsuario.Text + "' and pwd='" + txtContraseña.Text + "';", gloConexion)
+            Dim cmd As New MySqlCommand("select * from usuarios where user='" + txtUsuario.Text + "' and pwd='" + getSHA1Hash(txtContraseña.Text) + "';", gloConexion)
             Dim dt As New DataTable
             dt.Load(cmd.ExecuteReader)
             If dt.Rows.Count > 0 Then

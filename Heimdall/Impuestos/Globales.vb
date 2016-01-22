@@ -1,7 +1,7 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Text
+Imports MySql.Data.MySqlClient
 Module Globales
     Public gloConexion As MySqlConnection
-    Public gloRuta As String
     Public gloUsuario As String
     Public gloMesActual As Integer
     Public gloMesActualNombre As String
@@ -17,7 +17,6 @@ Module Globales
     Public Sub CargarVariablesGlobales()
         Try
             Dim vCon = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\UNAEP\Impuestos\", "Conexion", Nothing)
-            gloRuta = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\UNAEP\Impuestos\", "Ruta", Nothing)
 
             If IsNothing(vCon) Then
                 MsgBox("No ha definido las claves en el registro", vbExclamation)
@@ -55,5 +54,34 @@ Module Globales
         End Try
 
     End Sub
+
+    Public Function getSHA1Hash(ByVal strToHash As String) As String
+        Dim sha1Obj As New Security.Cryptography.SHA1CryptoServiceProvider
+        Dim bytesToHash() As Byte = System.Text.Encoding.ASCII.GetBytes(strToHash)
+        bytesToHash = sha1Obj.ComputeHash(bytesToHash)
+        Dim strResult As String = ""
+        For Each b As Byte In bytesToHash
+            strResult += b.ToString("f1")
+        Next
+        Return strResult
+
+    End Function
+
+
+    Public Function GenerarNombre() As String
+        Dim xCharArray() As Char = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray
+        Dim xNoArray() As Char = "0123456789".ToCharArray
+        Dim xGenerator As System.Random = New System.Random()
+        Dim xStr As String = String.Empty
+        While xStr.Length < 6
+            If xGenerator.Next(0, 2) = 0 Then
+                xStr &= xCharArray(xGenerator.Next(0, xCharArray.Length))
+            Else
+                xStr &= xNoArray(xGenerator.Next(0, xNoArray.Length))
+            End If
+        End While
+        Return xStr
+    End Function
+
 
 End Module

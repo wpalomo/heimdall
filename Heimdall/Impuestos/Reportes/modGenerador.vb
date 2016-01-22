@@ -2,7 +2,7 @@
 
 Module modGenerador
     Public Sub GenerarATS()
-        Using writer As XmlWriter = XmlWriter.Create("C:\test\ats.xml")
+        Using writer As XmlWriter = XmlWriter.Create("C:\unaep\impuestos\ats.xml")
             ' Begin writing.
             writer.WriteStartDocument()
             writer.WriteStartElement("iva") ' iva

@@ -186,6 +186,7 @@ Partial Class frmComprasRetenciones
         Me.Controls.Add(Me.cboCodigoRetencion)
         Me.Controls.Add(Me.Label37)
         Me.Name = "frmComprasRetenciones"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Agregar Retención en la Fuente"
         Me.ResumeLayout(False)
         Me.PerformLayout()

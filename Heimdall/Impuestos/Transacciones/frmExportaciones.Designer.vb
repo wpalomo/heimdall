@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmExportaciones
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmExportaciones
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmExportaciones))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
@@ -80,12 +80,15 @@ Partial Class frmExportaciones
         Me.cboTipoComprobante = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.cmdMostrar = New System.Windows.Forms.Button()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.groRefrendo.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -146,12 +149,14 @@ Partial Class frmExportaciones
         'txtRegistro
         '
         Me.txtRegistro.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.txtRegistro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRegistro.Location = New System.Drawing.Point(91, 35)
         Me.txtRegistro.MaxLength = 6
         Me.txtRegistro.Name = "txtRegistro"
         Me.txtRegistro.ReadOnly = True
         Me.txtRegistro.Size = New System.Drawing.Size(59, 20)
         Me.txtRegistro.TabIndex = 15
+        Me.txtRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -648,11 +653,27 @@ Partial Class frmExportaciones
         Me.cmdMostrar.TabIndex = 32
         Me.cmdMostrar.UseVisualStyleBackColor = True
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblUsuario})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 382)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(584, 22)
+        Me.StatusStrip1.TabIndex = 33
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'lblUsuario
+        '
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.Size = New System.Drawing.Size(47, 17)
+        Me.lblUsuario.Text = "Usuario"
+        '
         'frmExportaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(584, 389)
+        Me.ClientSize = New System.Drawing.Size(584, 404)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.cmdMostrar)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.txtRegistro)
@@ -671,6 +692,8 @@ Partial Class frmExportaciones
         Me.groRefrendo.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -733,4 +756,6 @@ Partial Class frmExportaciones
     Friend WithEvents txtFechaComprobante As DateTimePicker
     Friend WithEvents Label22 As Label
     Friend WithEvents cmdMostrar As Button
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents lblUsuario As ToolStripStatusLabel
 End Class

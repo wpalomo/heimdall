@@ -3,6 +3,7 @@ Imports SpreadsheetLight.Drawing
 Imports MySql.Data.MySqlClient
 Imports System.Data
 Imports DocumentFormat.OpenXml.Spreadsheet
+Imports System.IO
 
 Module modExportaciones
     Public Sub rptListadoExportaciones(dt As DataTable, del As String, al As String, usuario As String)
@@ -64,7 +65,7 @@ Module modExportaciones
         Next
         'Guardar el Reporte
         wb.AutoFitColumn(1, 21)
-        Dim archivoGenerado As String = "C:\UNAEP\impuestos\listado_exportaciones.xlsx"
+        Dim archivoGenerado As String = Path.GetTempPath + "\" + GenerarNombre() + ".xlsx"
         wb.SaveAs(archivoGenerado)
         Process.Start(archivoGenerado)
     End Sub

@@ -110,10 +110,15 @@ Partial Class frmCompras
         Me.cmdAñadirRetencion = New System.Windows.Forms.Button()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.Spr = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.concepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.baseImponible = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.porcentaje = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.valor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtFechaEmisionRet = New System.Windows.Forms.DateTimePicker()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
-        Me.txtAutorizacionRet = New System.Windows.Forms.TextBox()
+        Me.txtNumeroAutorizacionRet = New System.Windows.Forms.TextBox()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
@@ -124,11 +129,8 @@ Partial Class frmCompras
         Me.txtRegistro = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmdMostrar = New System.Windows.Forms.Button()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.concepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.baseImponible = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.porcentaje = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.valor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TabPage3.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -138,6 +140,7 @@ Partial Class frmCompras
         Me.TabPage4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         CType(Me.Spr, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabPage3
@@ -524,7 +527,7 @@ Partial Class frmCompras
         Me.txtProveedor.Location = New System.Drawing.Point(149, 46)
         Me.txtProveedor.Name = "txtProveedor"
         Me.txtProveedor.ReadOnly = True
-        Me.txtProveedor.Size = New System.Drawing.Size(309, 20)
+        Me.txtProveedor.Size = New System.Drawing.Size(399, 20)
         Me.txtProveedor.TabIndex = 37
         '
         'Label2
@@ -669,6 +672,7 @@ Partial Class frmCompras
         'txtSecuencial
         '
         Me.txtSecuencial.Location = New System.Drawing.Point(383, 158)
+        Me.txtSecuencial.MaxLength = 9
         Me.txtSecuencial.Name = "txtSecuencial"
         Me.txtSecuencial.Size = New System.Drawing.Size(100, 20)
         Me.txtSecuencial.TabIndex = 73
@@ -676,6 +680,7 @@ Partial Class frmCompras
         'txtPuntoEmision
         '
         Me.txtPuntoEmision.Location = New System.Drawing.Point(291, 158)
+        Me.txtPuntoEmision.MaxLength = 3
         Me.txtPuntoEmision.Name = "txtPuntoEmision"
         Me.txtPuntoEmision.Size = New System.Drawing.Size(86, 20)
         Me.txtPuntoEmision.TabIndex = 72
@@ -683,6 +688,7 @@ Partial Class frmCompras
         'txtEstablecimiento
         '
         Me.txtEstablecimiento.Location = New System.Drawing.Point(199, 158)
+        Me.txtEstablecimiento.MaxLength = 3
         Me.txtEstablecimiento.Name = "txtEstablecimiento"
         Me.txtEstablecimiento.Size = New System.Drawing.Size(86, 20)
         Me.txtEstablecimiento.TabIndex = 71
@@ -761,6 +767,7 @@ Partial Class frmCompras
         '
         Me.txtSecuencialModificado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSecuencialModificado.Location = New System.Drawing.Point(255, 56)
+        Me.txtSecuencialModificado.MaxLength = 9
         Me.txtSecuencialModificado.Name = "txtSecuencialModificado"
         Me.txtSecuencialModificado.Size = New System.Drawing.Size(80, 20)
         Me.txtSecuencialModificado.TabIndex = 64
@@ -769,6 +776,7 @@ Partial Class frmCompras
         '
         Me.txtPuntoEmisionModificado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPuntoEmisionModificado.Location = New System.Drawing.Point(212, 56)
+        Me.txtPuntoEmisionModificado.MaxLength = 3
         Me.txtPuntoEmisionModificado.Name = "txtPuntoEmisionModificado"
         Me.txtPuntoEmisionModificado.Size = New System.Drawing.Size(37, 20)
         Me.txtPuntoEmisionModificado.TabIndex = 63
@@ -777,6 +785,7 @@ Partial Class frmCompras
         '
         Me.txtEstablecimientoModificado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEstablecimientoModificado.Location = New System.Drawing.Point(169, 56)
+        Me.txtEstablecimientoModificado.MaxLength = 3
         Me.txtEstablecimientoModificado.Name = "txtEstablecimientoModificado"
         Me.txtEstablecimientoModificado.Size = New System.Drawing.Size(37, 20)
         Me.txtEstablecimientoModificado.TabIndex = 62
@@ -931,7 +940,7 @@ Partial Class frmCompras
         Me.TabPage5.Controls.Add(Me.txtFechaEmisionRet)
         Me.TabPage5.Controls.Add(Me.Label35)
         Me.TabPage5.Controls.Add(Me.Label34)
-        Me.TabPage5.Controls.Add(Me.txtAutorizacionRet)
+        Me.TabPage5.Controls.Add(Me.txtNumeroAutorizacionRet)
         Me.TabPage5.Controls.Add(Me.Label30)
         Me.TabPage5.Controls.Add(Me.Label31)
         Me.TabPage5.Controls.Add(Me.Label32)
@@ -1010,6 +1019,41 @@ Partial Class frmCompras
         Me.Spr.Size = New System.Drawing.Size(596, 162)
         Me.Spr.TabIndex = 90
         '
+        'codigo
+        '
+        Me.codigo.HeaderText = "Código"
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        Me.codigo.Width = 50
+        '
+        'concepto
+        '
+        Me.concepto.HeaderText = "Concepto"
+        Me.concepto.Name = "concepto"
+        Me.concepto.ReadOnly = True
+        Me.concepto.Width = 250
+        '
+        'baseImponible
+        '
+        Me.baseImponible.HeaderText = "Base Imponible"
+        Me.baseImponible.Name = "baseImponible"
+        Me.baseImponible.ReadOnly = True
+        Me.baseImponible.Width = 90
+        '
+        'porcentaje
+        '
+        Me.porcentaje.HeaderText = "% Retención"
+        Me.porcentaje.Name = "porcentaje"
+        Me.porcentaje.ReadOnly = True
+        Me.porcentaje.Width = 70
+        '
+        'valor
+        '
+        Me.valor.HeaderText = "Valor Retenido"
+        Me.valor.Name = "valor"
+        Me.valor.ReadOnly = True
+        Me.valor.Width = 90
+        '
         'txtFechaEmisionRet
         '
         Me.txtFechaEmisionRet.CustomFormat = "dd/MM/yyyy"
@@ -1039,14 +1083,14 @@ Partial Class frmCompras
         Me.Label34.TabIndex = 87
         Me.Label34.Text = "Comprobante de Retención"
         '
-        'txtAutorizacionRet
+        'txtNumeroAutorizacionRet
         '
-        Me.txtAutorizacionRet.Enabled = False
-        Me.txtAutorizacionRet.Location = New System.Drawing.Point(137, 80)
-        Me.txtAutorizacionRet.MaxLength = 49
-        Me.txtAutorizacionRet.Name = "txtAutorizacionRet"
-        Me.txtAutorizacionRet.Size = New System.Drawing.Size(284, 20)
-        Me.txtAutorizacionRet.TabIndex = 86
+        Me.txtNumeroAutorizacionRet.Enabled = False
+        Me.txtNumeroAutorizacionRet.Location = New System.Drawing.Point(137, 80)
+        Me.txtNumeroAutorizacionRet.MaxLength = 49
+        Me.txtNumeroAutorizacionRet.Name = "txtNumeroAutorizacionRet"
+        Me.txtNumeroAutorizacionRet.Size = New System.Drawing.Size(284, 20)
+        Me.txtNumeroAutorizacionRet.TabIndex = 86
         '
         'Label30
         '
@@ -1088,6 +1132,7 @@ Partial Class frmCompras
         '
         Me.txtSecuencialRet.Enabled = False
         Me.txtSecuencialRet.Location = New System.Drawing.Point(321, 54)
+        Me.txtSecuencialRet.MaxLength = 9
         Me.txtSecuencialRet.Name = "txtSecuencialRet"
         Me.txtSecuencialRet.Size = New System.Drawing.Size(100, 20)
         Me.txtSecuencialRet.TabIndex = 81
@@ -1096,6 +1141,7 @@ Partial Class frmCompras
         '
         Me.txtPuntoEmisionRet.Enabled = False
         Me.txtPuntoEmisionRet.Location = New System.Drawing.Point(229, 54)
+        Me.txtPuntoEmisionRet.MaxLength = 3
         Me.txtPuntoEmisionRet.Name = "txtPuntoEmisionRet"
         Me.txtPuntoEmisionRet.Size = New System.Drawing.Size(86, 20)
         Me.txtPuntoEmisionRet.TabIndex = 80
@@ -1104,6 +1150,7 @@ Partial Class frmCompras
         '
         Me.txtEstablecimientoRet.Enabled = False
         Me.txtEstablecimientoRet.Location = New System.Drawing.Point(137, 54)
+        Me.txtEstablecimientoRet.MaxLength = 3
         Me.txtEstablecimientoRet.Name = "txtEstablecimientoRet"
         Me.txtEstablecimientoRet.Size = New System.Drawing.Size(86, 20)
         Me.txtEstablecimientoRet.TabIndex = 79
@@ -1111,11 +1158,13 @@ Partial Class frmCompras
         'txtRegistro
         '
         Me.txtRegistro.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.txtRegistro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRegistro.Location = New System.Drawing.Point(100, 38)
         Me.txtRegistro.Name = "txtRegistro"
         Me.txtRegistro.ReadOnly = True
         Me.txtRegistro.Size = New System.Drawing.Size(59, 20)
         Me.txtRegistro.TabIndex = 29
+        Me.txtRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -1135,46 +1184,26 @@ Partial Class frmCompras
         Me.cmdMostrar.TabIndex = 31
         Me.cmdMostrar.UseVisualStyleBackColor = True
         '
-        'codigo
+        'StatusStrip1
         '
-        Me.codigo.HeaderText = "Código"
-        Me.codigo.Name = "codigo"
-        Me.codigo.ReadOnly = True
-        Me.codigo.Width = 50
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblUsuario})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 450)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(780, 22)
+        Me.StatusStrip1.TabIndex = 41
+        Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'concepto
+        'lblUsuario
         '
-        Me.concepto.HeaderText = "Concepto"
-        Me.concepto.Name = "concepto"
-        Me.concepto.ReadOnly = True
-        Me.concepto.Width = 250
-        '
-        'baseImponible
-        '
-        Me.baseImponible.HeaderText = "Base Imponible"
-        Me.baseImponible.Name = "baseImponible"
-        Me.baseImponible.ReadOnly = True
-        Me.baseImponible.Width = 90
-        '
-        'porcentaje
-        '
-        Me.porcentaje.HeaderText = "% Retención"
-        Me.porcentaje.Name = "porcentaje"
-        Me.porcentaje.ReadOnly = True
-        Me.porcentaje.Width = 70
-        '
-        'valor
-        '
-        Me.valor.HeaderText = "Valor Retenido"
-        Me.valor.Name = "valor"
-        Me.valor.ReadOnly = True
-        Me.valor.Width = 90
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.Size = New System.Drawing.Size(0, 17)
         '
         'frmCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(780, 457)
+        Me.ClientSize = New System.Drawing.Size(780, 472)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.cmdMostrar)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.TabControl1)
@@ -1198,6 +1227,8 @@ Partial Class frmCompras
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
         CType(Me.Spr, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1277,7 +1308,7 @@ Partial Class frmCompras
     Friend WithEvents Label28 As Label
     Friend WithEvents Label29 As Label
     Friend WithEvents Label34 As Label
-    Friend WithEvents txtAutorizacionRet As TextBox
+    Friend WithEvents txtNumeroAutorizacionRet As TextBox
     Friend WithEvents Label30 As Label
     Friend WithEvents Label31 As Label
     Friend WithEvents Label32 As Label
@@ -1308,4 +1339,6 @@ Partial Class frmCompras
     Friend WithEvents baseImponible As DataGridViewTextBoxColumn
     Friend WithEvents concepto As DataGridViewTextBoxColumn
     Friend WithEvents codigo As DataGridViewTextBoxColumn
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents lblUsuario As ToolStripStatusLabel
 End Class

@@ -43,21 +43,26 @@ Partial Class frmProveedor
         Me.cmdSalir = New System.Windows.Forms.ToolStripButton()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtID = New System.Windows.Forms.TextBox()
+        Me.cmdMostrar = New System.Windows.Forms.Button()
+        Me.txtRegistro = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStrip1.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtCiudad
         '
-        Me.txtCiudad.Location = New System.Drawing.Point(124, 121)
+        Me.txtCiudad.Location = New System.Drawing.Point(121, 149)
         Me.txtCiudad.Name = "txtCiudad"
         Me.txtCiudad.Size = New System.Drawing.Size(220, 20)
-        Me.txtCiudad.TabIndex = 24
+        Me.txtCiudad.TabIndex = 4
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(25, 124)
+        Me.Label6.Location = New System.Drawing.Point(22, 152)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(43, 13)
         Me.Label6.TabIndex = 23
@@ -65,16 +70,16 @@ Partial Class frmProveedor
         '
         'txtDireccion
         '
-        Me.txtDireccion.Location = New System.Drawing.Point(124, 147)
+        Me.txtDireccion.Location = New System.Drawing.Point(121, 175)
         Me.txtDireccion.Multiline = True
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(220, 50)
-        Me.txtDireccion.TabIndex = 22
+        Me.txtDireccion.TabIndex = 5
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(25, 150)
+        Me.Label5.Location = New System.Drawing.Point(22, 178)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(55, 13)
         Me.Label5.TabIndex = 21
@@ -82,15 +87,15 @@ Partial Class frmProveedor
         '
         'txtIdentificacion
         '
-        Me.txtIdentificacion.Location = New System.Drawing.Point(124, 95)
+        Me.txtIdentificacion.Location = New System.Drawing.Point(121, 123)
         Me.txtIdentificacion.Name = "txtIdentificacion"
         Me.txtIdentificacion.Size = New System.Drawing.Size(100, 20)
-        Me.txtIdentificacion.TabIndex = 20
+        Me.txtIdentificacion.TabIndex = 3
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(25, 98)
+        Me.Label4.Location = New System.Drawing.Point(22, 126)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(73, 13)
         Me.Label4.TabIndex = 19
@@ -101,15 +106,15 @@ Partial Class frmProveedor
         Me.cboTipoIdentificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipoIdentificacion.FormattingEnabled = True
         Me.cboTipoIdentificacion.Items.AddRange(New Object() {"01-RUC", "02-CEDULA", "03-PASAPORTE / IDENTIFICACIÓN TRIBUTARIA DEL EXTERIOR"})
-        Me.cboTipoIdentificacion.Location = New System.Drawing.Point(124, 69)
+        Me.cboTipoIdentificacion.Location = New System.Drawing.Point(121, 97)
         Me.cboTipoIdentificacion.Name = "cboTipoIdentificacion"
         Me.cboTipoIdentificacion.Size = New System.Drawing.Size(220, 21)
-        Me.cboTipoIdentificacion.TabIndex = 18
+        Me.cboTipoIdentificacion.TabIndex = 2
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(25, 71)
+        Me.Label3.Location = New System.Drawing.Point(22, 99)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(97, 13)
         Me.Label3.TabIndex = 17
@@ -117,15 +122,15 @@ Partial Class frmProveedor
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(124, 42)
+        Me.txtNombre.Location = New System.Drawing.Point(121, 70)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(309, 20)
-        Me.txtNombre.TabIndex = 16
+        Me.txtNombre.Size = New System.Drawing.Size(373, 20)
+        Me.txtNombre.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(25, 45)
+        Me.Label2.Location = New System.Drawing.Point(22, 73)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(47, 13)
         Me.Label2.TabIndex = 15
@@ -136,7 +141,7 @@ Partial Class frmProveedor
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmdNuevo, Me.cmdBuscar, Me.cmdGuardar, Me.toolStripSeparator, Me.cmdAyuda, Me.ToolStripSeparator2, Me.cmdSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(469, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(510, 25)
         Me.ToolStrip1.TabIndex = 34
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -197,36 +202,74 @@ Partial Class frmProveedor
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(124, 203)
+        Me.txtTelefono.Location = New System.Drawing.Point(121, 231)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
-        Me.txtTelefono.TabIndex = 37
+        Me.txtTelefono.TabIndex = 6
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(25, 206)
+        Me.Label1.Location = New System.Drawing.Point(22, 234)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(52, 13)
         Me.Label1.TabIndex = 36
         Me.Label1.Text = "Teléfono:"
         '
-        'txtID
+        'cmdMostrar
         '
-        Me.txtID.Location = New System.Drawing.Point(285, 203)
-        Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(59, 20)
-        Me.txtID.TabIndex = 35
-        Me.txtID.Visible = False
+        Me.cmdMostrar.Image = Global.Impuestos.My.Resources.Resources.find_icon
+        Me.cmdMostrar.Location = New System.Drawing.Point(186, 42)
+        Me.cmdMostrar.Name = "cmdMostrar"
+        Me.cmdMostrar.Size = New System.Drawing.Size(32, 23)
+        Me.cmdMostrar.TabIndex = 39
+        Me.cmdMostrar.UseVisualStyleBackColor = True
+        '
+        'txtRegistro
+        '
+        Me.txtRegistro.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.txtRegistro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRegistro.Location = New System.Drawing.Point(121, 44)
+        Me.txtRegistro.Name = "txtRegistro"
+        Me.txtRegistro.ReadOnly = True
+        Me.txtRegistro.Size = New System.Drawing.Size(59, 20)
+        Me.txtRegistro.TabIndex = 38
+        Me.txtRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(22, 47)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(69, 13)
+        Me.Label7.TabIndex = 37
+        Me.Label7.Text = "No. Registro:"
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblUsuario})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 270)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(510, 22)
+        Me.StatusStrip1.TabIndex = 40
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'lblUsuario
+        '
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.Size = New System.Drawing.Size(0, 17)
         '
         'frmProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(469, 250)
+        Me.ClientSize = New System.Drawing.Size(510, 292)
+        Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.cmdMostrar)
+        Me.Controls.Add(Me.txtRegistro)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtTelefono)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.txtCiudad)
         Me.Controls.Add(Me.Label6)
@@ -242,6 +285,8 @@ Partial Class frmProveedor
         Me.Text = "Proveedores"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -265,6 +310,10 @@ Partial Class frmProveedor
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents txtTelefono As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtID As TextBox
     Friend WithEvents cmdBuscar As ToolStripButton
+    Friend WithEvents cmdMostrar As Button
+    Friend WithEvents txtRegistro As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents lblUsuario As ToolStripStatusLabel
 End Class
