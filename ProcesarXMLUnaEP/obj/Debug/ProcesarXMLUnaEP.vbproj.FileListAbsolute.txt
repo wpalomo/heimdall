@@ -1,0 +1,11 @@
+C:\Users\David\Source\Repos\heimdall\ProcesarXMLUnaEP\bin\Debug\ProcesarXMLUnaEP.exe.config
+C:\Users\David\Source\Repos\heimdall\ProcesarXMLUnaEP\bin\Debug\ProcesarXMLUnaEP.exe
+C:\Users\David\Source\Repos\heimdall\ProcesarXMLUnaEP\bin\Debug\ProcesarXMLUnaEP.pdb
+C:\Users\David\Source\Repos\heimdall\ProcesarXMLUnaEP\bin\Debug\ProcesarXMLUnaEP.xml
+C:\Users\David\Source\Repos\heimdall\ProcesarXMLUnaEP\obj\Debug\ProcesarXMLUnaEP.vbprojResolveAssemblyReference.cache
+C:\Users\David\Source\Repos\heimdall\ProcesarXMLUnaEP\obj\Debug\ProcesarXMLUnaEP.Form1.resources
+C:\Users\David\Source\Repos\heimdall\ProcesarXMLUnaEP\obj\Debug\ProcesarXMLUnaEP.Resources.resources
+C:\Users\David\Source\Repos\heimdall\ProcesarXMLUnaEP\obj\Debug\ProcesarXMLUnaEP.vbproj.GenerateResource.Cache
+C:\Users\David\Source\Repos\heimdall\ProcesarXMLUnaEP\obj\Debug\ProcesarXMLUnaEP.exe
+C:\Users\David\Source\Repos\heimdall\ProcesarXMLUnaEP\obj\Debug\ProcesarXMLUnaEP.xml
+C:\Users\David\Source\Repos\heimdall\ProcesarXMLUnaEP\obj\Debug\ProcesarXMLUnaEP.pdb

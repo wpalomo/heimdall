@@ -1,0 +1,12 @@
+C:\Users\David\Source\Repos\heimdall\testUnaWs\bin\x86\Release\testUnaWs.exe
+C:\Users\David\Source\Repos\heimdall\testUnaWs\bin\x86\Release\testUnaWs.pdb
+C:\Users\David\Source\Repos\heimdall\testUnaWs\bin\x86\Release\testUnaWs.xml
+C:\Users\David\Source\Repos\heimdall\testUnaWs\bin\x86\Release\unaep.dll
+C:\Users\David\Source\Repos\heimdall\testUnaWs\bin\x86\Release\stdole.dll
+C:\Users\David\Source\Repos\heimdall\testUnaWs\obj\x86\Release\testUnaWs.vbprojResolveAssemblyReference.cache
+C:\Users\David\Source\Repos\heimdall\testUnaWs\obj\x86\Release\testUnaWs.Form1.resources
+C:\Users\David\Source\Repos\heimdall\testUnaWs\obj\x86\Release\testUnaWs.Resources.resources
+C:\Users\David\Source\Repos\heimdall\testUnaWs\obj\x86\Release\testUnaWs.vbproj.GenerateResource.Cache
+C:\Users\David\Source\Repos\heimdall\testUnaWs\obj\x86\Release\testUnaWs.exe
+C:\Users\David\Source\Repos\heimdall\testUnaWs\obj\x86\Release\testUnaWs.xml
+C:\Users\David\Source\Repos\heimdall\testUnaWs\obj\x86\Release\testUnaWs.pdb
