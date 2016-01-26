@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -81,7 +81,8 @@
       <HintPath>..\packages\DocumentFormat.OpenXmlSDK.2.0\lib\Net35\DocumentFormat.OpenXml.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="facturaE">
+    <Reference Include="facturaE, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>referencias\facturaE.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
@@ -136,10 +137,29 @@
     <Compile Include="Maestros\frmCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\modClientes.vb" />
-    <Compile Include="Reportes\modCompras.vb" />
-    <Compile Include="Reportes\modExportaciones.vb" />
-    <Compile Include="Reportes\modProveedores.vb" />
+    <Compile Include="ReportesExcel\modClientes.vb" />
+    <Compile Include="ReportesExcel\modCompras.vb" />
+    <Compile Include="ReportesExcel\modExportaciones.vb" />
+    <Compile Include="ReportesExcel\modProveedores.vb" />
+    <Compile Include="ReportesExcel\modVentas.vb" />
+    <Compile Include="Reportes\frmRpCompras.Designer.vb">
+      <DependentUpon>frmRpCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmRpCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRpExportaciones.Designer.vb">
+      <DependentUpon>frmRpExportaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmRpExportaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRpVentas.Designer.vb">
+      <DependentUpon>frmRpVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmRpVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transacciones\frmCompras.Designer.vb">
       <DependentUpon>frmCompras.vb</DependentUpon>
     </Compile>
@@ -189,7 +209,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Globales.vb" />
-    <Compile Include="Reportes\modGenerador.vb" />
+    <Compile Include="ReportesExcel\modGenerador.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -218,6 +238,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maestros\frmCliente.resx">
       <DependentUpon>frmCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRpCompras.resx">
+      <DependentUpon>frmRpCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRpExportaciones.resx">
+      <DependentUpon>frmRpExportaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRpVentas.resx">
+      <DependentUpon>frmRpVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transacciones\frmCompras.resx">
       <DependentUpon>frmCompras.vb</DependentUpon>
@@ -284,6 +313,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

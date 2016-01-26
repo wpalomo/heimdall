@@ -23,7 +23,80 @@ Partial Class frmCompras
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCompras))
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.cmdNuevo = New System.Windows.Forms.ToolStripButton()
+        Me.cmdGuardar = New System.Windows.Forms.ToolStripButton()
+        Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.cmdAyuda = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.cmdSalir = New System.Windows.Forms.ToolStripButton()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.txtFechaRegistro = New System.Windows.Forms.DateTimePicker()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.cmdBuscar = New System.Windows.Forms.Button()
+        Me.txtTipoIdentificacion = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.cboParteRelacionada = New System.Windows.Forms.ComboBox()
+        Me.txtIdentificacion = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtProveedor = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.txtFechaEmision = New System.Windows.Forms.DateTimePicker()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.cboSustentoTributario = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtNumeroAutorizacion = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtSecuencial = New System.Windows.Forms.TextBox()
+        Me.txtPuntoEmision = New System.Windows.Forms.TextBox()
+        Me.txtEstablecimiento = New System.Windows.Forms.TextBox()
+        Me.cboTipoComprobante = New System.Windows.Forms.ComboBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cboDocModificado = New System.Windows.Forms.ComboBox()
+        Me.txtNumeroAutorizacionModificado = New System.Windows.Forms.TextBox()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.txtSecuencialModificado = New System.Windows.Forms.TextBox()
+        Me.txtPuntoEmisionModificado = New System.Windows.Forms.TextBox()
+        Me.txtEstablecimientoModificado = New System.Windows.Forms.TextBox()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.cmdImportarRetencion = New System.Windows.Forms.Button()
+        Me.chkSiTieneRet = New System.Windows.Forms.CheckBox()
+        Me.cmdQuitarRetencion = New System.Windows.Forms.Button()
+        Me.cmdAñadirRetencion = New System.Windows.Forms.Button()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Spr = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.concepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.baseImponible = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.porcentaje = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.valor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtFechaEmisionRet = New System.Windows.Forms.DateTimePicker()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.txtNumeroAutorizacionRet = New System.Windows.Forms.TextBox()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.txtSecuencialRet = New System.Windows.Forms.TextBox()
+        Me.txtPuntoEmisionRet = New System.Windows.Forms.TextBox()
+        Me.txtEstablecimientoRet = New System.Windows.Forms.TextBox()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.cmdCalcularIVA = New System.Windows.Forms.Button()
+        Me.cmdCalcularIVA100 = New System.Windows.Forms.Button()
+        Me.cmdCalcularIVA70 = New System.Windows.Forms.Button()
+        Me.cmdCalcularIVA30 = New System.Windows.Forms.Button()
+        Me.cmdCalcularIVA20 = New System.Windows.Forms.Button()
+        Me.cmdCalcularIVA10 = New System.Windows.Forms.Button()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.txtRetIVA100 = New System.Windows.Forms.TextBox()
@@ -48,51 +121,7 @@ Partial Class frmCompras
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtBase0 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.cmdNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.cmdGuardar = New System.Windows.Forms.ToolStripButton()
-        Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.cmdAyuda = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.cmdSalir = New System.Windows.Forms.ToolStripButton()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.cmdBuscar = New System.Windows.Forms.Button()
-        Me.txtTipoIdentificacion = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.cboParteRelacionada = New System.Windows.Forms.ComboBox()
-        Me.txtIdentificacion = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtProveedor = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.txtFechaRegistro = New System.Windows.Forms.DateTimePicker()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtFechaEmision = New System.Windows.Forms.DateTimePicker()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.cboSustentoTributario = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtNumeroAutorizacion = New System.Windows.Forms.TextBox()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.txtSecuencial = New System.Windows.Forms.TextBox()
-        Me.txtPuntoEmision = New System.Windows.Forms.TextBox()
-        Me.txtEstablecimiento = New System.Windows.Forms.TextBox()
-        Me.cboTipoComprobante = New System.Windows.Forms.ComboBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.cboDocModificado = New System.Windows.Forms.ComboBox()
-        Me.txtNumeroAutorizacionModificado = New System.Windows.Forms.TextBox()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.txtSecuencialModificado = New System.Windows.Forms.TextBox()
-        Me.txtPuntoEmisionModificado = New System.Windows.Forms.TextBox()
-        Me.txtEstablecimientoModificado = New System.Windows.Forms.TextBox()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.cboPaisPago = New System.Windows.Forms.ComboBox()
         Me.cboRetencionNormaLegal = New System.Windows.Forms.ComboBox()
         Me.cboConvenioDobleTributacion = New System.Windows.Forms.ComboBox()
@@ -103,275 +132,22 @@ Partial Class frmCompras
         Me.Label38 = New System.Windows.Forms.Label()
         Me.cboPagoResidente = New System.Windows.Forms.ComboBox()
         Me.Label37 = New System.Windows.Forms.Label()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.cmdImportarRetencion = New System.Windows.Forms.Button()
-        Me.chkSiTieneRet = New System.Windows.Forms.CheckBox()
-        Me.cmdQuitarRetencion = New System.Windows.Forms.Button()
-        Me.cmdAñadirRetencion = New System.Windows.Forms.Button()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.Spr = New System.Windows.Forms.DataGridView()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.concepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.baseImponible = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.porcentaje = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.valor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtFechaEmisionRet = New System.Windows.Forms.DateTimePicker()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.txtNumeroAutorizacionRet = New System.Windows.Forms.TextBox()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.txtSecuencialRet = New System.Windows.Forms.TextBox()
-        Me.txtPuntoEmisionRet = New System.Windows.Forms.TextBox()
-        Me.txtEstablecimientoRet = New System.Windows.Forms.TextBox()
         Me.txtRegistro = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmdMostrar = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.TabPage3.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        Me.TabPage4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         CType(Me.Spr, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage6.SuspendLayout()
+        Me.TabPage7.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'TabPage3
-        '
-        Me.TabPage3.Controls.Add(Me.Label29)
-        Me.TabPage3.Controls.Add(Me.Label28)
-        Me.TabPage3.Controls.Add(Me.txtRetIVA100)
-        Me.TabPage3.Controls.Add(Me.Label27)
-        Me.TabPage3.Controls.Add(Me.txtRetIVA70)
-        Me.TabPage3.Controls.Add(Me.Label24)
-        Me.TabPage3.Controls.Add(Me.txtRetIVA30)
-        Me.TabPage3.Controls.Add(Me.Label17)
-        Me.TabPage3.Controls.Add(Me.txtRetIVA20)
-        Me.TabPage3.Controls.Add(Me.Label15)
-        Me.TabPage3.Controls.Add(Me.txtRetIVA10)
-        Me.TabPage3.Controls.Add(Me.Label14)
-        Me.TabPage3.Controls.Add(Me.txtMontoICE)
-        Me.TabPage3.Controls.Add(Me.Label13)
-        Me.TabPage3.Controls.Add(Me.txtMontoIVA)
-        Me.TabPage3.Controls.Add(Me.Label12)
-        Me.TabPage3.Controls.Add(Me.txtBaseExenta)
-        Me.TabPage3.Controls.Add(Me.Label11)
-        Me.TabPage3.Controls.Add(Me.txtBaseNoObjeto)
-        Me.TabPage3.Controls.Add(Me.Label10)
-        Me.TabPage3.Controls.Add(Me.txtBaseDiferente0)
-        Me.TabPage3.Controls.Add(Me.Label9)
-        Me.TabPage3.Controls.Add(Me.txtBase0)
-        Me.TabPage3.Controls.Add(Me.Label8)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(721, 352)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Bases Imponibles y Retenciones del IVA"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(53, 17)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(105, 13)
-        Me.Label29.TabIndex = 65
-        Me.Label29.Text = "Bases Imponibles"
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(53, 164)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(110, 13)
-        Me.Label28.TabIndex = 64
-        Me.Label28.Text = "Valores Retenidos"
-        '
-        'txtRetIVA100
-        '
-        Me.txtRetIVA100.Location = New System.Drawing.Point(220, 289)
-        Me.txtRetIVA100.Name = "txtRetIVA100"
-        Me.txtRetIVA100.Size = New System.Drawing.Size(100, 20)
-        Me.txtRetIVA100.TabIndex = 63
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(53, 292)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(108, 13)
-        Me.Label27.TabIndex = 62
-        Me.Label27.Text = "Retención IVA 100%:"
-        '
-        'txtRetIVA70
-        '
-        Me.txtRetIVA70.Location = New System.Drawing.Point(220, 263)
-        Me.txtRetIVA70.Name = "txtRetIVA70"
-        Me.txtRetIVA70.Size = New System.Drawing.Size(100, 20)
-        Me.txtRetIVA70.TabIndex = 61
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(53, 266)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(102, 13)
-        Me.Label24.TabIndex = 60
-        Me.Label24.Text = "Retención IVA 70%:"
-        '
-        'txtRetIVA30
-        '
-        Me.txtRetIVA30.Location = New System.Drawing.Point(220, 237)
-        Me.txtRetIVA30.Name = "txtRetIVA30"
-        Me.txtRetIVA30.Size = New System.Drawing.Size(100, 20)
-        Me.txtRetIVA30.TabIndex = 59
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(53, 240)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(102, 13)
-        Me.Label17.TabIndex = 58
-        Me.Label17.Text = "Retención IVA 30%:"
-        '
-        'txtRetIVA20
-        '
-        Me.txtRetIVA20.Location = New System.Drawing.Point(220, 211)
-        Me.txtRetIVA20.Name = "txtRetIVA20"
-        Me.txtRetIVA20.Size = New System.Drawing.Size(100, 20)
-        Me.txtRetIVA20.TabIndex = 57
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(53, 214)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(102, 13)
-        Me.Label15.TabIndex = 56
-        Me.Label15.Text = "Retención IVA 20%:"
-        '
-        'txtRetIVA10
-        '
-        Me.txtRetIVA10.Location = New System.Drawing.Point(220, 185)
-        Me.txtRetIVA10.Name = "txtRetIVA10"
-        Me.txtRetIVA10.Size = New System.Drawing.Size(100, 20)
-        Me.txtRetIVA10.TabIndex = 55
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(53, 188)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(102, 13)
-        Me.Label14.TabIndex = 54
-        Me.Label14.Text = "Retención IVA 10%:"
-        '
-        'txtMontoICE
-        '
-        Me.txtMontoICE.Location = New System.Drawing.Point(433, 90)
-        Me.txtMontoICE.Name = "txtMontoICE"
-        Me.txtMontoICE.Size = New System.Drawing.Size(100, 20)
-        Me.txtMontoICE.TabIndex = 53
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(367, 93)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(60, 13)
-        Me.Label13.TabIndex = 52
-        Me.Label13.Text = "Monto ICE:"
-        '
-        'txtMontoIVA
-        '
-        Me.txtMontoIVA.Location = New System.Drawing.Point(433, 64)
-        Me.txtMontoIVA.Name = "txtMontoIVA"
-        Me.txtMontoIVA.Size = New System.Drawing.Size(100, 20)
-        Me.txtMontoIVA.TabIndex = 51
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(367, 67)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(60, 13)
-        Me.Label12.TabIndex = 50
-        Me.Label12.Text = "Monto IVA:"
-        '
-        'txtBaseExenta
-        '
-        Me.txtBaseExenta.Location = New System.Drawing.Point(220, 116)
-        Me.txtBaseExenta.Name = "txtBaseExenta"
-        Me.txtBaseExenta.Size = New System.Drawing.Size(100, 20)
-        Me.txtBaseExenta.TabIndex = 49
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(53, 119)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(150, 13)
-        Me.Label11.TabIndex = 48
-        Me.Label11.Text = "Base Imponible Exenta de IVA"
-        '
-        'txtBaseNoObjeto
-        '
-        Me.txtBaseNoObjeto.Location = New System.Drawing.Point(220, 90)
-        Me.txtBaseNoObjeto.Name = "txtBaseNoObjeto"
-        Me.txtBaseNoObjeto.Size = New System.Drawing.Size(100, 20)
-        Me.txtBaseNoObjeto.TabIndex = 47
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(53, 93)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(163, 13)
-        Me.Label10.TabIndex = 46
-        Me.Label10.Text = "Base Imponible No objeto de IVA"
-        '
-        'txtBaseDiferente0
-        '
-        Me.txtBaseDiferente0.Location = New System.Drawing.Point(220, 64)
-        Me.txtBaseDiferente0.Name = "txtBaseDiferente0"
-        Me.txtBaseDiferente0.Size = New System.Drawing.Size(100, 20)
-        Me.txtBaseDiferente0.TabIndex = 45
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(53, 67)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(160, 13)
-        Me.Label9.TabIndex = 44
-        Me.Label9.Text = "Base Imponible IVA diferente 0%"
-        '
-        'txtBase0
-        '
-        Me.txtBase0.Location = New System.Drawing.Point(220, 38)
-        Me.txtBase0.Name = "txtBase0"
-        Me.txtBase0.Size = New System.Drawing.Size(100, 20)
-        Me.txtBase0.TabIndex = 43
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(53, 41)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(116, 13)
-        Me.Label8.TabIndex = 42
-        Me.Label8.Text = "Base Imponible IVA 0%"
         '
         'ToolStrip1
         '
@@ -432,9 +208,9 @@ Partial Class frmCompras
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage5)
+        Me.TabControl1.Controls.Add(Me.TabPage6)
+        Me.TabControl1.Controls.Add(Me.TabPage7)
         Me.TabControl1.Location = New System.Drawing.Point(24, 67)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -443,6 +219,8 @@ Partial Class frmCompras
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.txtFechaRegistro)
+        Me.TabPage1.Controls.Add(Me.Label7)
         Me.TabPage1.Controls.Add(Me.cmdBuscar)
         Me.TabPage1.Controls.Add(Me.txtTipoIdentificacion)
         Me.TabPage1.Controls.Add(Me.Label5)
@@ -459,6 +237,24 @@ Partial Class frmCompras
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Datos del Proveedor"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'txtFechaRegistro
+        '
+        Me.txtFechaRegistro.CustomFormat = "dd/MM/yyyy"
+        Me.txtFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.txtFechaRegistro.Location = New System.Drawing.Point(149, 148)
+        Me.txtFechaRegistro.Name = "txtFechaRegistro"
+        Me.txtFechaRegistro.Size = New System.Drawing.Size(100, 20)
+        Me.txtFechaRegistro.TabIndex = 86
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(34, 148)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(97, 13)
+        Me.Label7.TabIndex = 85
+        Me.Label7.Text = "Fecha de Registro:"
         '
         'cmdBuscar
         '
@@ -541,8 +337,6 @@ Partial Class frmCompras
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.txtFechaRegistro)
-        Me.TabPage2.Controls.Add(Me.Label7)
         Me.TabPage2.Controls.Add(Me.txtFechaEmision)
         Me.TabPage2.Controls.Add(Me.Label22)
         Me.TabPage2.Controls.Add(Me.cboSustentoTributario)
@@ -565,24 +359,6 @@ Partial Class frmCompras
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Comprobante de Venta"
         Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'txtFechaRegistro
-        '
-        Me.txtFechaRegistro.CustomFormat = "dd/MM/yyyy"
-        Me.txtFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.txtFechaRegistro.Location = New System.Drawing.Point(199, 99)
-        Me.txtFechaRegistro.Name = "txtFechaRegistro"
-        Me.txtFechaRegistro.Size = New System.Drawing.Size(100, 20)
-        Me.txtFechaRegistro.TabIndex = 84
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(81, 105)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(97, 13)
-        Me.Label7.TabIndex = 83
-        Me.Label7.Text = "Fecha de Registro:"
         '
         'txtFechaEmision
         '
@@ -627,7 +403,7 @@ Partial Class frmCompras
         '
         'txtNumeroAutorizacion
         '
-        Me.txtNumeroAutorizacion.Location = New System.Drawing.Point(199, 184)
+        Me.txtNumeroAutorizacion.Location = New System.Drawing.Point(198, 149)
         Me.txtNumeroAutorizacion.MaxLength = 49
         Me.txtNumeroAutorizacion.Name = "txtNumeroAutorizacion"
         Me.txtNumeroAutorizacion.Size = New System.Drawing.Size(284, 20)
@@ -636,7 +412,7 @@ Partial Class frmCompras
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(81, 184)
+        Me.Label21.Location = New System.Drawing.Point(80, 149)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(98, 13)
         Me.Label21.TabIndex = 77
@@ -645,7 +421,7 @@ Partial Class frmCompras
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(383, 142)
+        Me.Label20.Location = New System.Drawing.Point(382, 107)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(60, 13)
         Me.Label20.TabIndex = 76
@@ -654,7 +430,7 @@ Partial Class frmCompras
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(288, 142)
+        Me.Label19.Location = New System.Drawing.Point(287, 107)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(89, 13)
         Me.Label19.TabIndex = 75
@@ -663,7 +439,7 @@ Partial Class frmCompras
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(198, 142)
+        Me.Label18.Location = New System.Drawing.Point(197, 107)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(81, 13)
         Me.Label18.TabIndex = 74
@@ -671,7 +447,7 @@ Partial Class frmCompras
         '
         'txtSecuencial
         '
-        Me.txtSecuencial.Location = New System.Drawing.Point(383, 158)
+        Me.txtSecuencial.Location = New System.Drawing.Point(382, 123)
         Me.txtSecuencial.MaxLength = 9
         Me.txtSecuencial.Name = "txtSecuencial"
         Me.txtSecuencial.Size = New System.Drawing.Size(100, 20)
@@ -679,7 +455,7 @@ Partial Class frmCompras
         '
         'txtPuntoEmision
         '
-        Me.txtPuntoEmision.Location = New System.Drawing.Point(291, 158)
+        Me.txtPuntoEmision.Location = New System.Drawing.Point(290, 123)
         Me.txtPuntoEmision.MaxLength = 3
         Me.txtPuntoEmision.Name = "txtPuntoEmision"
         Me.txtPuntoEmision.Size = New System.Drawing.Size(86, 20)
@@ -687,7 +463,7 @@ Partial Class frmCompras
         '
         'txtEstablecimiento
         '
-        Me.txtEstablecimiento.Location = New System.Drawing.Point(199, 158)
+        Me.txtEstablecimiento.Location = New System.Drawing.Point(198, 123)
         Me.txtEstablecimiento.MaxLength = 3
         Me.txtEstablecimiento.Name = "txtEstablecimiento"
         Me.txtEstablecimiento.Size = New System.Drawing.Size(86, 20)
@@ -724,7 +500,7 @@ Partial Class frmCompras
         Me.GroupBox1.Controls.Add(Me.Label25)
         Me.GroupBox1.Controls.Add(Me.Label23)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(29, 221)
+        Me.GroupBox1.Location = New System.Drawing.Point(30, 204)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(502, 116)
         Me.GroupBox1.TabIndex = 55
@@ -810,125 +586,6 @@ Partial Class frmCompras
         Me.Label23.TabIndex = 60
         Me.Label23.Text = "Documento Modificado:"
         '
-        'TabPage4
-        '
-        Me.TabPage4.Controls.Add(Me.cboPaisPago)
-        Me.TabPage4.Controls.Add(Me.cboRetencionNormaLegal)
-        Me.TabPage4.Controls.Add(Me.cboConvenioDobleTributacion)
-        Me.TabPage4.Controls.Add(Me.Label41)
-        Me.TabPage4.Controls.Add(Me.Label40)
-        Me.TabPage4.Controls.Add(Me.cboPagoRegimenMenor)
-        Me.TabPage4.Controls.Add(Me.Label39)
-        Me.TabPage4.Controls.Add(Me.Label38)
-        Me.TabPage4.Controls.Add(Me.cboPagoResidente)
-        Me.TabPage4.Controls.Add(Me.Label37)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(721, 352)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "Información del Pago"
-        Me.TabPage4.UseVisualStyleBackColor = True
-        '
-        'cboPaisPago
-        '
-        Me.cboPaisPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboPaisPago.Enabled = False
-        Me.cboPaisPago.FormattingEnabled = True
-        Me.cboPaisPago.Items.AddRange(New Object() {"301-AFGANISTAN", "594-AGUAS INTERNACIONALES", "428-ÅLAND ISLANDS", "201-ALBANIA", "207-ALBORAN Y PEREJIL", "202-ALEMANIA", "595-ALTO VOLTA", "016-AMERICAN SAMOA", "233-ANDORRA", "454-ANGOLA", "109-ANGUILA", "134-ANTIGUA Y BARBUDA", "140-ANTILLAS HOLANDESAS", "302-ARABIA SAUDITA", "403-ARGELIA", "101-ARGENTINA", "356-ARMENIA", "141-ARUBA", "501-AUSTRALIA", "203-AUSTRIA", "347-AZERBAIJAN", "129-BAHAMAS", "327-BAHREIN", "328-BANGLADESH", "130-BARBADOS", "241-BELARUS", "204-BELGICA", "135-BELICE", "429-BENIN", "142-BERMUDA", "596-BIELORRUSIA", "102-BOLIVIA", "242-BOSNIA Y HERZEGOVINA", "430-BOTSWANA", "074-BOUVET ISLAND", "103-BRASIL", "344-BRUNEI DARUSSALAM", "205-BULGARIA", "402-BURKINA FASO", "404-BURUNDI", "329-BUTAN", "456-CABO VERDE", "304-CAMBOYA", "405-CAMERUN", "104-CANADA", "228-CANARIAS  ISLAS", "433-CHAD", "108-CHILE", "331-CHINA POPULAR", "332-CHIPRE", "105-COLOMBIA", "458-COMORAS", "406-CONGO", "330-COREA DEL SUR", "306-COREA NORTE", "432-COSTA DE MARFIL", "106-COSTA RICA", "597-COTE DÍVOIRE", "243-CROACIA", "107-CUBA", "127-CURAZAO", "598-CYPRUS", "208-DINAMARCA", "459-DJIBOUTI", "136-DOMINICA", "593-ECUADOR", "434-EGIPTO", "123-EL SALVADOR", "333-EMIRATOS ARABES UNIDOS", "463-ERITREA", "252-ESLOVAQUIA", "244-ESLOVENIA", "209-ESPAÑA", "110-ESTADOS UNIDOS", "245-ESTONIA", "407-ETIOPIA", "600-FALKLAND ISLANDS", "506-FIJI", "308-FILIPINAS", "212-FINLANDIA", "211-FRANCIA", "260-FRENCH SOUTHERN TERRITORIES", "435-GABON", "408-GAMBIA", "246-GEORGIA", "436-GHANA", "239-GIBRALTAR", "131-GRANADA", "214-GRECIA", "247-GROENLANDIA", "143-GUADALUPE", "517-GUAM", "111-GUATEMALA", "831-GUERNSEY", "409-GUINEA", "438-GUINEA ECUATORIAL", "437-GUINEA-BISSAU", "132-GUYANA", "144-GUYANA FRANCESA", "112-HAITI", "113-HONDURAS", "354-HONG KONG", "216-HUNGRIA", "309-INDIA", "310-INDONESIA", "311-IRAK", "312-IRAN (REPUBLICA ISLAMICA)", "217-IRLANDA", "218-ISLANDIA", "145-ISLAS CAIMAN", "518-ISLAS COCOS (KEELING)", "519-ISLAS COOK", "253-ISLAS FAROE", "343-ISLAS HEARD Y MCDONALD", "520-ISLAS NAVIDAD", "146-ISLAS VIRGENES (BRITANICAS)", "833-ISLE OF MAN", "313-ISRAEL", "219-ITALIA", "114-JAMAICA", "314-JAPON", "499-JERSEY", "147-JOHNSTON ISLA", "315-JORDANIA", "348-KAZAJSTAN", "439-KENIA", "349-KIRGUIZISTAN", "510-KIRIBATI", "316-KUWAIT", "317-LAOS, REP. POP. DEMOC.", "601-LATVIA", "440-LESOTHO", "248-LETONIA", "318-LIBANO", "410-LIBERIA", "602-LIBIA", "234-LIECHTENSTEIN", "249-LITUANIA", "220-LUXEMBURGO", "355-MACAO", "251-MACEDONIA", "412-MADAGASCAR", "319-MALASIA", "413-MALAWI", "335-MALDIVAS", "414-MALI", "221-MALTA", "115-MALVINAS  ISLAS", "415-MARRUECOS", "511-MARSHALL ISLAS", "148-MARTINICA", "441-MAURICIO", "416-MAURITANIA", "443-MAYOTTE", "116-MEXICO", "512-MICRONESIA", "521-MIDWAY ISLAS", "250-MOLDOVA", "235-MONACO", "321-MONGOLIA (MANCHURIA)", "382-MONTENEGRO", "149-MONTSERRAT ISLA", "464-MOROCCO", "442-MOZAMBIQUE", "303-MYANMAR (BURMA)", "460-NAMIBIA", "513-NAURU", "336-NEPAL", "117-NICARAGUA", "444-NIGER", "417-NIGERIA", "522-NIUE ISLA", "523-NORFOLK ISLA", "603-NORTHERN MARIANA ISL", "222-NORUEGA", "524-NUEVA  CALEDONIA", "503-NUEVA ZELANDA", "337-OMAN", "215-PAISES BAJOS (HOLANDA)", "322-PAKISTAN", "509-PALAO  (BELAU)  ISLAS", "353-PALESTINA", "118-PANAMA", "507-PAPUA NUEVA GUINEA", "119-PARAGUAY", "120-PERU", "525-PITCAIRN, ISLA", "526-POLINESIA FRANCESA", "223-POLONIA", "224-PORTUGAL", "121-PUERTO RICO", "334-QATAR", "213-REINO UNIDO", "431-REPUBLICA CENTROAFRICANA", "599-REPUBLICA CHECA", "122-REPUBLICA DOMINICANA", "465-REUNION", "225-RUMANIA", "230-RUSIA", "445-RWANDA", "447-SAHARA OCCIDENTAL", "590-SAINT BARTHELEMY", "514-SALOMON  ISLAS", "504-SAMOA OCCIDENTAL", "137-SAN CRISTOBAL Y NEVIS", "237-SAN MARINO", "139-SAN VICENTE Y LAS GRANAD.", "466-SANTA ELENA", "138-SANTA LUCIA", "449-SANTO TOME Y PRINCIPE", "420-SENEGAL", "688-SERBIA", "446-SEYCHELLES", "423-SIERRA LEONA", "338-SINGAPUR", "323-SIRIA", "448-SOMALIA", "339-SRI LANKA (CEILAN)", "604-ST. PIERRE AND MIQUE", "422-SUDAFRICA  (CISKEI)", "421-SUDAN", "226-SUECIA", "227-SUIZA", "133-SURINAM", "450-SWAZILANDIA", "605-SYRIAN ARAB REPUBLIC", "325-TAILANDIA", "307-TAIWAN (CHINA)", "350-TAJIKISTAN", "425-TANZANIA", "606-TERRITORIO ANTARTICO BRITANICO", "607-TERRITORIO BRITANICO OCEANO IN", "529-TIMOR DEL ESTE", "451-TOGO", "530-TOKELAI", "508-TONGA", "124-TRINIDAD Y TOBAGO", "452-TUNEZ", "151-TURCAS  Y CAICOS ISLAS", "351-TURKMENISTAN", "346-TURQUIA", "515-TUVALU", "229-UCRANIA", "426-UGANDA", "125-URUGUAY", "352-UZBEKISTAN", "516-VANUATU", "238-VATICANO (SANTA SEDE)", "126-VENEZUELA", "341-VIETNAM", "152-VIRGENES,ISLAS(NORT.AMER.)", "531-WAKE ISLA", "532-WALLIS Y FUTUNA, ISLAS", "342-YEMEN", "231-YUGOSLAVIA", "453-ZAIRE", "427-ZAMBIA", "419-ZIMBABWE (RHODESIA)"})
-        Me.cboPaisPago.Location = New System.Drawing.Point(358, 55)
-        Me.cboPaisPago.Name = "cboPaisPago"
-        Me.cboPaisPago.Size = New System.Drawing.Size(220, 21)
-        Me.cboPaisPago.TabIndex = 92
-        '
-        'cboRetencionNormaLegal
-        '
-        Me.cboRetencionNormaLegal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboRetencionNormaLegal.Enabled = False
-        Me.cboRetencionNormaLegal.FormattingEnabled = True
-        Me.cboRetencionNormaLegal.Items.AddRange(New Object() {"SI", "NO"})
-        Me.cboRetencionNormaLegal.Location = New System.Drawing.Point(358, 153)
-        Me.cboRetencionNormaLegal.Name = "cboRetencionNormaLegal"
-        Me.cboRetencionNormaLegal.Size = New System.Drawing.Size(73, 21)
-        Me.cboRetencionNormaLegal.TabIndex = 91
-        '
-        'cboConvenioDobleTributacion
-        '
-        Me.cboConvenioDobleTributacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboConvenioDobleTributacion.Enabled = False
-        Me.cboConvenioDobleTributacion.FormattingEnabled = True
-        Me.cboConvenioDobleTributacion.Items.AddRange(New Object() {"SI", "NO"})
-        Me.cboConvenioDobleTributacion.Location = New System.Drawing.Point(358, 126)
-        Me.cboConvenioDobleTributacion.Name = "cboConvenioDobleTributacion"
-        Me.cboConvenioDobleTributacion.Size = New System.Drawing.Size(73, 21)
-        Me.cboConvenioDobleTributacion.TabIndex = 90
-        '
-        'Label41
-        '
-        Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(33, 156)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(280, 13)
-        Me.Label41.TabIndex = 89
-        Me.Label41.Text = "¿Pago sujeto a retención en aplicación de la norma legal?"
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(33, 129)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(191, 13)
-        Me.Label40.TabIndex = 87
-        Me.Label40.Text = "¿Aplica convenio de doble tributación?"
-        '
-        'cboPagoRegimenMenor
-        '
-        Me.cboPagoRegimenMenor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboPagoRegimenMenor.Enabled = False
-        Me.cboPagoRegimenMenor.FormattingEnabled = True
-        Me.cboPagoRegimenMenor.Items.AddRange(New Object() {"SI", "NO"})
-        Me.cboPagoRegimenMenor.Location = New System.Drawing.Point(358, 99)
-        Me.cboPagoRegimenMenor.Name = "cboPagoRegimenMenor"
-        Me.cboPagoRegimenMenor.Size = New System.Drawing.Size(73, 21)
-        Me.cboPagoRegimenMenor.TabIndex = 86
-        '
-        'Label39
-        '
-        Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(33, 102)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(319, 13)
-        Me.Label39.TabIndex = 85
-        Me.Label39.Text = "¿El pago es a un régimen fiscal preferente o de menor imposición?"
-        '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(33, 58)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(141, 13)
-        Me.Label38.TabIndex = 83
-        Me.Label38.Text = "País al que efectúa el pago:"
-        '
-        'cboPagoResidente
-        '
-        Me.cboPagoResidente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboPagoResidente.FormattingEnabled = True
-        Me.cboPagoResidente.Items.AddRange(New Object() {"01-PAGO A RESIDENTE", "02-PAGO A NO RESIDENTE"})
-        Me.cboPagoResidente.Location = New System.Drawing.Point(358, 28)
-        Me.cboPagoResidente.Name = "cboPagoResidente"
-        Me.cboPagoResidente.Size = New System.Drawing.Size(220, 21)
-        Me.cboPagoResidente.TabIndex = 82
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(33, 31)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(160, 13)
-        Me.Label37.TabIndex = 81
-        Me.Label37.Text = "Pago a residente o no residente:"
-        '
         'TabPage5
         '
         Me.TabPage5.Controls.Add(Me.cmdImportarRetencion)
@@ -959,7 +616,7 @@ Partial Class frmCompras
         'cmdImportarRetencion
         '
         Me.cmdImportarRetencion.Enabled = False
-        Me.cmdImportarRetencion.Location = New System.Drawing.Point(438, 54)
+        Me.cmdImportarRetencion.Location = New System.Drawing.Point(457, 54)
         Me.cmdImportarRetencion.Name = "cmdImportarRetencion"
         Me.cmdImportarRetencion.Size = New System.Drawing.Size(113, 46)
         Me.cmdImportarRetencion.TabIndex = 95
@@ -1089,7 +746,7 @@ Partial Class frmCompras
         Me.txtNumeroAutorizacionRet.Location = New System.Drawing.Point(137, 80)
         Me.txtNumeroAutorizacionRet.MaxLength = 49
         Me.txtNumeroAutorizacionRet.Name = "txtNumeroAutorizacionRet"
-        Me.txtNumeroAutorizacionRet.Size = New System.Drawing.Size(284, 20)
+        Me.txtNumeroAutorizacionRet.Size = New System.Drawing.Size(314, 20)
         Me.txtNumeroAutorizacionRet.TabIndex = 86
         '
         'Label30
@@ -1155,6 +812,415 @@ Partial Class frmCompras
         Me.txtEstablecimientoRet.Size = New System.Drawing.Size(86, 20)
         Me.txtEstablecimientoRet.TabIndex = 79
         '
+        'TabPage6
+        '
+        Me.TabPage6.Controls.Add(Me.cmdCalcularIVA)
+        Me.TabPage6.Controls.Add(Me.cmdCalcularIVA100)
+        Me.TabPage6.Controls.Add(Me.cmdCalcularIVA70)
+        Me.TabPage6.Controls.Add(Me.cmdCalcularIVA30)
+        Me.TabPage6.Controls.Add(Me.cmdCalcularIVA20)
+        Me.TabPage6.Controls.Add(Me.cmdCalcularIVA10)
+        Me.TabPage6.Controls.Add(Me.Label29)
+        Me.TabPage6.Controls.Add(Me.Label28)
+        Me.TabPage6.Controls.Add(Me.txtRetIVA100)
+        Me.TabPage6.Controls.Add(Me.Label27)
+        Me.TabPage6.Controls.Add(Me.txtRetIVA70)
+        Me.TabPage6.Controls.Add(Me.Label24)
+        Me.TabPage6.Controls.Add(Me.txtRetIVA30)
+        Me.TabPage6.Controls.Add(Me.Label17)
+        Me.TabPage6.Controls.Add(Me.txtRetIVA20)
+        Me.TabPage6.Controls.Add(Me.Label15)
+        Me.TabPage6.Controls.Add(Me.txtRetIVA10)
+        Me.TabPage6.Controls.Add(Me.Label14)
+        Me.TabPage6.Controls.Add(Me.txtMontoICE)
+        Me.TabPage6.Controls.Add(Me.Label13)
+        Me.TabPage6.Controls.Add(Me.txtMontoIVA)
+        Me.TabPage6.Controls.Add(Me.Label12)
+        Me.TabPage6.Controls.Add(Me.txtBaseExenta)
+        Me.TabPage6.Controls.Add(Me.Label11)
+        Me.TabPage6.Controls.Add(Me.txtBaseNoObjeto)
+        Me.TabPage6.Controls.Add(Me.Label10)
+        Me.TabPage6.Controls.Add(Me.txtBaseDiferente0)
+        Me.TabPage6.Controls.Add(Me.Label9)
+        Me.TabPage6.Controls.Add(Me.txtBase0)
+        Me.TabPage6.Controls.Add(Me.Label8)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage6.Size = New System.Drawing.Size(721, 352)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = "Bases Imponibles y Retenciones del IVA"
+        Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'cmdCalcularIVA
+        '
+        Me.cmdCalcularIVA.Location = New System.Drawing.Point(340, 72)
+        Me.cmdCalcularIVA.Name = "cmdCalcularIVA"
+        Me.cmdCalcularIVA.Size = New System.Drawing.Size(28, 20)
+        Me.cmdCalcularIVA.TabIndex = 95
+        Me.cmdCalcularIVA.Text = ".."
+        Me.cmdCalcularIVA.UseVisualStyleBackColor = True
+        '
+        'cmdCalcularIVA100
+        '
+        Me.cmdCalcularIVA100.Location = New System.Drawing.Point(340, 297)
+        Me.cmdCalcularIVA100.Name = "cmdCalcularIVA100"
+        Me.cmdCalcularIVA100.Size = New System.Drawing.Size(28, 20)
+        Me.cmdCalcularIVA100.TabIndex = 94
+        Me.cmdCalcularIVA100.Text = ".."
+        Me.cmdCalcularIVA100.UseVisualStyleBackColor = True
+        '
+        'cmdCalcularIVA70
+        '
+        Me.cmdCalcularIVA70.Location = New System.Drawing.Point(340, 271)
+        Me.cmdCalcularIVA70.Name = "cmdCalcularIVA70"
+        Me.cmdCalcularIVA70.Size = New System.Drawing.Size(28, 20)
+        Me.cmdCalcularIVA70.TabIndex = 93
+        Me.cmdCalcularIVA70.Text = ".."
+        Me.cmdCalcularIVA70.UseVisualStyleBackColor = True
+        '
+        'cmdCalcularIVA30
+        '
+        Me.cmdCalcularIVA30.Location = New System.Drawing.Point(340, 245)
+        Me.cmdCalcularIVA30.Name = "cmdCalcularIVA30"
+        Me.cmdCalcularIVA30.Size = New System.Drawing.Size(28, 20)
+        Me.cmdCalcularIVA30.TabIndex = 92
+        Me.cmdCalcularIVA30.Text = ".."
+        Me.cmdCalcularIVA30.UseVisualStyleBackColor = True
+        '
+        'cmdCalcularIVA20
+        '
+        Me.cmdCalcularIVA20.Location = New System.Drawing.Point(340, 219)
+        Me.cmdCalcularIVA20.Name = "cmdCalcularIVA20"
+        Me.cmdCalcularIVA20.Size = New System.Drawing.Size(28, 20)
+        Me.cmdCalcularIVA20.TabIndex = 91
+        Me.cmdCalcularIVA20.Text = ".."
+        Me.cmdCalcularIVA20.UseVisualStyleBackColor = True
+        '
+        'cmdCalcularIVA10
+        '
+        Me.cmdCalcularIVA10.Location = New System.Drawing.Point(340, 193)
+        Me.cmdCalcularIVA10.Name = "cmdCalcularIVA10"
+        Me.cmdCalcularIVA10.Size = New System.Drawing.Size(28, 20)
+        Me.cmdCalcularIVA10.TabIndex = 90
+        Me.cmdCalcularIVA10.Text = ".."
+        Me.cmdCalcularIVA10.UseVisualStyleBackColor = True
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.Location = New System.Drawing.Point(67, 25)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(105, 13)
+        Me.Label29.TabIndex = 89
+        Me.Label29.Text = "Bases Imponibles"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.Location = New System.Drawing.Point(67, 172)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(110, 13)
+        Me.Label28.TabIndex = 88
+        Me.Label28.Text = "Valores Retenidos"
+        '
+        'txtRetIVA100
+        '
+        Me.txtRetIVA100.Location = New System.Drawing.Point(234, 297)
+        Me.txtRetIVA100.Name = "txtRetIVA100"
+        Me.txtRetIVA100.Size = New System.Drawing.Size(100, 20)
+        Me.txtRetIVA100.TabIndex = 87
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(67, 300)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(108, 13)
+        Me.Label27.TabIndex = 86
+        Me.Label27.Text = "Retención IVA 100%:"
+        '
+        'txtRetIVA70
+        '
+        Me.txtRetIVA70.Location = New System.Drawing.Point(234, 271)
+        Me.txtRetIVA70.Name = "txtRetIVA70"
+        Me.txtRetIVA70.Size = New System.Drawing.Size(100, 20)
+        Me.txtRetIVA70.TabIndex = 85
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(67, 274)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(102, 13)
+        Me.Label24.TabIndex = 84
+        Me.Label24.Text = "Retención IVA 70%:"
+        '
+        'txtRetIVA30
+        '
+        Me.txtRetIVA30.Location = New System.Drawing.Point(234, 245)
+        Me.txtRetIVA30.Name = "txtRetIVA30"
+        Me.txtRetIVA30.Size = New System.Drawing.Size(100, 20)
+        Me.txtRetIVA30.TabIndex = 83
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(67, 248)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(102, 13)
+        Me.Label17.TabIndex = 82
+        Me.Label17.Text = "Retención IVA 30%:"
+        '
+        'txtRetIVA20
+        '
+        Me.txtRetIVA20.Location = New System.Drawing.Point(234, 219)
+        Me.txtRetIVA20.Name = "txtRetIVA20"
+        Me.txtRetIVA20.Size = New System.Drawing.Size(100, 20)
+        Me.txtRetIVA20.TabIndex = 81
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(67, 222)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(102, 13)
+        Me.Label15.TabIndex = 80
+        Me.Label15.Text = "Retención IVA 20%:"
+        '
+        'txtRetIVA10
+        '
+        Me.txtRetIVA10.Location = New System.Drawing.Point(234, 193)
+        Me.txtRetIVA10.Name = "txtRetIVA10"
+        Me.txtRetIVA10.Size = New System.Drawing.Size(100, 20)
+        Me.txtRetIVA10.TabIndex = 79
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(67, 196)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(102, 13)
+        Me.Label14.TabIndex = 78
+        Me.Label14.Text = "Retención IVA 10%:"
+        '
+        'txtMontoICE
+        '
+        Me.txtMontoICE.Location = New System.Drawing.Point(483, 98)
+        Me.txtMontoICE.Name = "txtMontoICE"
+        Me.txtMontoICE.Size = New System.Drawing.Size(100, 20)
+        Me.txtMontoICE.TabIndex = 77
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(417, 101)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(60, 13)
+        Me.Label13.TabIndex = 76
+        Me.Label13.Text = "Monto ICE:"
+        '
+        'txtMontoIVA
+        '
+        Me.txtMontoIVA.Location = New System.Drawing.Point(483, 72)
+        Me.txtMontoIVA.Name = "txtMontoIVA"
+        Me.txtMontoIVA.Size = New System.Drawing.Size(100, 20)
+        Me.txtMontoIVA.TabIndex = 75
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(417, 75)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(60, 13)
+        Me.Label12.TabIndex = 74
+        Me.Label12.Text = "Monto IVA:"
+        '
+        'txtBaseExenta
+        '
+        Me.txtBaseExenta.Location = New System.Drawing.Point(234, 124)
+        Me.txtBaseExenta.Name = "txtBaseExenta"
+        Me.txtBaseExenta.Size = New System.Drawing.Size(100, 20)
+        Me.txtBaseExenta.TabIndex = 73
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(67, 127)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(150, 13)
+        Me.Label11.TabIndex = 72
+        Me.Label11.Text = "Base Imponible Exenta de IVA"
+        '
+        'txtBaseNoObjeto
+        '
+        Me.txtBaseNoObjeto.Location = New System.Drawing.Point(234, 98)
+        Me.txtBaseNoObjeto.Name = "txtBaseNoObjeto"
+        Me.txtBaseNoObjeto.Size = New System.Drawing.Size(100, 20)
+        Me.txtBaseNoObjeto.TabIndex = 71
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(67, 101)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(163, 13)
+        Me.Label10.TabIndex = 70
+        Me.Label10.Text = "Base Imponible No objeto de IVA"
+        '
+        'txtBaseDiferente0
+        '
+        Me.txtBaseDiferente0.Location = New System.Drawing.Point(234, 72)
+        Me.txtBaseDiferente0.Name = "txtBaseDiferente0"
+        Me.txtBaseDiferente0.Size = New System.Drawing.Size(100, 20)
+        Me.txtBaseDiferente0.TabIndex = 69
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(67, 75)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(160, 13)
+        Me.Label9.TabIndex = 68
+        Me.Label9.Text = "Base Imponible IVA diferente 0%"
+        '
+        'txtBase0
+        '
+        Me.txtBase0.Location = New System.Drawing.Point(234, 46)
+        Me.txtBase0.Name = "txtBase0"
+        Me.txtBase0.Size = New System.Drawing.Size(100, 20)
+        Me.txtBase0.TabIndex = 67
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(67, 49)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(116, 13)
+        Me.Label8.TabIndex = 66
+        Me.Label8.Text = "Base Imponible IVA 0%"
+        '
+        'TabPage7
+        '
+        Me.TabPage7.Controls.Add(Me.cboPaisPago)
+        Me.TabPage7.Controls.Add(Me.cboRetencionNormaLegal)
+        Me.TabPage7.Controls.Add(Me.cboConvenioDobleTributacion)
+        Me.TabPage7.Controls.Add(Me.Label41)
+        Me.TabPage7.Controls.Add(Me.Label40)
+        Me.TabPage7.Controls.Add(Me.cboPagoRegimenMenor)
+        Me.TabPage7.Controls.Add(Me.Label39)
+        Me.TabPage7.Controls.Add(Me.Label38)
+        Me.TabPage7.Controls.Add(Me.cboPagoResidente)
+        Me.TabPage7.Controls.Add(Me.Label37)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage7.Size = New System.Drawing.Size(721, 352)
+        Me.TabPage7.TabIndex = 6
+        Me.TabPage7.Text = "Información del Pago"
+        Me.TabPage7.UseVisualStyleBackColor = True
+        '
+        'cboPaisPago
+        '
+        Me.cboPaisPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboPaisPago.Enabled = False
+        Me.cboPaisPago.FormattingEnabled = True
+        Me.cboPaisPago.Items.AddRange(New Object() {"301-AFGANISTAN", "594-AGUAS INTERNACIONALES", "428-ÅLAND ISLANDS", "201-ALBANIA", "207-ALBORAN Y PEREJIL", "202-ALEMANIA", "595-ALTO VOLTA", "016-AMERICAN SAMOA", "233-ANDORRA", "454-ANGOLA", "109-ANGUILA", "134-ANTIGUA Y BARBUDA", "140-ANTILLAS HOLANDESAS", "302-ARABIA SAUDITA", "403-ARGELIA", "101-ARGENTINA", "356-ARMENIA", "141-ARUBA", "501-AUSTRALIA", "203-AUSTRIA", "347-AZERBAIJAN", "129-BAHAMAS", "327-BAHREIN", "328-BANGLADESH", "130-BARBADOS", "241-BELARUS", "204-BELGICA", "135-BELICE", "429-BENIN", "142-BERMUDA", "596-BIELORRUSIA", "102-BOLIVIA", "242-BOSNIA Y HERZEGOVINA", "430-BOTSWANA", "074-BOUVET ISLAND", "103-BRASIL", "344-BRUNEI DARUSSALAM", "205-BULGARIA", "402-BURKINA FASO", "404-BURUNDI", "329-BUTAN", "456-CABO VERDE", "304-CAMBOYA", "405-CAMERUN", "104-CANADA", "228-CANARIAS  ISLAS", "433-CHAD", "108-CHILE", "331-CHINA POPULAR", "332-CHIPRE", "105-COLOMBIA", "458-COMORAS", "406-CONGO", "330-COREA DEL SUR", "306-COREA NORTE", "432-COSTA DE MARFIL", "106-COSTA RICA", "597-COTE DÍVOIRE", "243-CROACIA", "107-CUBA", "127-CURAZAO", "598-CYPRUS", "208-DINAMARCA", "459-DJIBOUTI", "136-DOMINICA", "593-ECUADOR", "434-EGIPTO", "123-EL SALVADOR", "333-EMIRATOS ARABES UNIDOS", "463-ERITREA", "252-ESLOVAQUIA", "244-ESLOVENIA", "209-ESPAÑA", "110-ESTADOS UNIDOS", "245-ESTONIA", "407-ETIOPIA", "600-FALKLAND ISLANDS", "506-FIJI", "308-FILIPINAS", "212-FINLANDIA", "211-FRANCIA", "260-FRENCH SOUTHERN TERRITORIES", "435-GABON", "408-GAMBIA", "246-GEORGIA", "436-GHANA", "239-GIBRALTAR", "131-GRANADA", "214-GRECIA", "247-GROENLANDIA", "143-GUADALUPE", "517-GUAM", "111-GUATEMALA", "831-GUERNSEY", "409-GUINEA", "438-GUINEA ECUATORIAL", "437-GUINEA-BISSAU", "132-GUYANA", "144-GUYANA FRANCESA", "112-HAITI", "113-HONDURAS", "354-HONG KONG", "216-HUNGRIA", "309-INDIA", "310-INDONESIA", "311-IRAK", "312-IRAN (REPUBLICA ISLAMICA)", "217-IRLANDA", "218-ISLANDIA", "145-ISLAS CAIMAN", "518-ISLAS COCOS (KEELING)", "519-ISLAS COOK", "253-ISLAS FAROE", "343-ISLAS HEARD Y MCDONALD", "520-ISLAS NAVIDAD", "146-ISLAS VIRGENES (BRITANICAS)", "833-ISLE OF MAN", "313-ISRAEL", "219-ITALIA", "114-JAMAICA", "314-JAPON", "499-JERSEY", "147-JOHNSTON ISLA", "315-JORDANIA", "348-KAZAJSTAN", "439-KENIA", "349-KIRGUIZISTAN", "510-KIRIBATI", "316-KUWAIT", "317-LAOS, REP. POP. DEMOC.", "601-LATVIA", "440-LESOTHO", "248-LETONIA", "318-LIBANO", "410-LIBERIA", "602-LIBIA", "234-LIECHTENSTEIN", "249-LITUANIA", "220-LUXEMBURGO", "355-MACAO", "251-MACEDONIA", "412-MADAGASCAR", "319-MALASIA", "413-MALAWI", "335-MALDIVAS", "414-MALI", "221-MALTA", "115-MALVINAS  ISLAS", "415-MARRUECOS", "511-MARSHALL ISLAS", "148-MARTINICA", "441-MAURICIO", "416-MAURITANIA", "443-MAYOTTE", "116-MEXICO", "512-MICRONESIA", "521-MIDWAY ISLAS", "250-MOLDOVA", "235-MONACO", "321-MONGOLIA (MANCHURIA)", "382-MONTENEGRO", "149-MONTSERRAT ISLA", "464-MOROCCO", "442-MOZAMBIQUE", "303-MYANMAR (BURMA)", "460-NAMIBIA", "513-NAURU", "336-NEPAL", "117-NICARAGUA", "444-NIGER", "417-NIGERIA", "522-NIUE ISLA", "523-NORFOLK ISLA", "603-NORTHERN MARIANA ISL", "222-NORUEGA", "524-NUEVA  CALEDONIA", "503-NUEVA ZELANDA", "337-OMAN", "215-PAISES BAJOS (HOLANDA)", "322-PAKISTAN", "509-PALAO  (BELAU)  ISLAS", "353-PALESTINA", "118-PANAMA", "507-PAPUA NUEVA GUINEA", "119-PARAGUAY", "120-PERU", "525-PITCAIRN, ISLA", "526-POLINESIA FRANCESA", "223-POLONIA", "224-PORTUGAL", "121-PUERTO RICO", "334-QATAR", "213-REINO UNIDO", "431-REPUBLICA CENTROAFRICANA", "599-REPUBLICA CHECA", "122-REPUBLICA DOMINICANA", "465-REUNION", "225-RUMANIA", "230-RUSIA", "445-RWANDA", "447-SAHARA OCCIDENTAL", "590-SAINT BARTHELEMY", "514-SALOMON  ISLAS", "504-SAMOA OCCIDENTAL", "137-SAN CRISTOBAL Y NEVIS", "237-SAN MARINO", "139-SAN VICENTE Y LAS GRANAD.", "466-SANTA ELENA", "138-SANTA LUCIA", "449-SANTO TOME Y PRINCIPE", "420-SENEGAL", "688-SERBIA", "446-SEYCHELLES", "423-SIERRA LEONA", "338-SINGAPUR", "323-SIRIA", "448-SOMALIA", "339-SRI LANKA (CEILAN)", "604-ST. PIERRE AND MIQUE", "422-SUDAFRICA  (CISKEI)", "421-SUDAN", "226-SUECIA", "227-SUIZA", "133-SURINAM", "450-SWAZILANDIA", "605-SYRIAN ARAB REPUBLIC", "325-TAILANDIA", "307-TAIWAN (CHINA)", "350-TAJIKISTAN", "425-TANZANIA", "606-TERRITORIO ANTARTICO BRITANICO", "607-TERRITORIO BRITANICO OCEANO IN", "529-TIMOR DEL ESTE", "451-TOGO", "530-TOKELAI", "508-TONGA", "124-TRINIDAD Y TOBAGO", "452-TUNEZ", "151-TURCAS  Y CAICOS ISLAS", "351-TURKMENISTAN", "346-TURQUIA", "515-TUVALU", "229-UCRANIA", "426-UGANDA", "125-URUGUAY", "352-UZBEKISTAN", "516-VANUATU", "238-VATICANO (SANTA SEDE)", "126-VENEZUELA", "341-VIETNAM", "152-VIRGENES,ISLAS(NORT.AMER.)", "531-WAKE ISLA", "532-WALLIS Y FUTUNA, ISLAS", "342-YEMEN", "231-YUGOSLAVIA", "453-ZAIRE", "427-ZAMBIA", "419-ZIMBABWE (RHODESIA)"})
+        Me.cboPaisPago.Location = New System.Drawing.Point(363, 59)
+        Me.cboPaisPago.Name = "cboPaisPago"
+        Me.cboPaisPago.Size = New System.Drawing.Size(220, 21)
+        Me.cboPaisPago.TabIndex = 102
+        '
+        'cboRetencionNormaLegal
+        '
+        Me.cboRetencionNormaLegal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboRetencionNormaLegal.Enabled = False
+        Me.cboRetencionNormaLegal.FormattingEnabled = True
+        Me.cboRetencionNormaLegal.Items.AddRange(New Object() {"SI", "NO"})
+        Me.cboRetencionNormaLegal.Location = New System.Drawing.Point(363, 157)
+        Me.cboRetencionNormaLegal.Name = "cboRetencionNormaLegal"
+        Me.cboRetencionNormaLegal.Size = New System.Drawing.Size(73, 21)
+        Me.cboRetencionNormaLegal.TabIndex = 101
+        '
+        'cboConvenioDobleTributacion
+        '
+        Me.cboConvenioDobleTributacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboConvenioDobleTributacion.Enabled = False
+        Me.cboConvenioDobleTributacion.FormattingEnabled = True
+        Me.cboConvenioDobleTributacion.Items.AddRange(New Object() {"SI", "NO"})
+        Me.cboConvenioDobleTributacion.Location = New System.Drawing.Point(363, 130)
+        Me.cboConvenioDobleTributacion.Name = "cboConvenioDobleTributacion"
+        Me.cboConvenioDobleTributacion.Size = New System.Drawing.Size(73, 21)
+        Me.cboConvenioDobleTributacion.TabIndex = 100
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Location = New System.Drawing.Point(38, 160)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(280, 13)
+        Me.Label41.TabIndex = 99
+        Me.Label41.Text = "¿Pago sujeto a retención en aplicación de la norma legal?"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Location = New System.Drawing.Point(38, 133)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(191, 13)
+        Me.Label40.TabIndex = 98
+        Me.Label40.Text = "¿Aplica convenio de doble tributación?"
+        '
+        'cboPagoRegimenMenor
+        '
+        Me.cboPagoRegimenMenor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboPagoRegimenMenor.Enabled = False
+        Me.cboPagoRegimenMenor.FormattingEnabled = True
+        Me.cboPagoRegimenMenor.Items.AddRange(New Object() {"SI", "NO"})
+        Me.cboPagoRegimenMenor.Location = New System.Drawing.Point(363, 103)
+        Me.cboPagoRegimenMenor.Name = "cboPagoRegimenMenor"
+        Me.cboPagoRegimenMenor.Size = New System.Drawing.Size(73, 21)
+        Me.cboPagoRegimenMenor.TabIndex = 97
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Location = New System.Drawing.Point(38, 106)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(319, 13)
+        Me.Label39.TabIndex = 96
+        Me.Label39.Text = "¿El pago es a un régimen fiscal preferente o de menor imposición?"
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Location = New System.Drawing.Point(38, 62)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(141, 13)
+        Me.Label38.TabIndex = 95
+        Me.Label38.Text = "País al que efectúa el pago:"
+        '
+        'cboPagoResidente
+        '
+        Me.cboPagoResidente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboPagoResidente.FormattingEnabled = True
+        Me.cboPagoResidente.Items.AddRange(New Object() {"01-PAGO A RESIDENTE", "02-PAGO A NO RESIDENTE"})
+        Me.cboPagoResidente.Location = New System.Drawing.Point(363, 32)
+        Me.cboPagoResidente.Name = "cboPagoResidente"
+        Me.cboPagoResidente.Size = New System.Drawing.Size(220, 21)
+        Me.cboPagoResidente.TabIndex = 94
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(38, 35)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(160, 13)
+        Me.Label37.TabIndex = 93
+        Me.Label37.Text = "Pago a residente o no residente:"
+        '
         'txtRegistro
         '
         Me.txtRegistro.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
@@ -1211,8 +1277,6 @@ Partial Class frmCompras
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmCompras"
         Me.Text = "Compras"
-        Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
@@ -1222,18 +1286,19 @@ Partial Class frmCompras
         Me.TabPage2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.TabPage4.ResumeLayout(False)
-        Me.TabPage4.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
         CType(Me.Spr, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6.PerformLayout()
+        Me.TabPage7.ResumeLayout(False)
+        Me.TabPage7.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TabPage3 As TabPage
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents cmdNuevo As ToolStripButton
     Friend WithEvents cmdGuardar As ToolStripButton
@@ -1256,7 +1321,6 @@ Partial Class frmCompras
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents txtRegistro As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TabPage4 As TabPage
     Friend WithEvents cmdMostrar As Button
     Friend WithEvents Label23 As Label
     Friend WithEvents Label25 As Label
@@ -1280,33 +1344,7 @@ Partial Class frmCompras
     Friend WithEvents cboSustentoTributario As ComboBox
     Friend WithEvents Label22 As Label
     Friend WithEvents txtFechaEmision As DateTimePicker
-    Friend WithEvents Label7 As Label
-    Friend WithEvents txtFechaRegistro As DateTimePicker
     Friend WithEvents TabPage5 As TabPage
-    Friend WithEvents txtBaseNoObjeto As TextBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents txtBaseDiferente0 As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents txtBase0 As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents txtRetIVA100 As TextBox
-    Friend WithEvents Label27 As Label
-    Friend WithEvents txtRetIVA70 As TextBox
-    Friend WithEvents Label24 As Label
-    Friend WithEvents txtRetIVA30 As TextBox
-    Friend WithEvents Label17 As Label
-    Friend WithEvents txtRetIVA20 As TextBox
-    Friend WithEvents Label15 As Label
-    Friend WithEvents txtRetIVA10 As TextBox
-    Friend WithEvents Label14 As Label
-    Friend WithEvents txtMontoICE As TextBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents txtMontoIVA As TextBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents txtBaseExenta As TextBox
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label28 As Label
-    Friend WithEvents Label29 As Label
     Friend WithEvents Label34 As Label
     Friend WithEvents txtNumeroAutorizacionRet As TextBox
     Friend WithEvents Label30 As Label
@@ -1322,16 +1360,6 @@ Partial Class frmCompras
     Friend WithEvents Label36 As Label
     Friend WithEvents cmdQuitarRetencion As Button
     Friend WithEvents cmdAñadirRetencion As Button
-    Friend WithEvents Label41 As Label
-    Friend WithEvents Label40 As Label
-    Friend WithEvents cboPagoRegimenMenor As ComboBox
-    Friend WithEvents Label39 As Label
-    Friend WithEvents Label38 As Label
-    Friend WithEvents cboPagoResidente As ComboBox
-    Friend WithEvents Label37 As Label
-    Friend WithEvents cboConvenioDobleTributacion As ComboBox
-    Friend WithEvents cboRetencionNormaLegal As ComboBox
-    Friend WithEvents cboPaisPago As ComboBox
     Friend WithEvents chkSiTieneRet As CheckBox
     Friend WithEvents cmdImportarRetencion As Button
     Friend WithEvents valor As DataGridViewTextBoxColumn
@@ -1341,4 +1369,48 @@ Partial Class frmCompras
     Friend WithEvents codigo As DataGridViewTextBoxColumn
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents lblUsuario As ToolStripStatusLabel
+    Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents TabPage7 As TabPage
+    Friend WithEvents Label37 As Label
+    Friend WithEvents cboPagoResidente As ComboBox
+    Friend WithEvents Label38 As Label
+    Friend WithEvents Label39 As Label
+    Friend WithEvents cboPagoRegimenMenor As ComboBox
+    Friend WithEvents Label40 As Label
+    Friend WithEvents Label41 As Label
+    Friend WithEvents cboConvenioDobleTributacion As ComboBox
+    Friend WithEvents cboRetencionNormaLegal As ComboBox
+    Friend WithEvents cboPaisPago As ComboBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtBase0 As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txtBaseDiferente0 As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents txtBaseNoObjeto As TextBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents txtBaseExenta As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents txtMontoIVA As TextBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents txtMontoICE As TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents txtRetIVA10 As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents txtRetIVA20 As TextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents txtRetIVA30 As TextBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents txtRetIVA70 As TextBox
+    Friend WithEvents Label27 As Label
+    Friend WithEvents txtRetIVA100 As TextBox
+    Friend WithEvents Label28 As Label
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtFechaRegistro As DateTimePicker
+    Friend WithEvents cmdCalcularIVA As Button
+    Friend WithEvents cmdCalcularIVA100 As Button
+    Friend WithEvents cmdCalcularIVA70 As Button
+    Friend WithEvents cmdCalcularIVA30 As Button
+    Friend WithEvents cmdCalcularIVA20 As Button
+    Friend WithEvents cmdCalcularIVA10 As Button
 End Class

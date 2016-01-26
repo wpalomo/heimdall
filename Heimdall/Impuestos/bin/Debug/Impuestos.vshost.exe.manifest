@@ -147,19 +147,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>1jLVYMOoG2dRTntAeZ2hCNrkz6w=</dsig:DigestValue>
+        <dsig:DigestValue>tVushjhBvZViMJqeI4Y2r9522ZU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Impuestos.exe" size="706048">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Impuestos.exe" size="838656">
       <assemblyIdentity name="Impuestos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+3c9BEKf/LR9wnCOXGCYsE4i1j8=</dsig:DigestValue>
+        <dsig:DigestValue>BoKYaqkfn21eeKYJgyeZOX7M3tY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

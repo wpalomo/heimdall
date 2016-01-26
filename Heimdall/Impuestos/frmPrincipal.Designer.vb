@@ -60,6 +60,8 @@ Partial Class frmPrincipal
         Me.statusSucursal = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.statusUsuario = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.SoporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripSeparator()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -75,7 +77,7 @@ Partial Class frmPrincipal
         '
         'SistemaToolStripMenuItem
         '
-        Me.SistemaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ParámetrosToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.ToolStripMenuItem4, Me.SalirToolStripMenuItem})
+        Me.SistemaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ParámetrosToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.ToolStripMenuItem4, Me.SoporteToolStripMenuItem, Me.ToolStripMenuItem7, Me.SalirToolStripMenuItem})
         Me.SistemaToolStripMenuItem.Name = "SistemaToolStripMenuItem"
         Me.SistemaToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.SistemaToolStripMenuItem.Text = "Sistema"
@@ -83,24 +85,24 @@ Partial Class frmPrincipal
         'ParámetrosToolStripMenuItem
         '
         Me.ParámetrosToolStripMenuItem.Name = "ParámetrosToolStripMenuItem"
-        Me.ParámetrosToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
+        Me.ParámetrosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ParámetrosToolStripMenuItem.Text = "Parámetros"
         '
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(131, 6)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(149, 6)
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'TransaccionesToolStripMenuItem
@@ -299,6 +301,17 @@ Partial Class frmPrincipal
         Me.statusUsuario.Size = New System.Drawing.Size(52, 17)
         Me.statusUsuario.Text = "evillegas"
         '
+        'SoporteToolStripMenuItem
+        '
+        Me.SoporteToolStripMenuItem.Name = "SoporteToolStripMenuItem"
+        Me.SoporteToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SoporteToolStripMenuItem.Text = "Soporte"
+        '
+        'ToolStripMenuItem7
+        '
+        Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
+        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(149, 6)
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -358,4 +371,6 @@ Partial Class frmPrincipal
     Friend WithEvents ToolStripMenuItem4 As ToolStripSeparator
     Friend WithEvents ATSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SoporteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem7 As ToolStripSeparator
 End Class

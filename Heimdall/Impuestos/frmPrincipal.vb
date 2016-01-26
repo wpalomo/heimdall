@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.IO
+Imports MySql.Data.MySqlClient
 
 Public Class frmPrincipal
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -91,17 +92,10 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub RegistrosDeExportacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrosDeExportacionesToolStripMenuItem.Click
-        Try
-            Me.Cursor = Cursors.WaitCursor
-            Dim cmd As New MySqlCommand("select * from exportaciones", gloConexion)
-            Dim dt As New DataTable
-            dt.Load(cmd.ExecuteReader)
-            rptListadoExportaciones(dt, "", "", "")
-        Catch ex As Exception
-            MsgBox(ex.Message + vbCrLf + vbCrLf + "funcion=reporteExportaciones", vbCritical)
-        Finally
-            Me.Cursor = Cursors.Default
-        End Try
+        Dim f As New frmRpExportaciones
+        f.MdiParent = Me
+        f.Show()
+
     End Sub
 
     Private Sub UsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem.Click
@@ -124,5 +118,9 @@ Public Class frmPrincipal
         Finally
             Me.Cursor = Cursors.Default
         End Try
+    End Sub
+
+    Private Sub SoporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SoporteToolStripMenuItem.Click
+        MsgBox("Si tiene algun inconveniente, envíe un correo a dvinces@gmail.com" + vbCrLf + "con la Captura de Pantall", vbInformation)
     End Sub
 End Class

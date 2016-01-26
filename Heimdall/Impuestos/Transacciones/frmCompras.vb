@@ -1,4 +1,6 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.IO
+Imports System.Xml
+Imports MySql.Data.MySqlClient
 
 Public Class frmCompras
     Private modo As Integer = 0 '0=>Nuevo, 1=>Edicion
@@ -104,7 +106,7 @@ Public Class frmCompras
 
     End Sub
 
-    Private Sub cboPagoResidente_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboPagoResidente.SelectedIndexChanged
+    Private Sub cboPagoResidente_SelectedIndexChanged(sender As Object, e As EventArgs)
         If cboPagoResidente.Text = "01-PAGO A RESIDENTE" Then
             cboPaisPago.SelectedIndex = -1
             cboPagoRegimenMenor.SelectedIndex = -1
@@ -131,7 +133,60 @@ Public Class frmCompras
     End Sub
 
     Private Sub cmdImportarRetencion_Click(sender As Object, e As EventArgs) Handles cmdImportarRetencion.Click
-        InputBox("Ingrese la Clave de Acceso")
+        Dim ca As String = InputBox("Ingrese la Clave de Acceso")
+        If ca <> "" Then
+            Dim ws As New facturaE.WebServiceSRI.WebService
+            Dim archivo = Path.GetTempPath + "\temporal.xml"
+            If ws.SendClaveAcceso(ca, archivo) = facturaE.WebServiceSRI.RespuestaSRYType.AUTORIZADO Then
+                Dim fileReader As String = My.Computer.FileSystem.ReadAllText(archivo).Replace("<![CDATA[<?xml version=""1.0"" encoding=""UTF-8""?>", "").Replace("]]>", "")
+                My.Computer.FileSystem.WriteAllText(archivo, fileReader, False)
+                Dim xmlDoc As New XmlDocument()
+                xmlDoc.Load(archivo)
+                Dim nodes As XmlNodeList = xmlDoc.DocumentElement.SelectNodes("/autorizacion/comprobante/comprobanteRetencion/impuestos/impuesto")
+                Dim retencion As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoTributaria/estab").FirstChild.Value.ToString + xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoTributaria/ptoEmi").FirstChild.Value.ToString + xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoTributaria/secuencial").FirstChild.Value.ToString
+                Dim autorizacion As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/numeroAutorizacion").FirstChild.Value.ToString + xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoTributaria/ptoEmi").FirstChild.Value.ToString + xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoTributaria/secuencial").FirstChild.Value.ToString
+                Dim identificacion As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoCompRetencion/identificacionSujetoRetenido").FirstChild.Value.ToString
+                Dim tipoIdenticacion As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoCompRetencion/tipoIdentificacionSujetoRetenido").FirstChild.Value.ToString
+                Dim proveedor As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoCompRetencion/razonSocialSujetoRetenido").FirstChild.Value.ToString
+                txtIdentificacion.Text = identificacion
+                txtTipoIdentificacion.Text = tipoIdenticacion
+                txtProveedor.Text = proveedor
+
+                txtEstablecimientoRet.Text = Strings.Left(retencion, 3)
+                txtPuntoEmisionRet.Text = Strings.Right(Strings.Left(retencion, 6), 3)
+                txtSecuencialRet.Text = Strings.Right(retencion, 9)
+                txtNumeroAutorizacionRet.Text = autorizacion
+
+                Dim codigoImpuesto As String = ""
+                Dim codigoRetencion As String = ""
+                Dim base As String = ""
+                Dim porcentaje As String = ""
+                Dim valor As String = ""
+                Dim numDoc As String = ""
+                Dim fechaDoc As String = ""
+                For Each node As XmlNode In nodes
+                    codigoImpuesto = node.SelectSingleNode("codigo").InnerText
+                    codigoRetencion = node.SelectSingleNode("codigoRetencion").InnerText
+                    base = node.SelectSingleNode("baseImponible").InnerText
+                    porcentaje = node.SelectSingleNode("porcentajeRetener").InnerText
+                    valor = node.SelectSingleNode("valorRetenido").InnerText
+                    numDoc = node.SelectSingleNode("numDocSustento").InnerText
+                    fechaDoc = node.SelectSingleNode("fechaEmisionDocSustento").InnerText
+
+                    If codigoImpuesto = "1" Then
+                        Spr.Rows.Add(codigoRetencion, "", base, porcentaje, valor)
+                    End If
+
+                    txtFechaEmision.Value = CDate(fechaDoc)
+                    txtEstablecimiento.Text = Strings.Left(numDoc, 3)
+                    txtPuntoEmision.Text = Strings.Right(Strings.Left(numDoc, 6), 3)
+                    txtSecuencial.Text = Strings.Right(numDoc, 9)
+
+                Next
+            End If
+        End If
+
+
     End Sub
 
     Private Sub cmdGuardar_Click(sender As Object, e As EventArgs) Handles cmdGuardar.Click
@@ -423,5 +478,53 @@ Public Class frmCompras
         f.Spr = Me.Spr
         f.ShowDialog()
         Spr.Refresh()
+    End Sub
+
+    Private Sub cmdCalcularIVA10_Click(sender As Object, e As EventArgs) Handles cmdCalcularIVA10.Click
+        If IsNumeric(txtMontoIVA.text) Then
+            txtRetIVA10.Text = Math.Round(CDec(txtMontoIVA.Text) * 0.1, 2).ToString
+        Else
+            txtRetIVA10.Text = "0.00"
+        End If
+    End Sub
+
+    Private Sub cmdCalcularIVA20_Click(sender As Object, e As EventArgs) Handles cmdCalcularIVA20.Click
+        If IsNumeric(txtMontoIVA.Text) Then
+            txtRetIVA20.Text = Math.Round(CDec(txtMontoIVA.Text) * 0.2, 2).ToString
+        Else
+            txtRetIVA20.Text = "0.00"
+        End If
+    End Sub
+
+    Private Sub cmdCalcularIVA30_Click(sender As Object, e As EventArgs) Handles cmdCalcularIVA30.Click
+        If IsNumeric(txtMontoIVA.Text) Then
+            txtRetIVA30.Text = Math.Round(CDec(txtMontoIVA.Text) * 0.3, 2).ToString
+        Else
+            txtRetIVA30.Text = "0.00"
+        End If
+    End Sub
+
+    Private Sub cmdCalcularIVA70_Click(sender As Object, e As EventArgs) Handles cmdCalcularIVA70.Click
+        If IsNumeric(txtMontoIVA.Text) Then
+            txtRetIVA70.Text = Math.Round(CDec(txtMontoIVA.Text) * 0.7, 2).ToString
+        Else
+            txtRetIVA70.Text = "0.00"
+        End If
+    End Sub
+
+    Private Sub cmdCalcularIVA100_Click(sender As Object, e As EventArgs) Handles cmdCalcularIVA100.Click
+        If IsNumeric(txtMontoIVA.Text) Then
+            txtRetIVA100.Text = Math.Round(CDec(txtMontoIVA.Text) * 1, 2).ToString
+        Else
+            txtRetIVA100.Text = "0.00"
+        End If
+    End Sub
+
+    Private Sub cmdCalcularIVA_Click(sender As Object, e As EventArgs) Handles cmdCalcularIVA.Click
+        If IsNumeric(txtMontoIVA.Text) Then
+            txtBaseDiferente0.Text = Math.Round(CDec(txtMontoIVA.Text) * 0.12, 2).ToString
+        Else
+            txtBaseDiferente0.Text = "0.00"
+        End If
     End Sub
 End Class
