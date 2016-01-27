@@ -36,7 +36,7 @@ Public Class Form1
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim strFile As String = "C:\Users\David\Desktop\SUSANITA\diciembre\facturas-procesadas.txt"
+        Dim strFile As String = "C:\Users\David\Desktop\diciembre\facturas-procesadas.txt"
         Dim fileEntries As String() = Directory.GetFiles(txtRuta.Text)
         Dim xmlDoc As New XmlDocument()
 
@@ -46,6 +46,7 @@ Public Class Form1
             xmlDoc.Load(f)
             Dim totalSinImpuestos As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/factura/infoFactura/totalSinImpuestos").FirstChild.Value.ToString
             Dim importeTotal As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/factura/infoFactura/importeTotal").FirstChild.Value.ToString
+            Dim factura As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/factura/infoTributaria/estab").FirstChild.Value.ToString + xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/factura/infoTributaria/ptoEmi").FirstChild.Value.ToString + xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/factura/infoTributaria/secuencial").FirstChild.Value.ToString
             Dim nodes As XmlNodeList = xmlDoc.DocumentElement.SelectNodes("/autorizacion/comprobante/factura/infoFactura/totalConImpuestos/totalImpuesto")
             Dim codigoImpuesto As String = ""
             Dim porcentaje As String = ""
@@ -56,7 +57,7 @@ Public Class Form1
                 porcentaje = node.SelectSingleNode("codigoPorcentaje").InnerText
                 base = node.SelectSingleNode("baseImponible").InnerText
                 valor = node.SelectSingleNode("valor").InnerText
-                File.AppendAllText(strFile, totalSinImpuestos + vbTab + codigoImpuesto + vbTab + porcentaje + vbTab + base + vbTab + valor + vbTab + importeTotal + vbCrLf)
+                File.AppendAllText(strFile, factura + vbTab + totalSinImpuestos + vbTab + codigoImpuesto + vbTab + porcentaje + vbTab + base + vbTab + valor + vbTab + importeTotal + vbCrLf)
             Next
         Next
         MsgBox("Listo", vbInformation)

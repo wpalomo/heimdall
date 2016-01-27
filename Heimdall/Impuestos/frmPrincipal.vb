@@ -107,20 +107,23 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub RegistrosDeCompraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrosDeCompraToolStripMenuItem.Click
-        Try
-            Me.Cursor = Cursors.WaitCursor
-            Dim cmd As New MySqlCommand("select * from compras", gloConexion)
-            Dim dt As New DataTable
-            dt.Load(cmd.ExecuteReader)
-            rptListadoCompras(dt)
-        Catch ex As Exception
-            MsgBox(ex.Message + vbCrLf + vbCrLf + "funcion=reporteExportaciones", vbCritical)
-        Finally
-            Me.Cursor = Cursors.Default
-        End Try
+        Dim f As New frmRpCompras
+        f.MdiParent = Me
+        f.Show()
     End Sub
 
     Private Sub SoporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SoporteToolStripMenuItem.Click
         MsgBox("Si tiene algun inconveniente, envíe un correo a dvinces@gmail.com" + vbCrLf + "con la Captura de Pantall", vbInformation)
+    End Sub
+
+    Private Sub VentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub RegistrosDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrosDeVentasToolStripMenuItem.Click
+        Dim f As frmRpVentas
+        f.MdiParent = Me
+        f.Show()
+
     End Sub
 End Class
