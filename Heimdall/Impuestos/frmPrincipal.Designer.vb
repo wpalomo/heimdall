@@ -285,8 +285,7 @@ Partial Class frmPrincipal
         'statusMes
         '
         Me.statusMes.Name = "statusMes"
-        Me.statusMes.Size = New System.Drawing.Size(44, 17)
-        Me.statusMes.Text = "ENERO"
+        Me.statusMes.Size = New System.Drawing.Size(0, 17)
         '
         'ToolStripStatusLabel1
         '
@@ -297,8 +296,7 @@ Partial Class frmPrincipal
         'statusSucursal
         '
         Me.statusSucursal.Name = "statusSucursal"
-        Me.statusSucursal.Size = New System.Drawing.Size(40, 17)
-        Me.statusSucursal.Text = "Matriz"
+        Me.statusSucursal.Size = New System.Drawing.Size(0, 17)
         '
         'ToolStripStatusLabel2
         '
@@ -309,8 +307,7 @@ Partial Class frmPrincipal
         'statusUsuario
         '
         Me.statusUsuario.Name = "statusUsuario"
-        Me.statusUsuario.Size = New System.Drawing.Size(52, 17)
-        Me.statusUsuario.Text = "evillegas"
+        Me.statusUsuario.Size = New System.Drawing.Size(0, 17)
         '
         'frmPrincipal
         '

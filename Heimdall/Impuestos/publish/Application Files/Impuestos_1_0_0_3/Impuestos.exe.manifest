@@ -152,14 +152,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Impuestos.exe" size="898048">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Impuestos.exe" size="897536">
       <assemblyIdentity name="Impuestos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>udtR4ejOkf0gHIaJSmR56MGDL/0=</dsig:DigestValue>
+        <dsig:DigestValue>d10q2+8sqIgpwo+Lq+zPJWialsc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

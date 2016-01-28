@@ -7,6 +7,7 @@ Public Class frmPrincipal
         Dim f As New frmLogin
         f.ShowDialog()
         statusUsuario.Text = gloUsuario
+        statusSucursal.Text = "Matriz"
         statusMes.Text = gloMesActualNombre
     End Sub
 
