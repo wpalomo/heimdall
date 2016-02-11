@@ -189,6 +189,7 @@ Partial Class frmRpCompras
         Me.Controls.Add(Me.txtDesde)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Spr)
+        Me.MaximizeBox = False
         Me.Name = "frmRpCompras"
         Me.Text = "Reporte de Compras"
         Me.ToolStrip1.ResumeLayout(False)

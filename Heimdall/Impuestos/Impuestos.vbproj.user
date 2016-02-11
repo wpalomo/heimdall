@@ -4,10 +4,13 @@
     <PublishUrlHistory>publish\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory />
-    <UpdateUrlHistory />
+    <UpdateUrlHistory>\\winfs01\sit\</UpdateUrlHistory>
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>en-US</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
   </PropertyGroup>
 </Project>

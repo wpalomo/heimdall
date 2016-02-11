@@ -189,6 +189,7 @@ Partial Class frmRpExportaciones
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Spr)
         Me.Controls.Add(Me.ToolStrip1)
+        Me.MaximizeBox = False
         Me.Name = "frmRpExportaciones"
         Me.Text = "Reporte de Exportaciones"
         Me.ToolStrip1.ResumeLayout(False)

@@ -33,6 +33,9 @@ Public Class frmRpExportaciones
             dt.Load(cmd.ExecuteReader)
             Spr.DataSource = dt
             Spr.Refresh()
+            Spr.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+            'Spr.Columns(1).HeaderText = "Usuario"
+            'Spr.Columns(2).HeaderText = "Contraseña"
             cmdExportar.Visible = True
         Catch ex As Exception
             MsgBox(ex.Message + vbCrLf + vbCrLf + "funcion=reporteExportaciones", vbCritical)
@@ -51,4 +54,10 @@ Public Class frmRpExportaciones
             Me.Cursor = Cursors.Default
         End Try
     End Sub
+
+    Private Sub frmRpExportaciones_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
+        Spr.Width = Me.Width - 40
+        Spr.Height = Me.Height - 160
+    End Sub
+
 End Class

@@ -122,9 +122,53 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub RegistrosDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrosDeVentasToolStripMenuItem.Click
-        Dim f As frmRpVentas
+        Dim f As New frmRpVentas
         f.MdiParent = Me
         f.Show()
+
+    End Sub
+
+    Private Sub DescargarXMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DescargarXMLToolStripMenuItem.Click
+        Dim mes As String = InputBox("ingrese mes")
+        If mes = "" Then Exit Sub
+
+        Try
+            Dim objReader As New StreamReader("C:\Users\David\Desktop\SUSANITA\" + mes + "\claves.txt")
+
+            Dim ws As New facturaE.eFactura.WebService
+            Dim ca As String = ""
+            stProBar.Visible = True
+            stProBar.Minimum = 0
+            Dim contador As Integer = 0
+            Do
+                ca = objReader.ReadLine()
+                contador += 1
+            Loop Until ca Is Nothing
+            objReader.Close()
+            stProBar.Maximum = contador
+            contador = 0
+
+            objReader = New StreamReader("C:\Users\David\Desktop\SUSANITA\" + mes + "\claves.txt")
+            Dim objWriter As New StreamWriter("C:\Users\David\Desktop\SUSANITA\" + mes + "\procesadas.txt")
+            Do
+                ca = objReader.ReadLine()
+                If Not ca Is Nothing Then
+                    Dim k As New facturaE.RespuestaSRYType
+                    k = ws.SendClaveAcceso(ca, "C:\Users\David\Desktop\SUSANITA\" + mes + "\xml\" + ca + ".xml")
+                    If k = facturaE.RespuestaSRYType.AUTORIZADO Then
+                        objWriter.WriteLine()
+                    End If
+                    contador += 1
+                    stProBar.Value = contador
+                End If
+            Loop Until ca Is Nothing
+            objWriter.Close()
+            objReader.Close()
+
+            MsgBox("finalizado")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 End Class

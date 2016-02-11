@@ -26,13 +26,16 @@ Public Class frmRpCompras
             Dim cmd As New MySqlCommand()
             cmd.Connection = gloConexion
             If cboEstablecimiento.Text = "Todos" Then
-                cmd.CommandText = "select * from exportaciones where fecha_comprobante between '" + txtDesde.Text + "' and '" + txtHasta.Text + "';"
+                cmd.CommandText = "select * from compras where fecha_comprobante between '" + txtDesde.Text + "' and '" + txtHasta.Text + "';"
             Else
-                cmd.CommandText = "select * from exportaciones where establecimiento='" + cboEstablecimiento.Text + "' and fecha_comprobante between '" + txtHasta.Text + "' and '" + txtDesde.Text + "';"
+                cmd.CommandText = "select * from compras where establecimiento='" + cboEstablecimiento.Text + "' and fecha_comprobante between '" + txtHasta.Text + "' and '" + txtDesde.Text + "';"
             End If
             dt.Load(cmd.ExecuteReader)
             Spr.DataSource = dt
             Spr.Refresh()
+            Spr.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+            'Spr.Columns(1).HeaderText = "Usuario"
+            'Spr.Columns(2).HeaderText = "Contraseña"
             cmdExportar.Visible = True
         Catch ex As Exception
             MsgBox(ex.Message + vbCrLf + vbCrLf + "funcion=reporteCompras", vbCritical)
@@ -50,5 +53,10 @@ Public Class frmRpCompras
         Finally
             Me.Cursor = Cursors.Default
         End Try
+    End Sub
+
+    Private Sub frmRpCompras_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
+        Spr.Width = Me.Width - 40
+        Spr.Height = Me.Height - 160
     End Sub
 End Class

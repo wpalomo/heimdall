@@ -135,19 +135,20 @@ Public Class frmCompras
     Private Sub cmdImportarRetencion_Click(sender As Object, e As EventArgs) Handles cmdImportarRetencion.Click
         Dim ca As String = InputBox("Ingrese la Clave de Acceso")
         If ca <> "" Then
-            Dim ws As New facturaE.WebServiceSRI.WebService
+            Dim ws As New facturaE.eFactura.WebService
             Dim archivo = Path.GetTempPath + "\temporal.xml"
-            If ws.SendClaveAcceso(ca, archivo) = facturaE.WebServiceSRI.RespuestaSRYType.AUTORIZADO Then
+            If ws.SendClaveAcceso(ca, archivo) = facturaE.RespuestaSRYType.AUTORIZADO Then
                 Dim fileReader As String = My.Computer.FileSystem.ReadAllText(archivo).Replace("<![CDATA[<?xml version=""1.0"" encoding=""UTF-8""?>", "").Replace("]]>", "")
                 My.Computer.FileSystem.WriteAllText(archivo, fileReader, False)
                 Dim xmlDoc As New XmlDocument()
                 xmlDoc.Load(archivo)
                 Dim nodes As XmlNodeList = xmlDoc.DocumentElement.SelectNodes("/autorizacion/comprobante/comprobanteRetencion/impuestos/impuesto")
                 Dim retencion As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoTributaria/estab").FirstChild.Value.ToString + xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoTributaria/ptoEmi").FirstChild.Value.ToString + xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoTributaria/secuencial").FirstChild.Value.ToString
-                Dim autorizacion As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/numeroAutorizacion").FirstChild.Value.ToString + xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoTributaria/ptoEmi").FirstChild.Value.ToString + xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoTributaria/secuencial").FirstChild.Value.ToString
+                Dim autorizacion As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/numeroAutorizacion").FirstChild.Value.ToString
                 Dim identificacion As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoCompRetencion/identificacionSujetoRetenido").FirstChild.Value.ToString
                 Dim tipoIdenticacion As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoCompRetencion/tipoIdentificacionSujetoRetenido").FirstChild.Value.ToString
                 Dim proveedor As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoCompRetencion/razonSocialSujetoRetenido").FirstChild.Value.ToString
+                Dim fechaEmision As String = xmlDoc.DocumentElement.SelectSingleNode("/autorizacion/comprobante/comprobanteRetencion/infoCompRetencion/fechaEmision").FirstChild.Value.ToString
                 txtIdentificacion.Text = identificacion
                 txtTipoIdentificacion.Text = tipoIdenticacion
                 txtProveedor.Text = proveedor
@@ -156,6 +157,7 @@ Public Class frmCompras
                 txtPuntoEmisionRet.Text = Strings.Right(Strings.Left(retencion, 6), 3)
                 txtSecuencialRet.Text = Strings.Right(retencion, 9)
                 txtNumeroAutorizacionRet.Text = autorizacion
+                txtFechaEmisionRet.Value = CDate(fechaEmision)
 
                 Dim codigoImpuesto As String = ""
                 Dim codigoRetencion As String = ""
@@ -197,6 +199,22 @@ Public Class frmCompras
             If modo = 0 Then 'NUEVO 
 
                 ' ---. VALIDACIONES .----
+
+                If txtEstablecimiento.Text.Length < 3 Then
+                    MsgBox("El número del ESTABLECIMIENTO debe ser igual a 3", vbExclamation)
+                    Exit Sub
+                End If
+
+                If txtPuntoEmision.Text.Length < 3 Then
+                    MsgBox("El número del PUNTO DE EMISIÓN debe ser igual a 3", vbExclamation)
+                    Exit Sub
+                End If
+
+                If txtSecuencial.Text.Length < 9 Then
+                    MsgBox("El número del SECUENCIAL debe ser igual a 9", vbExclamation)
+                    Exit Sub
+                End If
+
                 If txtBase0.Text = "" Then
                     txtBase0.Text = "0.00"
                 End If

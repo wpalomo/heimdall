@@ -37,9 +37,9 @@ Public Class frmImportarVentas
 
     Private Sub cmdImportar_Click(sender As Object, e As EventArgs) Handles cmdImportar.Click
         If MsgBox("Desea importar estos comprobantes al Sistema?", vbQuestion + vbYesNo) = vbYes Then
-            Dim ws As New facturaE.WebServiceSRI.WebService
+            Dim ws As New facturaE.eFactura.WebService
             Dim archivo = Path.GetTempPath + "\temporal.xml"
-            If ws.SendClaveAcceso("0112201501176817399000120012080000003281234567819", archivo) = facturaE.WebServiceSRI.RespuestaSRYType.AUTORIZADO Then
+            If ws.SendClaveAcceso("0112201501176817399000120012080000003281234567819", archivo) = facturaE.RespuestaSRYType.AUTORIZADO Then
                 MsgBox("importado")
             End If
         End If

@@ -7,7 +7,6 @@ C:\Users\David\Source\Repos\heimdall\Heimdall\Impuestos\bin\Debug\DocumentFormat
 C:\Users\David\Source\Repos\heimdall\Heimdall\Impuestos\bin\Debug\facturaE.dll
 C:\Users\David\Source\Repos\heimdall\Heimdall\Impuestos\bin\Debug\MySql.Data.dll
 C:\Users\David\Source\Repos\heimdall\Heimdall\Impuestos\bin\Debug\SpreadsheetLight.dll
-C:\Users\David\Source\Repos\heimdall\Heimdall\Impuestos\bin\Debug\stdole.dll
 C:\Users\David\Source\Repos\heimdall\Heimdall\Impuestos\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\David\Source\Repos\heimdall\Heimdall\Impuestos\bin\Debug\SpreadsheetLight.xml
 C:\Users\David\Source\Repos\heimdall\Heimdall\Impuestos\obj\Debug\Impuestos.frmCierreMensual.resources
