@@ -31,7 +31,7 @@ Partial Class frmRpCompras
         Me.cmdSalir = New System.Windows.Forms.ToolStripButton()
         Me.cmdExportar = New System.Windows.Forms.Button()
         Me.cmdGenerar = New System.Windows.Forms.Button()
-        Me.cboEstablecimiento = New System.Windows.Forms.ComboBox()
+        Me.cboUsuarios = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtHasta = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -100,31 +100,31 @@ Partial Class frmRpCompras
         '
         'cmdGenerar
         '
-        Me.cmdGenerar.Location = New System.Drawing.Point(415, 49)
+        Me.cmdGenerar.Location = New System.Drawing.Point(380, 49)
         Me.cmdGenerar.Name = "cmdGenerar"
         Me.cmdGenerar.Size = New System.Drawing.Size(75, 37)
         Me.cmdGenerar.TabIndex = 46
         Me.cmdGenerar.Text = "Generar"
         Me.cmdGenerar.UseVisualStyleBackColor = True
         '
-        'cboEstablecimiento
+        'cboUsuarios
         '
-        Me.cboEstablecimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboEstablecimiento.FormattingEnabled = True
-        Me.cboEstablecimiento.Items.AddRange(New Object() {"Todos"})
-        Me.cboEstablecimiento.Location = New System.Drawing.Point(285, 39)
-        Me.cboEstablecimiento.Name = "cboEstablecimiento"
-        Me.cboEstablecimiento.Size = New System.Drawing.Size(92, 21)
-        Me.cboEstablecimiento.TabIndex = 45
+        Me.cboUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboUsuarios.FormattingEnabled = True
+        Me.cboUsuarios.Items.AddRange(New Object() {"Todos"})
+        Me.cboUsuarios.Location = New System.Drawing.Point(256, 39)
+        Me.cboUsuarios.Name = "cboUsuarios"
+        Me.cboUsuarios.Size = New System.Drawing.Size(92, 21)
+        Me.cboUsuarios.TabIndex = 45
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(195, 42)
+        Me.Label3.Location = New System.Drawing.Point(204, 42)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(84, 13)
+        Me.Label3.Size = New System.Drawing.Size(46, 13)
         Me.Label3.TabIndex = 44
-        Me.Label3.Text = "Establecimiento:"
+        Me.Label3.Text = "Usuario:"
         '
         'txtHasta
         '
@@ -182,7 +182,7 @@ Partial Class frmRpCompras
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.cmdExportar)
         Me.Controls.Add(Me.cmdGenerar)
-        Me.Controls.Add(Me.cboEstablecimiento)
+        Me.Controls.Add(Me.cboUsuarios)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtHasta)
         Me.Controls.Add(Me.Label2)
@@ -202,7 +202,7 @@ Partial Class frmRpCompras
 
     Friend WithEvents cmdExportar As Button
     Friend WithEvents cmdGenerar As Button
-    Friend WithEvents cboEstablecimiento As ComboBox
+    Friend WithEvents cboUsuarios As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txtHasta As DateTimePicker
     Friend WithEvents Label2 As Label

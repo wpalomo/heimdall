@@ -1,8 +1,12 @@
 ﻿Imports System.Text
+Imports System.IO
 Imports MySql.Data.MySqlClient
+Imports System.Drawing.Imaging
+
 Module Globales
     Public gloConexion As MySqlConnection
     Public gloUsuario As String
+    Public gloTienePermisos As Integer
     Public gloMesActual As Integer
     Public gloMesActualNombre As String
 
@@ -81,6 +85,15 @@ Module Globales
             End If
         End While
         Return xStr
+    End Function
+
+    Public Function BmpToBytes_MemStream(bmp As Bitmap) As Byte()
+        Dim MS As MemoryStream = New MemoryStream()
+        bmp.Save(MS, ImageFormat.Jpeg)
+        Dim bmpBytes As Byte() = MS.GetBuffer()
+        bmp.Dispose()
+        MS.Close()
+        Return bmpBytes
     End Function
 
 

@@ -23,8 +23,12 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub ParámetrosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ParámetrosToolStripMenuItem.Click
-        Dim f As New frmParametros
-        f.ShowDialog()
+        If gloTienePermisos Then
+            Dim f As New frmParametros
+            f.ShowDialog()
+        Else
+            MsgBox("No tiene permiso para esta opción", vbExclamation)
+        End If
 
     End Sub
 
@@ -41,9 +45,14 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub ImportarVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImportarVentasToolStripMenuItem.Click
-        Dim f As New frmImportarVentas
-        f.MdiParent = Me
-        f.Show()
+        If gloTienePermisos Then
+            Dim f As New frmImportarVentas
+            f.MdiParent = Me
+            f.Show()
+        Else
+            MsgBox("No tiene permiso para esta opción", vbExclamation)
+        End If
+
     End Sub
 
     Private Sub ComprasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ComprasToolStripMenuItem1.Click
@@ -99,14 +108,6 @@ Public Class frmPrincipal
 
     End Sub
 
-    Private Sub UsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem.Click
-        Dim s As String = getSHA1Hash(InputBox(""))
-        Clipboard.SetText(s)
-        'MsgBox(s)
-
-
-    End Sub
-
     Private Sub RegistrosDeCompraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrosDeCompraToolStripMenuItem.Click
         Dim f As New frmRpCompras
         f.MdiParent = Me
@@ -128,12 +129,11 @@ Public Class frmPrincipal
 
     End Sub
 
-    Private Sub DescargarXMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DescargarXMLToolStripMenuItem.Click
-        Dim mes As String = InputBox("ingrese mes")
-        If mes = "" Then Exit Sub
+    Private Sub DescargarXMLToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
 
         Try
-            Dim objReader As New StreamReader("C:\Users\David\Desktop\SUSANITA\" + mes + "\claves.txt")
+            Dim objReader As New StreamReader("C:\UNAEP\claves.txt")
 
             Dim ws As New facturaE.eFactura.WebService
             Dim ca As String = ""
@@ -148,13 +148,13 @@ Public Class frmPrincipal
             stProBar.Maximum = contador
             contador = 0
 
-            objReader = New StreamReader("C:\Users\David\Desktop\SUSANITA\" + mes + "\claves.txt")
-            Dim objWriter As New StreamWriter("C:\Users\David\Desktop\SUSANITA\" + mes + "\procesadas.txt")
+            objReader = New StreamReader("C:\UNAEP\claves.txt")
+            Dim objWriter As New StreamWriter("C:\Users\David\Desktop\SUSANITA\" + "\procesadas.txt")
             Do
                 ca = objReader.ReadLine()
                 If Not ca Is Nothing Then
                     Dim k As New facturaE.RespuestaSRYType
-                    k = ws.SendClaveAcceso(ca, "C:\Users\David\Desktop\SUSANITA\" + mes + "\xml\" + ca + ".xml")
+                    k = ws.SendClaveAcceso(ca, "C:\Users\David\Desktop\SUSANITA\" + "\xml\" + ca + ".xml")
                     If k = facturaE.RespuestaSRYType.AUTORIZADO Then
                         objWriter.WriteLine()
                     End If
@@ -169,6 +169,33 @@ Public Class frmPrincipal
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+
+    End Sub
+
+    Private Sub AdministrarUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministrarUsuariosToolStripMenuItem.Click
+        If gloTienePermisos Then
+            Dim f As New frmAdministrarUsuarios
+            f.ShowDialog()
+        Else
+            MsgBox("No tiene permiso para esta opción", vbExclamation)
+        End If
+    End Sub
+
+    Private Sub CambiarMiClaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambiarMiClaveToolStripMenuItem.Click
+        Dim f As New frmCambiarClave
+        f.ShowDialog()
+
+    End Sub
+
+    Private Sub Formulario101ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Formulario101ToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub Formulario103ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Formulario103ToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub Formulario104ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Formulario104ToolStripMenuItem.Click
 
     End Sub
 End Class

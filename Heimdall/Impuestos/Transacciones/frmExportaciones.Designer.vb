@@ -82,6 +82,7 @@ Partial Class frmExportaciones
         Me.cmdMostrar = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.cmdImportarRetencion = New System.Windows.Forms.Button()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -96,7 +97,7 @@ Partial Class frmExportaciones
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmdNuevo, Me.cmdGuardar, Me.toolStripSeparator, Me.cmdAyuda, Me.ToolStripSeparator2, Me.cmdSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(584, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(580, 25)
         Me.ToolStrip1.TabIndex = 13
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -194,7 +195,7 @@ Partial Class frmExportaciones
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(548, 287)
+        Me.TabPage1.Size = New System.Drawing.Size(565, 287)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Datos del Cliente"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -309,7 +310,7 @@ Partial Class frmExportaciones
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(548, 287)
+        Me.TabPage2.Size = New System.Drawing.Size(565, 287)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Detalle de Exportación"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -489,6 +490,7 @@ Partial Class frmExportaciones
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.cmdImportarRetencion)
         Me.TabPage3.Controls.Add(Me.txtFechaComprobante)
         Me.TabPage3.Controls.Add(Me.Label22)
         Me.TabPage3.Controls.Add(Me.txtNumeroAutorizacion)
@@ -658,7 +660,7 @@ Partial Class frmExportaciones
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblUsuario})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 382)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(584, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(580, 22)
         Me.StatusStrip1.TabIndex = 33
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -668,11 +670,20 @@ Partial Class frmExportaciones
         Me.lblUsuario.Size = New System.Drawing.Size(47, 17)
         Me.lblUsuario.Text = "Usuario"
         '
+        'cmdImportarRetencion
+        '
+        Me.cmdImportarRetencion.Location = New System.Drawing.Point(444, 145)
+        Me.cmdImportarRetencion.Name = "cmdImportarRetencion"
+        Me.cmdImportarRetencion.Size = New System.Drawing.Size(92, 46)
+        Me.cmdImportarRetencion.TabIndex = 96
+        Me.cmdImportarRetencion.Text = "Importar Factura Electrónica"
+        Me.cmdImportarRetencion.UseVisualStyleBackColor = True
+        '
         'frmExportaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(584, 404)
+        Me.ClientSize = New System.Drawing.Size(580, 404)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.cmdMostrar)
         Me.Controls.Add(Me.TabControl1)
@@ -758,4 +769,5 @@ Partial Class frmExportaciones
     Friend WithEvents cmdMostrar As Button
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents lblUsuario As ToolStripStatusLabel
+    Friend WithEvents cmdImportarRetencion As Button
 End Class

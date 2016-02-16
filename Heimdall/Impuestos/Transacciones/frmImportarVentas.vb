@@ -38,10 +38,36 @@ Public Class frmImportarVentas
     Private Sub cmdImportar_Click(sender As Object, e As EventArgs) Handles cmdImportar.Click
         If MsgBox("Desea importar estos comprobantes al Sistema?", vbQuestion + vbYesNo) = vbYes Then
             Dim ws As New facturaE.eFactura.WebService
-            Dim archivo = Path.GetTempPath + "\temporal.xml"
+            Dim archivo = "c:\unaep\temporal.xml"
             If ws.SendClaveAcceso("0112201501176817399000120012080000003281234567819", archivo) = facturaE.RespuestaSRYType.AUTORIZADO Then
                 MsgBox("importado")
             End If
+            Exit Sub
+
+            Try
+                Dim i As Integer
+                Spr.Enabled = False
+                cmdImportar.Enabled = False
+                Me.Cursor = Cursors.WaitCursor
+                pgBar.Minimum = 0
+                pgBar.Maximum = Spr.Rows.Count
+                pgBar.Visible = True
+                For i = 1 To Spr.Rows.Count
+                    'Spr(i,1).Value 
+                    i = i + 1
+                    pgBar.Value = i
+                Next
+                MsgBox("Proceso de Importación Finalizado", vbInformation)
+            Catch ex As Exception
+                MsgBox(ex.Message + vbCrLf + vbCrLf + "funcion=batchImportarVentas", vbCritical)
+            Finally
+                Me.Cursor = Cursors.Default
+                pgBar.Visible = False
+                Spr.Enabled = True
+                cmdImportar.Enabled = True
+                llenarSpr()
+            End Try
+
         End If
 
     End Sub

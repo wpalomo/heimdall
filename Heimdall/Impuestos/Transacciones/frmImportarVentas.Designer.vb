@@ -31,6 +31,7 @@ Partial Class frmImportarVentas
         Me.cmdImportar = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lblMensaje = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.pgBar = New System.Windows.Forms.ProgressBar()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.Spr, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
@@ -41,7 +42,7 @@ Partial Class frmImportarVentas
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmdAyuda, Me.ToolStripSeparator2, Me.cmdSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(531, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(521, 25)
         Me.ToolStrip1.TabIndex = 26
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -81,9 +82,9 @@ Partial Class frmImportarVentas
         '
         'cmdImportar
         '
-        Me.cmdImportar.Location = New System.Drawing.Point(438, 161)
+        Me.cmdImportar.Location = New System.Drawing.Point(434, 161)
         Me.cmdImportar.Name = "cmdImportar"
-        Me.cmdImportar.Size = New System.Drawing.Size(75, 23)
+        Me.cmdImportar.Size = New System.Drawing.Size(75, 33)
         Me.cmdImportar.TabIndex = 29
         Me.cmdImportar.Text = "Importar"
         Me.cmdImportar.UseVisualStyleBackColor = True
@@ -93,7 +94,7 @@ Partial Class frmImportarVentas
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblMensaje})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 354)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(531, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(521, 22)
         Me.StatusStrip1.TabIndex = 30
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -102,11 +103,20 @@ Partial Class frmImportarVentas
         Me.lblMensaje.Name = "lblMensaje"
         Me.lblMensaje.Size = New System.Drawing.Size(0, 17)
         '
+        'pgBar
+        '
+        Me.pgBar.Location = New System.Drawing.Point(40, 161)
+        Me.pgBar.Name = "pgBar"
+        Me.pgBar.Size = New System.Drawing.Size(339, 23)
+        Me.pgBar.TabIndex = 31
+        Me.pgBar.Visible = False
+        '
         'frmImportarVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(531, 376)
+        Me.ClientSize = New System.Drawing.Size(521, 376)
+        Me.Controls.Add(Me.pgBar)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.cmdImportar)
         Me.Controls.Add(Me.Spr)
@@ -132,4 +142,5 @@ Partial Class frmImportarVentas
     Friend WithEvents cmdImportar As Button
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents lblMensaje As ToolStripStatusLabel
+    Friend WithEvents pgBar As ProgressBar
 End Class

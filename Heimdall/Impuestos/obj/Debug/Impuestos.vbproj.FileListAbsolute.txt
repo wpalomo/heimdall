@@ -32,3 +32,5 @@ C:\Users\David\Source\Repos\heimdall\Heimdall\Impuestos\obj\Debug\Impuestos.exe
 C:\Users\David\Source\Repos\heimdall\Heimdall\Impuestos\obj\Debug\Impuestos.xml
 C:\Users\David\Source\Repos\heimdall\Heimdall\Impuestos\obj\Debug\Impuestos.pdb
 C:\Users\David\Source\Repos\heimdall\Heimdall\Impuestos\obj\Debug\Impuestos.vbprojResolveAssemblyReference.cache
+C:\Users\David\Source\Repos\heimdall\Heimdall\Impuestos\obj\Debug\Impuestos.frmCambiarClave.resources
+C:\Users\David\Source\Repos\heimdall\Heimdall\Impuestos\obj\Debug\Impuestos.frmAdministrarUsuarios.resources

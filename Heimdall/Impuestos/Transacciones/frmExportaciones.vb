@@ -232,6 +232,17 @@ Public Class frmExportaciones
                 cmd.Parameters.Add("@creado_el", MySqlDbType.DateTime).Value = DateTime.Now
 
                 cmd.ExecuteNonQuery()
+
+                'Recuperamos el ID de la Exportacion
+                Dim exportacionId As Integer = 0
+                Dim cmx As New MySqlCommand("Select LAST_INSERT_ID() As t;", gloConexion)
+                Dim dt As New DataTable
+                dt.Load(cmx.ExecuteReader)
+                If dt.Rows.Count > 0 Then
+                    exportacionId = CInt(dt.Rows(0)("t").ToString)
+                End If
+                txtRegistro.Text = exportacionId.ToString
+
                 MsgBox("Exportación Creada!", vbInformation)
 
             ElseIf modo = 1 Then 'ACTUALIZA

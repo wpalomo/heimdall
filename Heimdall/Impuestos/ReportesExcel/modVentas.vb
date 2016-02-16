@@ -8,7 +8,7 @@ Imports System.IO
 Module modVentas
     Public Sub rptListadoVentas(dt As DataTable)
         Dim wb As New SLDocument()
-        Dim pic As SLPicture = New SLPicture("C:\UNAEP\images\logo.png")
+        Dim pic As SLPicture = New SLPicture(BmpToBytes_MemStream(My.Resources.ResourceManager.GetObject("logo")), DocumentFormat.OpenXml.Packaging.ImagePartType.Png)
         wb.InsertPicture(pic)
         wb.SetCellValue("A5", "LISTADO DE PROVEEDORES")
         wb.MergeWorksheetCells("A5", "D5")

@@ -11,6 +11,7 @@ Public Class frmLogin
             dt.Load(cmd.ExecuteReader)
             If dt.Rows.Count > 0 Then
                 gloUsuario = txtUsuario.Text
+                gloTienePermisos = CInt(dt.Rows(0)("admin_rights").ToString)
                 isLogin = 1
                 Me.Close()
             Else
@@ -25,10 +26,6 @@ Public Class frmLogin
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
         Application.Exit()
-    End Sub
-
-    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Private Sub frmLogin_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing

@@ -100,7 +100,7 @@ Partial Class frmRpVentas
         '
         'cmdGenerar
         '
-        Me.cmdGenerar.Location = New System.Drawing.Point(415, 50)
+        Me.cmdGenerar.Location = New System.Drawing.Point(427, 43)
         Me.cmdGenerar.Name = "cmdGenerar"
         Me.cmdGenerar.Size = New System.Drawing.Size(75, 37)
         Me.cmdGenerar.TabIndex = 46
@@ -111,10 +111,10 @@ Partial Class frmRpVentas
         '
         Me.cboEstablecimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboEstablecimiento.FormattingEnabled = True
-        Me.cboEstablecimiento.Items.AddRange(New Object() {"Todos"})
+        Me.cboEstablecimiento.Items.AddRange(New Object() {"Todos", "001 - Guayaquil", "002 - Quito", "003 - Portoviejo", "004 - Quevedo", "005 - Ventanas", "006 - Babahoyo", "007 - Daule", "008 - Duran", "009 - Machala"})
         Me.cboEstablecimiento.Location = New System.Drawing.Point(285, 40)
         Me.cboEstablecimiento.Name = "cboEstablecimiento"
-        Me.cboEstablecimiento.Size = New System.Drawing.Size(92, 21)
+        Me.cboEstablecimiento.Size = New System.Drawing.Size(119, 21)
         Me.cboEstablecimiento.TabIndex = 45
         '
         'Label3

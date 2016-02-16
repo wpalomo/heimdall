@@ -6,18 +6,35 @@ Public Class frmRpCompras
     Private Sub cmdSalir_Click(sender As Object, e As EventArgs) Handles cmdSalir.Click
         Me.Close()
     End Sub
-
+    Private Sub llenarUsuarios()
+        Try
+            cboUsuarios.Items.Clear()
+            If gloTienePermisos Then
+                Dim cmd As New MySqlCommand("select user from usuarios", gloConexion)
+                Dim dt As New DataTable
+                dt.Load(cmd.ExecuteReader)
+                cboUsuarios.Items.Add("Todos")
+                For Each row As DataRow In dt.Rows
+                    cboUsuarios.Items.Add(row("user").ToString)
+                Next
+            Else
+                cboUsuarios.Items.Add(gloUsuario)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
     Private Sub cmdNuevo_Click(sender As Object, e As EventArgs) Handles cmdNuevo.Click
         txtDesde.ResetText()
         txtHasta.ResetText()
-        cboEstablecimiento.SelectedIndex = 0
+        cboUsuarios.SelectedIndex = 0
         Spr.DataSource = ""
         Spr.Refresh()
         cmdExportar.Visible = False
-
     End Sub
 
     Private Sub frmRpExportaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        llenarUsuarios()
         cmdNuevo_Click(sender, e)
     End Sub
 
@@ -25,10 +42,10 @@ Public Class frmRpCompras
         Try
             Dim cmd As New MySqlCommand()
             cmd.Connection = gloConexion
-            If cboEstablecimiento.Text = "Todos" Then
+            If cboUsuarios.Text = "Todos" Then
                 cmd.CommandText = "select * from compras where fecha_comprobante between '" + txtDesde.Text + "' and '" + txtHasta.Text + "';"
             Else
-                cmd.CommandText = "select * from compras where establecimiento='" + cboEstablecimiento.Text + "' and fecha_comprobante between '" + txtHasta.Text + "' and '" + txtDesde.Text + "';"
+                cmd.CommandText = "select * from compras where creado_por='" + cboUsuarios.Text + "' and fecha_comprobante between '" + txtHasta.Text + "' and '" + txtDesde.Text + "';"
             End If
             dt.Load(cmd.ExecuteReader)
             Spr.DataSource = dt
@@ -58,5 +75,9 @@ Public Class frmRpCompras
     Private Sub frmRpCompras_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
         Spr.Width = Me.Width - 40
         Spr.Height = Me.Height - 160
+    End Sub
+
+    Private Sub ToolStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles ToolStrip1.ItemClicked
+
     End Sub
 End Class
