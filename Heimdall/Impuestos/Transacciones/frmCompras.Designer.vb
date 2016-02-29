@@ -32,8 +32,6 @@ Partial Class frmCompras
         Me.cmdSalir = New System.Windows.Forms.ToolStripButton()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.txtFechaRegistro = New System.Windows.Forms.DateTimePicker()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.cmdBuscar = New System.Windows.Forms.Button()
         Me.txtTipoIdentificacion = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -219,8 +217,6 @@ Partial Class frmCompras
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.txtFechaRegistro)
-        Me.TabPage1.Controls.Add(Me.Label7)
         Me.TabPage1.Controls.Add(Me.cmdBuscar)
         Me.TabPage1.Controls.Add(Me.txtTipoIdentificacion)
         Me.TabPage1.Controls.Add(Me.Label5)
@@ -237,24 +233,6 @@ Partial Class frmCompras
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Datos del Proveedor"
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'txtFechaRegistro
-        '
-        Me.txtFechaRegistro.CustomFormat = "dd/MM/yyyy"
-        Me.txtFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.txtFechaRegistro.Location = New System.Drawing.Point(149, 148)
-        Me.txtFechaRegistro.Name = "txtFechaRegistro"
-        Me.txtFechaRegistro.Size = New System.Drawing.Size(100, 20)
-        Me.txtFechaRegistro.TabIndex = 86
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(34, 148)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(97, 13)
-        Me.Label7.TabIndex = 85
-        Me.Label7.Text = "Fecha de Registro:"
         '
         'cmdBuscar
         '
@@ -1405,8 +1383,6 @@ Partial Class frmCompras
     Friend WithEvents txtRetIVA100 As TextBox
     Friend WithEvents Label28 As Label
     Friend WithEvents Label29 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents txtFechaRegistro As DateTimePicker
     Friend WithEvents cmdCalcularIVA As Button
     Friend WithEvents cmdCalcularIVA100 As Button
     Friend WithEvents cmdCalcularIVA70 As Button

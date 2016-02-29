@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\winfs01\sit\</UpdateUrl>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -313,7 +313,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo.png" />
+    <None Include="Resources\unaep.png" />
     <None Include="find_icon.png" />
     <Content Include="logo.ico" />
   </ItemGroup>

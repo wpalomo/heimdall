@@ -38,8 +38,11 @@ Partial Class frmRpCompras
         Me.txtDesde = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Spr = New System.Windows.Forms.DataGridView()
+        Me.stComBar = New System.Windows.Forms.StatusStrip()
+        Me.lblMensajeCompras = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.Spr, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.stComBar.SuspendLayout()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -174,11 +177,26 @@ Partial Class frmRpCompras
         Me.Spr.Size = New System.Drawing.Size(703, 304)
         Me.Spr.TabIndex = 39
         '
+        'stComBar
+        '
+        Me.stComBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblMensajeCompras})
+        Me.stComBar.Location = New System.Drawing.Point(0, 414)
+        Me.stComBar.Name = "stComBar"
+        Me.stComBar.Size = New System.Drawing.Size(727, 22)
+        Me.stComBar.TabIndex = 48
+        Me.stComBar.Text = "StatusStrip1"
+        '
+        'lblMensajeCompras
+        '
+        Me.lblMensajeCompras.Name = "lblMensajeCompras"
+        Me.lblMensajeCompras.Size = New System.Drawing.Size(0, 17)
+        '
         'frmRpCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(727, 419)
+        Me.ClientSize = New System.Drawing.Size(727, 436)
+        Me.Controls.Add(Me.stComBar)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.cmdExportar)
         Me.Controls.Add(Me.cmdGenerar)
@@ -195,6 +213,8 @@ Partial Class frmRpCompras
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         CType(Me.Spr, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.stComBar.ResumeLayout(False)
+        Me.stComBar.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -215,4 +235,6 @@ Partial Class frmRpCompras
     Friend WithEvents toolStripSeparator As ToolStripSeparator
     Friend WithEvents cmdNuevo As ToolStripButton
     Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents stComBar As StatusStrip
+    Friend WithEvents lblMensajeCompras As ToolStripStatusLabel
 End Class

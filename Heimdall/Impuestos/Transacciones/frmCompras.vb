@@ -59,7 +59,6 @@ Public Class frmCompras
         cboSustentoTributario.SelectedIndex = -1
         cboTipoComprobante.SelectedIndex = -1
         txtFechaEmision.ResetText()
-        txtFechaRegistro.ResetText()
         txtEstablecimiento.Text = ""
         txtPuntoEmision.Text = ""
         txtSecuencial.Text = ""
@@ -260,7 +259,7 @@ Public Class frmCompras
                 cmd.Parameters.Add("@sustento_tributario", MySqlDbType.VarChar).Value = cboSustentoTributario.Text
                 cmd.Parameters.Add("@tipo_comprobante", MySqlDbType.VarChar).Value = cboTipoComprobante.Text
                 cmd.Parameters.Add("@fecha_emision", MySqlDbType.Date).Value = txtFechaEmision.Value
-                cmd.Parameters.Add("@fecha_comprobante", MySqlDbType.Date).Value = txtFechaRegistro.Value
+                cmd.Parameters.Add("@fecha_comprobante", MySqlDbType.Date).Value = txtFechaEmision.Value
                 cmd.Parameters.Add("@establecimiento", MySqlDbType.VarChar).Value = txtEstablecimiento.Text
                 cmd.Parameters.Add("@punto_emision", MySqlDbType.VarChar).Value = txtPuntoEmision.Text
                 cmd.Parameters.Add("@secuencial", MySqlDbType.VarChar).Value = txtSecuencial.Text
@@ -331,7 +330,7 @@ Public Class frmCompras
                 cmd.Parameters.Add("@sustento_tributario", MySqlDbType.VarChar).Value = cboSustentoTributario.Text
                 cmd.Parameters.Add("@tipo_comprobante", MySqlDbType.VarChar).Value = cboTipoComprobante.Text
                 cmd.Parameters.Add("@fecha_emision", MySqlDbType.Date).Value = txtFechaEmision.Value
-                cmd.Parameters.Add("@fecha_comprobante", MySqlDbType.Date).Value = txtFechaRegistro.Value
+                cmd.Parameters.Add("@fecha_comprobante", MySqlDbType.Date).Value = txtFechaEmision.Value
                 cmd.Parameters.Add("@establecimiento", MySqlDbType.VarChar).Value = txtEstablecimiento.Text
                 cmd.Parameters.Add("@punto_emision", MySqlDbType.VarChar).Value = txtPuntoEmision.Text
                 cmd.Parameters.Add("@secuencial", MySqlDbType.VarChar).Value = txtSecuencial.Text
@@ -436,7 +435,6 @@ Public Class frmCompras
             cboSustentoTributario.Text = dt.Rows(0)("sustento_tributario").ToString
             cboTipoComprobante.Text = dt.Rows(0)("tipo_comprobante").ToString
             txtFechaEmision.Value = dt.Rows(0)("fecha_emision").ToString
-            txtFechaRegistro.Value = dt.Rows(0)("fecha_comprobante").ToString
             txtEstablecimiento.Text = dt.Rows(0)("establecimiento").ToString
             txtPuntoEmision.Text = dt.Rows(0)("punto_emision").ToString
             txtSecuencial.Text = dt.Rows(0)("secuencial").ToString

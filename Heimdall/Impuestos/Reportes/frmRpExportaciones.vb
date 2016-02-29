@@ -10,10 +10,10 @@ Public Class frmRpExportaciones
     Private Sub cmdNuevo_Click(sender As Object, e As EventArgs) Handles cmdNuevo.Click
         txtDesde.ResetText()
         txtHasta.ResetText()
-        cboEstablecimiento.SelectedIndex = 0
         Spr.DataSource = ""
         Spr.Refresh()
         cmdExportar.Visible = False
+        dt.Clear()
 
     End Sub
 
@@ -23,19 +23,19 @@ Public Class frmRpExportaciones
 
     Private Sub cmdGenerar_Click(sender As Object, e As EventArgs) Handles cmdGenerar.Click
         Try
+            Spr.DataSource = Nothing
+            Spr.Refresh()
             Dim cmd As New MySqlCommand()
             cmd.Connection = gloConexion
-            If cboEstablecimiento.Text = "Todos" Then
-                cmd.CommandText = "select * from exportaciones where fecha_comprobante between '" + txtDesde.Text + "' and '" + txtHasta.Text + "';"
-            Else
-                cmd.CommandText = "select * from exportaciones where establecimiento='" + cboEstablecimiento.Text + "' and fecha_comprobante between '" + txtHasta.Text + "' and '" + txtDesde.Text + "';"
-            End If
+            cmd.CommandText = "select * from exportaciones where fecha_comprobante between '" + txtDesde.Text + "' and '" + txtHasta.Text + "';"
+            dt.Clear()
             dt.Load(cmd.ExecuteReader)
             Spr.DataSource = dt
             Spr.Refresh()
             Spr.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
             'Spr.Columns(1).HeaderText = "Usuario"
             'Spr.Columns(2).HeaderText = "Contraseña"
+            lblMensajeExportaciones.Text = Spr.Rows.Count.ToString + " registros recuperados"
             cmdExportar.Visible = True
         Catch ex As Exception
             MsgBox(ex.Message + vbCrLf + vbCrLf + "funcion=reporteExportaciones", vbCritical)
@@ -57,7 +57,7 @@ Public Class frmRpExportaciones
 
     Private Sub frmRpExportaciones_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
         Spr.Width = Me.Width - 40
-        Spr.Height = Me.Height - 160
+        Spr.Height = Me.Height - 170
     End Sub
 
 End Class

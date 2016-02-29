@@ -7,7 +7,6 @@ Public Class frmPrincipal
         Dim f As New frmLogin
         f.ShowDialog()
         statusUsuario.Text = gloUsuario
-        statusSucursal.Text = "Matriz"
         statusMes.Text = gloMesActualNombre
     End Sub
 
@@ -137,15 +136,12 @@ Public Class frmPrincipal
 
             Dim ws As New facturaE.eFactura.WebService
             Dim ca As String = ""
-            stProBar.Visible = True
-            stProBar.Minimum = 0
             Dim contador As Integer = 0
             Do
                 ca = objReader.ReadLine()
                 contador += 1
             Loop Until ca Is Nothing
             objReader.Close()
-            stProBar.Maximum = contador
             contador = 0
 
             objReader = New StreamReader("C:\UNAEP\claves.txt")
@@ -159,7 +155,6 @@ Public Class frmPrincipal
                         objWriter.WriteLine()
                     End If
                     contador += 1
-                    stProBar.Value = contador
                 End If
             Loop Until ca Is Nothing
             objWriter.Close()

@@ -38,8 +38,11 @@ Partial Class frmRpVentas
         Me.txtDesde = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Spr = New System.Windows.Forms.DataGridView()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.lblMensajeVentas = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.Spr, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -90,7 +93,7 @@ Partial Class frmRpVentas
         '
         'cmdExportar
         '
-        Me.cmdExportar.Location = New System.Drawing.Point(577, 50)
+        Me.cmdExportar.Location = New System.Drawing.Point(576, 43)
         Me.cmdExportar.Name = "cmdExportar"
         Me.cmdExportar.Size = New System.Drawing.Size(75, 37)
         Me.cmdExportar.TabIndex = 47
@@ -174,11 +177,26 @@ Partial Class frmRpVentas
         Me.Spr.Size = New System.Drawing.Size(639, 281)
         Me.Spr.TabIndex = 39
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblMensajeVentas})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 393)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(663, 22)
+        Me.StatusStrip1.TabIndex = 48
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'lblMensajeVentas
+        '
+        Me.lblMensajeVentas.Name = "lblMensajeVentas"
+        Me.lblMensajeVentas.Size = New System.Drawing.Size(0, 17)
+        '
         'frmRpVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(663, 405)
+        Me.ClientSize = New System.Drawing.Size(663, 415)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.cmdExportar)
         Me.Controls.Add(Me.cmdGenerar)
@@ -194,6 +212,8 @@ Partial Class frmRpVentas
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         CType(Me.Spr, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -214,4 +234,6 @@ Partial Class frmRpVentas
     Friend WithEvents toolStripSeparator As ToolStripSeparator
     Friend WithEvents cmdNuevo As ToolStripButton
     Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents lblMensajeVentas As ToolStripStatusLabel
 End Class

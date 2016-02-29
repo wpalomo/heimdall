@@ -8,7 +8,7 @@ Imports System.IO
 Module modExportaciones
     Public Sub rptListadoExportaciones(dt As DataTable, del As String, al As String, usuario As String)
         Dim wb As New SLDocument()
-        Dim pic As SLPicture = New SLPicture(BmpToBytes_MemStream(My.Resources.ResourceManager.GetObject("logo")), DocumentFormat.OpenXml.Packaging.ImagePartType.Png)
+        Dim pic As SLPicture = New SLPicture(BmpToBytes_MemStream(My.Resources.ResourceManager.GetObject("unaep")), DocumentFormat.OpenXml.Packaging.ImagePartType.Png)
         wb.InsertPicture(pic)
         wb.SetCellValue("A5", "REGISTRO DE EXPORTACIONES")
         wb.MergeWorksheetCells("A5", "D5")

@@ -36,7 +36,7 @@ Public Class Form1
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim strFile As String = "C:\Users\David\Desktop\SUSANITA\all\facturas-procesadas.txt"
+        Dim strFile As String = "C:\Users\David\Desktop\SUSANITA\diciembre\facturas-procesadas.txt"
         Dim fileEntries As String() = Directory.GetFiles(txtRuta.Text)
         Dim xmlDoc As New XmlDocument()
 

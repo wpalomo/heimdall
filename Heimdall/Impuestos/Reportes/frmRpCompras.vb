@@ -31,6 +31,7 @@ Public Class frmRpCompras
         Spr.DataSource = ""
         Spr.Refresh()
         cmdExportar.Visible = False
+        dt.Clear()
     End Sub
 
     Private Sub frmRpExportaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -40,19 +41,23 @@ Public Class frmRpCompras
 
     Private Sub cmdGenerar_Click(sender As Object, e As EventArgs) Handles cmdGenerar.Click
         Try
+            Spr.DataSource = Nothing
+            Spr.Refresh()
             Dim cmd As New MySqlCommand()
             cmd.Connection = gloConexion
             If cboUsuarios.Text = "Todos" Then
                 cmd.CommandText = "select * from compras where fecha_comprobante between '" + txtDesde.Text + "' and '" + txtHasta.Text + "';"
             Else
-                cmd.CommandText = "select * from compras where creado_por='" + cboUsuarios.Text + "' and fecha_comprobante between '" + txtHasta.Text + "' and '" + txtDesde.Text + "';"
+                cmd.CommandText = "select * from compras where creado_por='" + cboUsuarios.Text + "' and fecha_comprobante between '" + txtDesde.Text + "' and '" + txtHasta.Text + "';"
             End If
+            dt.Clear()
             dt.Load(cmd.ExecuteReader)
             Spr.DataSource = dt
             Spr.Refresh()
             Spr.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
             'Spr.Columns(1).HeaderText = "Usuario"
             'Spr.Columns(2).HeaderText = "Contraseña"
+            lblMensajeCompras.Text = Spr.Rows.Count.ToString + " registros recuperados"
             cmdExportar.Visible = True
         Catch ex As Exception
             MsgBox(ex.Message + vbCrLf + vbCrLf + "funcion=reporteCompras", vbCritical)
@@ -74,10 +79,7 @@ Public Class frmRpCompras
 
     Private Sub frmRpCompras_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
         Spr.Width = Me.Width - 40
-        Spr.Height = Me.Height - 160
+        Spr.Height = Me.Height - 170
     End Sub
 
-    Private Sub ToolStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles ToolStrip1.ItemClicked
-
-    End Sub
 End Class

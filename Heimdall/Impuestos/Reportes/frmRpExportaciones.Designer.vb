@@ -34,12 +34,13 @@ Partial Class frmRpExportaciones
         Me.txtDesde = New System.Windows.Forms.DateTimePicker()
         Me.txtHasta = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.cboEstablecimiento = New System.Windows.Forms.ComboBox()
         Me.cmdGenerar = New System.Windows.Forms.Button()
         Me.cmdExportar = New System.Windows.Forms.Button()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.lblMensajeExportaciones = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.Spr, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -136,25 +137,6 @@ Partial Class frmRpExportaciones
         Me.Label2.TabIndex = 32
         Me.Label2.Text = "Hasta:"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(194, 39)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(84, 13)
-        Me.Label3.TabIndex = 34
-        Me.Label3.Text = "Establecimiento:"
-        '
-        'cboEstablecimiento
-        '
-        Me.cboEstablecimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboEstablecimiento.FormattingEnabled = True
-        Me.cboEstablecimiento.Items.AddRange(New Object() {"Todos"})
-        Me.cboEstablecimiento.Location = New System.Drawing.Point(284, 36)
-        Me.cboEstablecimiento.Name = "cboEstablecimiento"
-        Me.cboEstablecimiento.Size = New System.Drawing.Size(92, 21)
-        Me.cboEstablecimiento.TabIndex = 35
-        '
         'cmdGenerar
         '
         Me.cmdGenerar.Location = New System.Drawing.Point(414, 46)
@@ -174,15 +156,28 @@ Partial Class frmRpExportaciones
         Me.cmdExportar.UseVisualStyleBackColor = True
         Me.cmdExportar.Visible = False
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblMensajeExportaciones})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 372)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(630, 22)
+        Me.StatusStrip1.TabIndex = 38
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'lblMensajeExportaciones
+        '
+        Me.lblMensajeExportaciones.Name = "lblMensajeExportaciones"
+        Me.lblMensajeExportaciones.Size = New System.Drawing.Size(0, 17)
+        '
         'frmRpExportaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(630, 379)
+        Me.ClientSize = New System.Drawing.Size(630, 394)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.cmdExportar)
         Me.Controls.Add(Me.cmdGenerar)
-        Me.Controls.Add(Me.cboEstablecimiento)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtHasta)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtDesde)
@@ -195,6 +190,8 @@ Partial Class frmRpExportaciones
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         CType(Me.Spr, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -211,8 +208,8 @@ Partial Class frmRpExportaciones
     Friend WithEvents txtDesde As DateTimePicker
     Friend WithEvents txtHasta As DateTimePicker
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents cboEstablecimiento As ComboBox
     Friend WithEvents cmdGenerar As Button
     Friend WithEvents cmdExportar As Button
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents lblMensajeExportaciones As ToolStripStatusLabel
 End Class

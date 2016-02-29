@@ -71,7 +71,6 @@ Module Globales
 
     End Function
 
-
     Public Function GenerarNombre() As String
         Dim xCharArray() As Char = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray
         Dim xNoArray() As Char = "0123456789".ToCharArray
