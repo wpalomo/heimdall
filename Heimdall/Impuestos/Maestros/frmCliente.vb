@@ -11,9 +11,9 @@ Public Class frmCliente
         Dim f As New frmBuscarCliente
         f.ShowDialog()
         Dim registro As String = gloSelectedClientID
-        If Not IsNumeric(registro) Then
-            Exit Sub
-        End If
+        'If Not IsNumeric(registro) Then
+        '    Exit Sub
+        'End If
         Dim cmd As New MySqlCommand("SELECT * FROM clientes where identificacion='" + registro + "';", gloConexion)
         Dim dt As New DataTable
         dt.Load(cmd.ExecuteReader)

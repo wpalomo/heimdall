@@ -35,9 +35,32 @@ Public Class frmCierreMensual
 
     Private Sub cmdCerrarMes_Click(sender As Object, e As EventArgs) Handles cmdCerrarMes.Click
         If MsgBox("¿ Desea cerrar " + txtNombreMesActual.Text.ToUpper + " ?", vbYesNo + vbQuestion) = vbYes Then
-            'actualizar tabla mes
-            MsgBox("Se ha cerrado " + txtNombreMesActual.Text.ToUpper, vbInformation)
-            llenarSpr()
+            Try
+                'Poner el mes actual como cerrado
+                Dim cmd As New MySqlCommand("update cierre_mes set estado=2, fecha_cierre=@fecha where id=@id", gloConexion)
+                cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = CInt(txtIdMesActual.Text)
+                cmd.Parameters.Add("@fecha", MySqlDbType.DateTime).Value = DateTime.Now
+                cmd.ExecuteNonQuery()
+
+                'Poner el mes siguiente como actual
+                Dim cmx As New MySqlCommand("update cierre_mes set estado=1 where id=@id", gloConexion)
+                cmx.Parameters.Add("@id", MySqlDbType.Int32).Value = CInt(txtIdMesActual.Text) + 1
+                cmx.ExecuteNonQuery()
+                MsgBox("Se ha cerrado " + txtNombreMesActual.Text.ToUpper, vbInformation)
+
+                llenarSpr()
+                CargarMesActual()
+                frmPrincipal.statusMes.Text = gloMesActualNombre
+                cmdCerrarMes.Enabled = False
+
+            Catch ex As Exception
+                MsgBox("" + vbCrLf + ex.Message, vbExclamation)
+            End Try
+
+
+
+
+
         End If
     End Sub
 End Class

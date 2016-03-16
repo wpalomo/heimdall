@@ -537,10 +537,10 @@ Public Class frmCompras
     End Sub
 
     Private Sub cmdCalcularIVA_Click(sender As Object, e As EventArgs) Handles cmdCalcularIVA.Click
-        If IsNumeric(txtMontoIVA.Text) Then
-            txtBaseDiferente0.Text = Math.Round(CDec(txtMontoIVA.Text) * 0.12, 2).ToString
+        If IsNumeric(txtBaseDiferente0.Text) Then
+            txtMontoIVA.Text = Math.Round(CDec(txtBaseDiferente0.Text) * 0.12, 2).ToString
         Else
-            txtBaseDiferente0.Text = "0.00"
+            txtMontoIVA.Text = "0.00"
         End If
     End Sub
 End Class

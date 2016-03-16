@@ -832,7 +832,7 @@ Partial Class frmCompras
         '
         'cmdCalcularIVA
         '
-        Me.cmdCalcularIVA.Location = New System.Drawing.Point(340, 72)
+        Me.cmdCalcularIVA.Location = New System.Drawing.Point(589, 71)
         Me.cmdCalcularIVA.Name = "cmdCalcularIVA"
         Me.cmdCalcularIVA.Size = New System.Drawing.Size(28, 20)
         Me.cmdCalcularIVA.TabIndex = 95
