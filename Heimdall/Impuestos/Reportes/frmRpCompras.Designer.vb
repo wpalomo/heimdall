@@ -40,6 +40,10 @@ Partial Class frmRpCompras
         Me.Spr = New System.Windows.Forms.DataGridView()
         Me.stComBar = New System.Windows.Forms.StatusStrip()
         Me.lblMensajeCompras = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtRuc = New System.Windows.Forms.TextBox()
+        Me.cmdBuscar = New System.Windows.Forms.Button()
+        Me.txtProveedor = New System.Windows.Forms.TextBox()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.Spr, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.stComBar.SuspendLayout()
@@ -50,7 +54,7 @@ Partial Class frmRpCompras
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmdNuevo, Me.toolStripSeparator, Me.cmdAyuda, Me.ToolStripSeparator2, Me.cmdSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(727, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(788, 25)
         Me.ToolStrip1.TabIndex = 38
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -93,7 +97,7 @@ Partial Class frmRpCompras
         '
         'cmdExportar
         '
-        Me.cmdExportar.Location = New System.Drawing.Point(640, 49)
+        Me.cmdExportar.Location = New System.Drawing.Point(698, 49)
         Me.cmdExportar.Name = "cmdExportar"
         Me.cmdExportar.Size = New System.Drawing.Size(75, 37)
         Me.cmdExportar.TabIndex = 47
@@ -103,7 +107,7 @@ Partial Class frmRpCompras
         '
         'cmdGenerar
         '
-        Me.cmdGenerar.Location = New System.Drawing.Point(380, 49)
+        Me.cmdGenerar.Location = New System.Drawing.Point(617, 49)
         Me.cmdGenerar.Name = "cmdGenerar"
         Me.cmdGenerar.Size = New System.Drawing.Size(75, 37)
         Me.cmdGenerar.TabIndex = 46
@@ -115,15 +119,15 @@ Partial Class frmRpCompras
         Me.cboUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboUsuarios.FormattingEnabled = True
         Me.cboUsuarios.Items.AddRange(New Object() {"Todos"})
-        Me.cboUsuarios.Location = New System.Drawing.Point(256, 39)
+        Me.cboUsuarios.Location = New System.Drawing.Point(235, 39)
         Me.cboUsuarios.Name = "cboUsuarios"
-        Me.cboUsuarios.Size = New System.Drawing.Size(92, 21)
+        Me.cboUsuarios.Size = New System.Drawing.Size(87, 21)
         Me.cboUsuarios.TabIndex = 45
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(204, 42)
+        Me.Label3.Location = New System.Drawing.Point(183, 42)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(46, 13)
         Me.Label3.TabIndex = 44
@@ -135,13 +139,13 @@ Partial Class frmRpCompras
         Me.txtHasta.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.txtHasta.Location = New System.Drawing.Point(64, 66)
         Me.txtHasta.Name = "txtHasta"
-        Me.txtHasta.Size = New System.Drawing.Size(101, 20)
+        Me.txtHasta.Size = New System.Drawing.Size(92, 20)
         Me.txtHasta.TabIndex = 43
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(17, 66)
+        Me.Label2.Location = New System.Drawing.Point(17, 69)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(38, 13)
         Me.Label2.TabIndex = 42
@@ -153,13 +157,13 @@ Partial Class frmRpCompras
         Me.txtDesde.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.txtDesde.Location = New System.Drawing.Point(64, 40)
         Me.txtDesde.Name = "txtDesde"
-        Me.txtDesde.Size = New System.Drawing.Size(101, 20)
+        Me.txtDesde.Size = New System.Drawing.Size(92, 20)
         Me.txtDesde.TabIndex = 41
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(17, 40)
+        Me.Label1.Location = New System.Drawing.Point(17, 42)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(41, 13)
         Me.Label1.TabIndex = 40
@@ -174,7 +178,7 @@ Partial Class frmRpCompras
         Me.Spr.Location = New System.Drawing.Point(12, 103)
         Me.Spr.Name = "Spr"
         Me.Spr.ReadOnly = True
-        Me.Spr.Size = New System.Drawing.Size(703, 304)
+        Me.Spr.Size = New System.Drawing.Size(764, 304)
         Me.Spr.TabIndex = 39
         '
         'stComBar
@@ -182,7 +186,7 @@ Partial Class frmRpCompras
         Me.stComBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblMensajeCompras})
         Me.stComBar.Location = New System.Drawing.Point(0, 414)
         Me.stComBar.Name = "stComBar"
-        Me.stComBar.Size = New System.Drawing.Size(727, 22)
+        Me.stComBar.Size = New System.Drawing.Size(788, 22)
         Me.stComBar.TabIndex = 48
         Me.stComBar.Text = "StatusStrip1"
         '
@@ -191,11 +195,47 @@ Partial Class frmRpCompras
         Me.lblMensajeCompras.Name = "lblMensajeCompras"
         Me.lblMensajeCompras.Size = New System.Drawing.Size(0, 17)
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(183, 69)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(33, 13)
+        Me.Label4.TabIndex = 49
+        Me.Label4.Text = "RUC:"
+        '
+        'txtRuc
+        '
+        Me.txtRuc.Location = New System.Drawing.Point(235, 66)
+        Me.txtRuc.Name = "txtRuc"
+        Me.txtRuc.Size = New System.Drawing.Size(87, 20)
+        Me.txtRuc.TabIndex = 50
+        '
+        'cmdBuscar
+        '
+        Me.cmdBuscar.Location = New System.Drawing.Point(509, 65)
+        Me.cmdBuscar.Name = "cmdBuscar"
+        Me.cmdBuscar.Size = New System.Drawing.Size(52, 21)
+        Me.cmdBuscar.TabIndex = 51
+        Me.cmdBuscar.Text = "Buscar"
+        Me.cmdBuscar.UseVisualStyleBackColor = True
+        '
+        'txtProveedor
+        '
+        Me.txtProveedor.Location = New System.Drawing.Point(328, 66)
+        Me.txtProveedor.Name = "txtProveedor"
+        Me.txtProveedor.Size = New System.Drawing.Size(175, 20)
+        Me.txtProveedor.TabIndex = 52
+        '
         'frmRpCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(727, 436)
+        Me.ClientSize = New System.Drawing.Size(788, 436)
+        Me.Controls.Add(Me.txtProveedor)
+        Me.Controls.Add(Me.cmdBuscar)
+        Me.Controls.Add(Me.txtRuc)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.stComBar)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.cmdExportar)
@@ -237,4 +277,8 @@ Partial Class frmRpCompras
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents stComBar As StatusStrip
     Friend WithEvents lblMensajeCompras As ToolStripStatusLabel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtRuc As TextBox
+    Friend WithEvents cmdBuscar As Button
+    Friend WithEvents txtProveedor As TextBox
 End Class

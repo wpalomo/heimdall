@@ -27,7 +27,6 @@ Partial Class frmCompras
         Me.cmdNuevo = New System.Windows.Forms.ToolStripButton()
         Me.cmdGuardar = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.cmdAyuda = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.cmdSalir = New System.Windows.Forms.ToolStripButton()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -135,6 +134,7 @@ Partial Class frmCompras
         Me.cmdMostrar = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.cmdEliminar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -149,7 +149,7 @@ Partial Class frmCompras
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmdNuevo, Me.cmdGuardar, Me.toolStripSeparator, Me.cmdAyuda, Me.ToolStripSeparator2, Me.cmdSalir})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmdNuevo, Me.cmdGuardar, Me.toolStripSeparator, Me.cmdEliminar, Me.ToolStripSeparator2, Me.cmdSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(780, 25)
@@ -178,15 +178,6 @@ Partial Class frmCompras
         '
         Me.toolStripSeparator.Name = "toolStripSeparator"
         Me.toolStripSeparator.Size = New System.Drawing.Size(6, 25)
-        '
-        'cmdAyuda
-        '
-        Me.cmdAyuda.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.cmdAyuda.Image = CType(resources.GetObject("cmdAyuda.Image"), System.Drawing.Image)
-        Me.cmdAyuda.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.cmdAyuda.Name = "cmdAyuda"
-        Me.cmdAyuda.Size = New System.Drawing.Size(23, 22)
-        Me.cmdAyuda.Text = "Ayuda"
         '
         'ToolStripSeparator2
         '
@@ -1242,6 +1233,15 @@ Partial Class frmCompras
         Me.lblUsuario.Name = "lblUsuario"
         Me.lblUsuario.Size = New System.Drawing.Size(0, 17)
         '
+        'cmdEliminar
+        '
+        Me.cmdEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.cmdEliminar.Image = CType(resources.GetObject("cmdEliminar.Image"), System.Drawing.Image)
+        Me.cmdEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.cmdEliminar.Name = "cmdEliminar"
+        Me.cmdEliminar.Size = New System.Drawing.Size(23, 22)
+        Me.cmdEliminar.Text = "Eliminar"
+        '
         'frmCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1281,7 +1281,6 @@ Partial Class frmCompras
     Friend WithEvents cmdNuevo As ToolStripButton
     Friend WithEvents cmdGuardar As ToolStripButton
     Friend WithEvents toolStripSeparator As ToolStripSeparator
-    Friend WithEvents cmdAyuda As ToolStripButton
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents cmdSalir As ToolStripButton
     Friend WithEvents TabControl1 As TabControl
@@ -1389,4 +1388,5 @@ Partial Class frmCompras
     Friend WithEvents cmdCalcularIVA30 As Button
     Friend WithEvents cmdCalcularIVA20 As Button
     Friend WithEvents cmdCalcularIVA10 As Button
+    Friend WithEvents cmdEliminar As ToolStripButton
 End Class

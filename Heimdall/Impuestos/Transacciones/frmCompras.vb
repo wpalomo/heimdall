@@ -543,4 +543,13 @@ Public Class frmCompras
             txtBaseDiferente0.Text = "0.00"
         End If
     End Sub
+
+    Private Sub cmdEliminar_Click(sender As Object, e As EventArgs) Handles cmdEliminar.Click
+        If txtRegistro.Text <> "" Then
+            If MsgBox("Está seguro de eliminar este registro?", vbQuestion + vbYesNo, "Eliminar Registro de Compras") = vbYes Then
+
+            End If
+        End If
+
+    End Sub
 End Class

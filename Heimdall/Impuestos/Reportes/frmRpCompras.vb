@@ -28,6 +28,8 @@ Public Class frmRpCompras
         txtDesde.ResetText()
         txtHasta.ResetText()
         cboUsuarios.SelectedIndex = 0
+        txtRuc.ResetText()
+        txtProveedor.ResetText()
         Spr.DataSource = ""
         Spr.Refresh()
         cmdExportar.Visible = False
@@ -45,11 +47,21 @@ Public Class frmRpCompras
             Spr.Refresh()
             Dim cmd As New MySqlCommand()
             cmd.Connection = gloConexion
+
+            Dim usuario As String = ""
+            Dim ruc As String = ""
             If cboUsuarios.Text = "Todos" Then
-                cmd.CommandText = "select * from compras where fecha_comprobante between '" + txtDesde.Text + "' and '" + txtHasta.Text + "';"
+                usuario = "1"
             Else
-                cmd.CommandText = "select * from compras where creado_por='" + cboUsuarios.Text + "' and fecha_comprobante between '" + txtDesde.Text + "' and '" + txtHasta.Text + "';"
+                usuario = "creado_por='" + usuario + "'"
             End If
+            If txtRuc.Text = "" Then
+                ruc = "1"
+            Else
+                ruc = "identificacion='" + txtRuc.Text + "'"
+            End If
+            cmd.CommandText = "select * from compras where " + usuario + " and " + ruc + " and fecha_comprobante between '" + txtDesde.Text + "' and '" + txtHasta.Text + "';"
+
             dt.Clear()
             dt.Load(cmd.ExecuteReader)
             Spr.DataSource = dt
@@ -82,4 +94,13 @@ Public Class frmRpCompras
         Spr.Height = Me.Height - 170
     End Sub
 
+    Private Sub cmdBuscar_Click(sender As Object, e As EventArgs) Handles cmdBuscar.Click
+        gloSelectedSupplierID = ""
+        gloSelectedSupplierName = ""
+        gloSelectedSupplierType = ""
+        Dim f As New frmBuscarProveedor
+        f.ShowDialog()
+        txtRuc.Text = gloSelectedSupplierID
+        txtProveedor.Text = gloSelectedSupplierName
+    End Sub
 End Class

@@ -221,38 +221,47 @@ Public Class frmImportarVentas
 
     End Function
 
-    Private Function ProcesarXML(ca As String, archivo As String, id As String) As Boolean
+    Private Function ProcesarXML(ws As facturaE.eFactura.WebService, id As String) As Boolean
         Try
-            If Strings.Mid(ca, 9, 2) = "01" Then
-                If extraeFC(ca, archivo) = True Then
-                    Return True
-                Else
-                    Return False
-                End If
-            ElseIf Strings.Mid(ca, 9, 2) = "04" Then
-                If extraeNC(ca, archivo) = True Then
-                    Return True
-                Else
-                    Return False
-                End If
-            ElseIf Strings.Mid(ca, 9, 2) = "05" Then
-                If extraeND(ca, archivo) = True Then
-                    Return True
-                Else
-                    Return False
-                End If
-            ElseIf Strings.Mid(ca, 9, 2) = "06" Then
-                SetComprobanteNoAplica(id)
-                Return False
-            ElseIf Strings.Mid(ca, 9, 2) = "07" Then
-                SetComprobanteNoAplica(id)
-                Return False
-            Else
-                Return False
+            Dim comprobante As facturaE.Comprobante = ws.Comprobante
+            Dim ca As String = comprobante.ClaveAcceso
+            Dim na As String = comprobante.NumeroAutorizacion
+            Dim fa As String = comprobante.FechaAutorizacion
+            Dim xmlDoc As New XmlDocument()
+            xmlDoc.Load(comprobante.Comprobante)
+            If IsNothing(xmlDoc.DocumentElement.SelectSingleNode("/comprobante/factura/infoTributaria/CodDoc").FirstChild.Value.ToString) = False Then
+                MsgBox("Es Factura")
             End If
+            'If Strings.Mid(ca, 9, 2) = "01" Then
+            '    If extraeFC(ca, archivo) = True Then
+            '        Return True
+            '    Else
+            '        Return False
+            '    End If
+            'ElseIf Strings.Mid(ca, 9, 2) = "04" Then
+            '    If extraeNC(ca, archivo) = True Then
+            '        Return True
+            '    Else
+            '        Return False
+            '    End If
+            'ElseIf Strings.Mid(ca, 9, 2) = "05" Then
+            '    If extraeND(ca, archivo) = True Then
+            '        Return True
+            '    Else
+            '        Return False
+            '    End If
+            'ElseIf Strings.Mid(ca, 9, 2) = "06" Then
+            '    SetComprobanteNoAplica(id)
+            '    Return False
+            'ElseIf Strings.Mid(ca, 9, 2) = "07" Then
+            '    SetComprobanteNoAplica(id)
+            '    Return False
+            'Else
+            '    Return False
+            'End If
         Catch ex As Exception
             MsgBox(ex.Message + vbCrLf + vbCrLf + "funcion=ProcesarXML", vbCritical)
-        Return False
+            Return False
         End Try
 
     End Function
@@ -290,11 +299,11 @@ Public Class frmImportarVentas
                 pgBar.Maximum = Spr.Rows.Count
                 pgBar.Visible = True
                 For i = 0 To Spr.Rows.Count - 1
-                    archivo = Path.GetTempPath + Spr(1, i).Value.ToString.Trim + ".xml"
-                    ca = Spr(1, i).Value.ToString
+                    archivo = Path.GetTempPath + Spr(2, i).Value.ToString.Trim + ".xml"
+                    ca = Spr(2, i).Value.ToString
                     id = Spr(0, i).Value.ToString
                     If ws.SendClaveAcceso(ca, archivo) = facturaE.RespuestaSRYType.AUTORIZADO Then
-                        If ProcesarXML(ca, archivo, id) = True Then
+                        If ProcesarXML(ws, id) = True Then
                             SetComprobanteProcesado(id)
                         End If
                     End If
