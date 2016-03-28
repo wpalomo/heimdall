@@ -124,6 +124,24 @@ Module modCompras
             i += 1
         Next
 
+        'Estilos
+        wb.ApplyNamedCellStyleToColumn(15, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(16, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(17, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(18, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(19, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(20, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(21, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(22, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(23, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(24, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(25, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(34, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(35, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(36, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(37, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(38, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(39, SLNamedCellStyleValues.Currency)
 
         'Guardar el Reporte
         wb.AutoFitColumn(1, 45)

@@ -57,10 +57,20 @@ Module modVentas
             wb.SetCellValue("P" & i, row("base_imponible"))
             wb.SetCellValue("Q" & i, row("valor_impuesto"))
             wb.SetCellValue("R" & i, row("importe_total"))
-            wb.SetCellValue("S" & i, row("creado_por").ToString)
+            wb.SetCellValue("S" & i, row("creado_por").ToString.ToUpper)
             wb.SetCellValue("T" & i, CDate(row("creado_el")).ToString)
             i += 1
         Next
+
+        'Estilos
+        wb.ApplyNamedCellStyleToColumn(12, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(13, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(14, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(15, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(16, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(17, SLNamedCellStyleValues.Currency)
+        wb.ApplyNamedCellStyleToColumn(18, SLNamedCellStyleValues.Currency)
+
         'Guardar el Reporte
         wb.AutoFitColumn(1, 20)
         Dim archivoGenerado As String = Path.GetTempPath + "\" + GenerarNombre() + ".xlsx"

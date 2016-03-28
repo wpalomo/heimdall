@@ -34,7 +34,7 @@ Module Globales
         End Try
 
     End Sub
-    Private Sub CargarMesActual()
+    Public Sub CargarMesActual()
         Try
             Dim cmd As New MySqlCommand("select id, mes from cierre_mes where estado=1;", gloConexion)
             Dim dt As New DataTable
